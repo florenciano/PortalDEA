@@ -1,0 +1,378 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    B- content
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+//  $settings SASS/COMPASS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/////////////////////////////////////////////////////////////////////
+// Vars
+/////////////////////////////////////////////////////////////////////
+
+$font: verdana, sans-serif;
+$grid: 40px;
+$meioGrid: $grid / 2;
+
+
+/////////////////////////////////////////////////////////////////////
+// colors
+/////////////////////////////////////////////////////////////////////
+$red: #d03238;
+$magenta: #ee2a5d;
+$cinza: #646464;
+$laranja: #f58220;
+$corBorda: rgb(230,230,230);
+$cinzaTexto: rgb(65,65,65);
+
+/////////////////////////////////////////////////////////////////////
+// Mixin
+/////////////////////////////////////////////////////////////////////
+
+@mixin font($fstyle, $fsize) {
+    font: $fstyle $fsize $font;
+}
+
+@mixin bShadow($lenH,$lenV,$blur,$spread,$rgba) {
+    box-shadow: $lenH $lenV $blur $spread $rgba;
+    -o-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -ms-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -moz-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -webkit-box-shadow: $lenH $lenV $blur $spread $rgba;
+}
+
+@mixin box-size($boxSize) {
+    box-sizing: $boxSize;
+    -o-box-sizing: $boxSize;
+    -ms-box-sizing: $boxSize;
+    -moz-box-sizing: $boxSize;
+    -webkit-box-sizing: $boxSize;
+}
+
+@mixin radius($radT,$radR,$radB,$radL) {
+    border-radius: $radT $radR $radB $radL;
+    -o-border-radius: $radT $radR $radB $radL;
+    -ms-border-radius: $radT $radR $radB $radL;
+    -moz-border-radius: $radT $radR $radB $radL;
+    -webkit-border-radius: $radT $radR $radB $radL;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+}
+
+/////////////////////////////////////////////////////////////////////
+// Resets
+/////////////////////////////////////////////////////////////////////
+
+* {
+    @include box-size(border-box);
+    @include transition(all .25s ease);
+    // Trasition removed in all style, it's not a good pratice
+}
+
+body { 
+    @include font(normal, 100%);
+}
+
+// colors links
+a, a:active, a:hover {
+    color: $red;
+}
+a, a:active { text-decoration: none }
+a:hover { text-decoration: underline }
+a:visited { color: #c43150 }
+.wrapper {
+    border: 1px solid $corBorda;
+    margin-top: $meioGrid;
+    padding-bottom: $meioGrid;
+}
+
+// header
+header[role="banner"] {
+    background: $red url('../img/ui/bgHeader.png') left center no-repeat;
+    border-bottom: 1px solid $corBorda;
+    min-height: 125px;
+    h1 {
+        color: #fff;
+        font-size: 2em;
+        margin: 0;
+        padding: ($grid/4) 0 0 ($meioGrid);
+        line-height: 100%;
+        text-shadow: 0px 2px 1px rgba(1,1,1,.4);
+    }
+    img {
+        margin-top: 17%;
+    }
+}
+// body
+.textIntrod {
+    font-size: 75%;
+    padding: $meioGrid;
+    line-height: 1.5em;
+    ul {
+        list-style-type: square;
+        padding-left: $meioGrid*1.5;
+    }
+}
+.boxLabel {
+    display: inline-block;
+    width: 87.5%;
+    border: 1px solid $corBorda;
+    background-color: #fff;
+    box-shadow: 0px 2px 1px rgba(1, 1, 1, 0.2);
+    margin: 40px auto 0;
+    h6 {
+        margin: 0;
+        background-color: #e6e7e8;
+        padding: $meioGrid/2 0;
+        text-align: center;
+        font-size: 68.75%;
+        color: #414042;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 75%;
+    }
+    li {
+        display: inline-block;
+        width: 32%; // % per 3
+        padding: 1em 0;
+        text-align: center;
+        border-right: 1px solid $corBorda;
+        span {
+            display: block;
+            width: 1.5em;
+            margin: 0 auto 5px;
+            height: 1.5em;
+        }
+        span.magenta { background-color: $magenta; }
+        span.cinza { background-color: $cinza; }
+        span.laranja { background-color: $laranja; }
+    }
+    li:last-child {
+        border-right: none;
+    }
+}
+
+// calendar attack: month, week and day
+#calendar * {
+    @include transition(none);
+}
+#calendar {
+    padding: 0 ($grid/4);
+    font-size: 75%;
+    .fc-toolbar h2 {
+        color: #414042;
+    }
+}
+
+//footer
+footer[role="contentinfo"] {
+    background-color: rgb(242,242,242);
+    margin-top: $meioGrid;
+    .wrapperFooter {
+        border: none;
+    }
+    ul {
+        list-style: none;
+        padding: $meioGrid;
+        margin: 0 0 0 $grid;
+        li {
+            margin-bottom: $meioGrid*1.5;
+        }
+        h5 {
+            margin: 0 0 ($meioGrid/4) 0;
+            font-weight: normal;
+            font-size: 100%;
+            color: #414042;
+        }
+        p {
+            margin: 0;
+            font-size: 75%;
+        }
+    }
+    .logoInsperFooter {
+        margin-top: $meioGrid;
+    }
+}
+
+
+/*  $Sticky Footer | cssstickyfooter.com
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// copy this code for all Media Queries and do adjustes necessary
+// html, body {height: 100%;}
+
+// .wrapper {
+//     min-height: 100%;
+//     overflow:auto;
+//     padding-bottom: 310px; /* defined value here */
+// }
+
+// div[role="main"] {
+//     min-height: 310px; }  /* must be same height as the footer */
+
+// footer.PageInterna {
+//     position: relative;
+//     margin-top: -310px; /* negative value of footer height */
+//     height: 310px; /* defined value here */
+//     clear:both;
+//     .wrapper {
+//         padding-bottom: 0;
+//     }
+// }
+
+/*  $Media Queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Media query for 960 Screens - sets nested grids to 100%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (max-width:960px) {
+    .row .row .c1,.row .row .c2,.row .row .c3,.row .row .c4,.row .row .c5,.row .row .c6,.row .row .c7,.row .row .c8,.row .row .c9,.row .row .c10,.row .row .c11,.row .row .c12{width:100%;margin-bottom:20px}
+    .row .row > div:last-child{margin-bottom:0 !important}
+    
+    body{ background: #e24304 !important; }
+}
+
+
+/* Media query for iPad and tablets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+    
+    body{
+        font-size:90%;
+        background-color: orange !important;
+    }
+    
+    .row{ margin-bottom:0!important }
+    
+    .c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12{width:100%;margin-right:0;margin-left:0;margin-bottom:20px}
+
+    // YOUR CODE HERE...
+
+}
+
+
+/* Media query for 480 Screens - sets for mobile phone
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (max-width:480px) {
+    .row .row .c1,.row .row .c2,.row .row .c3,.row .row .c4,.row .row .c5,.row .row .c6,.row .row .c7,.row .row .c8,.row .row .c9,.row .row .c10,.row .row .c11,.row .row .c12{ width:100%; margin-bottom:20px }
+    .row .row > div:last-child{ margin-bottom:0 !important }
+    
+    body{ 
+        background: gold !important; 
+        color: #000;
+    }
+
+    // YOUR CODE HERE...
+
+
+}
+/* $Helper classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+
+.invisible {
+    visibility: hidden;
+}
+
+.fix:before,
+.fix:after {
+    content: " ";
+    display: table;
+}
+
+.fix:after {
+    clear: both;
+}
+
+.fix {
+    *zoom: 1;
+}
+
+/* $Print Styles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
