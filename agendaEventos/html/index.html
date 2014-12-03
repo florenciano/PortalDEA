@@ -7,7 +7,7 @@
     <title>Workshops,Treinamentos e Eventos em geral</title>
 
     <link rel="stylesheet" href="css/main.css">
-    <link rel='stylesheet' href='css/fullcalendar-2.1.1/fullcalendar.css' />
+    <link rel='stylesheet' href='css/fullcalendar-2.1.1/fullcalendar.min.css' />
     <!--[if lt IE 9]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <script src="html5shiv.googlecode.com/svn/trunk/html5.js"></script>
@@ -23,7 +23,7 @@
             	<div class="c9">
             		<h1>Workshops,<br>Treinamentos<br>e Eventos em geral</h1>
             	</div>
-            	<div class="c3">
+            	<div class="c3 logoInsperHeader">
             		<a href="http://www.insper.edu.br/" title="Ensino Superior e Pesquisa em Negócios, Economia e Direito | Insper"><img src="img/ui/logoInsperHeader.png" alt="logo Insper" class="logoInsper"></a>
             	</div>
             </div>
@@ -81,8 +81,8 @@
 						</li>
 					</ul>
             	</div>
-            	<div class="c3">
-            		<a href="http://www.insper.edu.br/" title="Ensino Superior e Pesquisa em Negócios, Economia e Direito | Insper"><img src="img/ui/logoInsperFooter.png" alt="logo Insper" class="logoInsperFooter"></a>
+            	<div class="c3 logoInsperFooter">
+            		<a href="http://www.insper.edu.br/" title="Ensino Superior e Pesquisa em Negócios, Economia e Direito | Insper"><img src="img/ui/logoInsperFooter.png" alt="logo Insper"></a>
             	</div>
             </div>
         </section>
@@ -97,7 +97,75 @@
 	<script src='js/libs/fullcalendar-2.1.1/lang-all.js'></script>
 	<!-- scripts adds -->
     <script src="js/main.js"></script>
+    <!-- data calendar -->
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $( "#calendar" ).fullCalendar({
+                lang: "pt-br",
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,agendaWeek,agendaDay'
+                },
+                weekends: true, // will hide saturdays and sundays
+                eventLimit: true, // allow "more" link when too many events
+                eventColor: '#ee2a5d', // color default: DEA
+                eventTextColor: '#fff', // color text default
+                eventBorderColor: 'transparent',
+                timeFormat: 'H(:mm)',
+                events: [
+                    {
+                        title: 'FÓRUM: How Learning Work (capítulo 8)',
+                        start: '2014-12-10T18:00:00',
+                        end:   '2014-12-10T20:30:00',   
+                        url:   'http://insper.edu.br/',
+                        backgroundColor: '#ee2a5d'
+                    },
+                    {
 
+                        title: 'Aula Presencial',
+                        start: '2014-12-12T12:30:00',
+                        end: '2014-12-12T13:30:00',
+                        backgroundColor: '#646464',
+                        url:   'http://portaldoprofessor.insper.edu.br/'    
+                    },
+                    {
+
+                        title: 'Workshop blackboard: Boas práticas',
+                        start: '2014-12-12T10:00:00',
+                        end: '2014-12-12T12:00:00',
+                        url:   'http://portaldoprofessor.insper.edu.br/'    
+                    },
+                    {
+
+                        title: 'Pré-Teste de Conhecimentos Prévios',
+                        // start: '2014-12-05', // evento dia todo
+                        start: '2014-12-05T15:00:00',
+                        end: '2014-12-05T16:45:00',
+                        backgroundColor: '#f58220',
+                        url:   'http://insper.blackboard.com/'  
+                    }
+                    // exemplo de eventos recorrentes
+                    // {
+                    //  id: 999,
+                    //  title: 'Repeating Event',
+                    //  start: '2014-11-14T16:00:00'
+                    // },
+                    // {
+                    //  id: 999,
+                    //  title: 'Repeating Event',
+                    //  start: '2014-11-21T16:00:00'
+                    // }
+                ],
+                eventClick: function(event) {
+                    if( event.url ) {
+                        window.open(event.url);
+                        return false;
+                    }
+                }
+            });
+        });
+    </script>
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- <script>
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

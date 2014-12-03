@@ -36,7 +36,7 @@ textarea { resize: vertical; }
 
 .row { width: 100%; margin-bottom: 20px; }
 
-.row .row { width: auto; margin: 0 -20px; }
+.row .row { width: auto; margin: 0 0; }
 
 .c1 { width: 8.33%; }
 
@@ -90,7 +90,7 @@ textarea { resize: vertical; }
 
 /* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ B- content
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-* { box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; transition: all 0.25s ease; -o-transition: all 0.25s ease; -ms-transition: all 0.25s ease; -moz-transition: all 0.25s ease; -webkit-transition: all 0.25s ease; }
+* { box-sizing: border-box; -o-box-sizing: border-box; -ms-box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
 
 body { font: normal 100% verdana, sans-serif; }
 
@@ -104,10 +104,22 @@ a:visited { color: #c43150; }
 
 .wrapper { border: 1px solid #e6e6e6; margin-top: 20px; padding-bottom: 20px; }
 
+/* header */
 header[role="banner"] { background: #d03238 url("../img/ui/bgHeader.png") left center no-repeat; border-bottom: 1px solid #e6e6e6; min-height: 125px; }
 header[role="banner"] h1 { color: #fff; font-size: 2em; margin: 0; padding: 10px 0 0 20px; line-height: 100%; text-shadow: 0px 2px 1px rgba(1, 1, 1, 0.4); }
 header[role="banner"] img { margin-top: 17%; }
 
+/* footer */
+footer[role="contentinfo"] { background-color: #f2f2f2; margin-top: 20px; }
+footer[role="contentinfo"] .wrapperFooter { border: none; }
+footer[role="contentinfo"] ul { list-style: none; padding: 20px; margin: 0 0 0 40px; }
+footer[role="contentinfo"] ul li { margin-bottom: 30px; }
+footer[role="contentinfo"] ul h5 { margin: 0 0 5px 0; font-weight: normal; font-size: 100%; color: #414042; }
+footer[role="contentinfo"] ul p { margin: 0; font-size: 75%; }
+footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
+
+/* ========================================================================== index
+========================================================================== */
 .textIntrod { font-size: 75%; padding: 20px; line-height: 1.5em; }
 .textIntrod ul { list-style-type: square; padding-left: 30px; }
 
@@ -126,33 +138,99 @@ header[role="banner"] img { margin-top: 17%; }
 #calendar { padding: 0 10px; font-size: 75%; }
 #calendar .fc-toolbar h2 { color: #414042; }
 
-footer[role="contentinfo"] { background-color: #f2f2f2; margin-top: 20px; }
-footer[role="contentinfo"] .wrapperFooter { border: none; }
-footer[role="contentinfo"] ul { list-style: none; padding: 20px; margin: 0 0 0 40px; }
-footer[role="contentinfo"] ul li { margin-bottom: 30px; }
-footer[role="contentinfo"] ul h5 { margin: 0 0 5px 0; font-weight: normal; font-size: 100%; color: #414042; }
-footer[role="contentinfo"] ul p { margin: 0; font-size: 75%; }
-footer[role="contentinfo"] .logoInsperFooter { margin-top: 20px; }
+/* ========================================================================== events: eventTest
+========================================================================== */
+.wrapperPageIntern { background: transparent url("../img/ui/borderDivision.png") 33.33% top repeat-y; }
+
+.dea { color: #ee2a5d; }
+
+.pgls { color: #646464; }
+
+.graduacao { color: #f58220; }
+
+.adjust { padding-left: 0; }
+
+.namePalestrante { margin-top: 20px; }
+.namePalestrante ul { list-style: none; margin: 0; padding: 0; }
+.namePalestrante li { margin-bottom: 20px; border-bottom: 1px dotted #e6e6e6; padding-bottom: 10px; }
+.namePalestrante li:last-child { border-bottom: none; }
+.namePalestrante li img { border-radius: 50%; }
+.namePalestrante li h5 { text-align: center; font-size: .75rem; margin: 10px 0 20px 0; }
+.namePalestrante li p { font-size: .675rem; }
+
+.nameEvent h2 { margin: 0; border-bottom: 1px solid transparent; font-size: 1.25rem; padding-bottom: 10px; line-height: 125%; }
+.nameEvent h2.dea { border-color: #ee2a5d; }
+.nameEvent h2.pgls { border-color: #646464; }
+.nameEvent h2.graduacao { border-color: #f58220; }
+
+.cols { border-bottom: 1px solid #e6e6e6; font-size: .75rem; color: #414042; line-height: 125%; padding: 1rem 0; margin-bottom: 20px !important; }
+.cols span { display: block; font-weight: bold; }
+
+.btnInscreva { margin-top: 40px !important; }
+.btnInscreva a, .btnInscreva a:active, .btnInscreva a:hover, .btnInscreva a:visited { color: #fff; }
+.btnInscreva a:hover { text-decoration: none; }
+.btnInscreva a { background-color: #ee2a5d; padding: 1em; border-radius: 4px; border: 1px solid #DF2555; }
+.btnInscreva a:hover { background-color: #E22354; border: 1px solid #D32351; }
 
 /*  $Sticky Footer | cssstickyfooter.com
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+html, body { height: 100%; }
+
+.wrapperPageIntern { min-height: 100%; overflow: auto; }
+
+div[role="main"] { min-height: 310px; }
+
+/* must be same height as the footer */
+.footerPageIntern { position: relative; margin-top: -310px; /* negative value of footer height */ height: 310px; /* defined value here */ clear: both; }
+.footerPageIntern .wrapper { padding-bottom: 0; }
+
 /*  $Media Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 /* Media query for 960 Screens - sets nested grids to 100%
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@media only screen and (max-width: 960px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
+@media only screen and (max-width: 960px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; }
   .row .row > div:last-child { margin-bottom: 0 !important; }
-  body { background: #e24304 !important; } }
+  .boxLabel { width: 100%; }
+  /* ========================================================================== events: eventTest ========================================================================== */
+  .cols div { margin: 0 0 5px 0; padding: 0 0 5px 0; } }
 /* Media query for iPad and tablets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation: portrait) { body { font-size: 90%; background-color: orange !important; }
+@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation: portrait) { body { font-size: 92.5%; }
   .row { margin-bottom: 0 !important; }
-  .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 { width: 100%; margin-right: 0; margin-left: 0; margin-bottom: 20px; } }
+  .c1, .c2, .c3, .c4, .c5, .c6, .c7, .c8, .c9, .c10, .c11, .c12 { width: 100%; margin-right: 0; margin-left: 0; margin-bottom: 0; }
+  header[role="banner"] { background-position: left top; }
+  header[role="banner"] .logoInsperHeader { display: none; }
+  header[role="banner"] h1 { font-size: 1.925em; line-height: 112.5%; }
+  footer[role="contentinfo"] { margin-top: 0; }
+  footer[role="contentinfo"] ul { padding: 0; margin: 0; }
+  footer[role="contentinfo"] ul p { font-size: 87.5%; }
+  footer[role="contentinfo"] ul li { margin-bottom: 10px; padding-bottom: 10px; border-bottom: 1px solid #e6e6e6; }
+  footer[role="contentinfo"] ul li:last-child { border-bottom: none; }
+  footer[role="contentinfo"] .logoInsperFooter { margin-bottom: 20px; }
+  footer[role="contentinfo"] .logoInsperFooter img { margin: 0 auto; }
+  /* ========================================================================== Index ========================================================================== */
+  .textIntrod { font-size: 87.5%; }
+  .boxLabel { width: 67.5%; display: block; margin: 0 auto; box-shadow: none; }
+  .boxLabel h6 { padding: 1em 0; font-size: 75%; }
+  .boxLabel li { padding: .5em 0; }
+  .areaCalendar { margin-top: 60px; }
+  #calendar { padding: 0 5px; font-size: 87.5%; }
+  /* ========================================================================== events: eventTest ========================================================================== */
+  .cols div { font-size: .875rem; }
+  .wrapperPageIntern { background: none; }
+  .namePalestrante { border-top: 1px solid #e6e6e6; margin-top: 40px; padding-top: 20px; } }
 /* Media query for 480 Screens - sets for mobile phone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 480px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
   .row .row > div:last-child { margin-bottom: 0 !important; }
-  body { background: gold !important; color: #000; } }
+  .wrapper { margin-top: 0; }
+  header[role="banner"] { background-size: cover; text-align: center; }
+  header[role="banner"] h1 { font-size: 1.5em; line-height: 125%; padding: 20px 0 0 0; }
+  .textIntrod { padding: 0; font-size: 75%; }
+  .boxLabel { width: 100%; }
+  #calendar { font-size: 75%; }
+  footer[role="contentinfo"] ul { padding: 20px 0; }
+  footer[role="contentinfo"] ul h5 { font-size: 87.5%; } }
 /* $Helper classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .ir { background-color: transparent; border: 0; overflow: hidden; *text-indent: -9999px; }

@@ -70,7 +70,7 @@ $cinzaTexto: rgb(65,65,65);
 
 * {
     @include box-size(border-box);
-    @include transition(all .25s ease);
+    // @include transition(all .125s ease);
     // Trasition removed in all style, it's not a good pratice
 }
 
@@ -78,20 +78,18 @@ body {
     @include font(normal, 100%);
 }
 
-// colors links
-a, a:active, a:hover {
-    color: $red;
-}
+a, a:active, a:hover { color: $red; }
 a, a:active { text-decoration: none }
 a:hover { text-decoration: underline }
 a:visited { color: #c43150 }
+
 .wrapper {
     border: 1px solid $corBorda;
     margin-top: $meioGrid;
     padding-bottom: $meioGrid;
 }
 
-// header
+/* header */
 header[role="banner"] {
     background: $red url('../img/ui/bgHeader.png') left center no-repeat;
     border-bottom: 1px solid $corBorda;
@@ -104,10 +102,44 @@ header[role="banner"] {
         line-height: 100%;
         text-shadow: 0px 2px 1px rgba(1,1,1,.4);
     }
-    img {
-        margin-top: 17%;
+    img { margin-top: 17%; }
+}
+
+
+/* footer */
+footer[role="contentinfo"] {
+    background-color: rgb(242,242,242);
+    margin-top: $meioGrid;
+
+    .wrapperFooter { border: none; }
+
+    ul {
+        list-style: none;
+        padding: $meioGrid;
+        margin: 0 0 0 $grid;
+        li {
+            margin-bottom: $meioGrid*1.5;
+        }
+        h5 {
+            margin: 0 0 ($meioGrid/4) 0;
+            font-weight: normal;
+            font-size: 100%;
+            color: #414042;
+        }
+        p {
+            margin: 0;
+            font-size: 75%;
+        }
+    }
+    .logoInsperFooter { 
+        img { margin-top: $meioGrid; }
     }
 }
+
+/* ==========================================================================
+   index
+========================================================================== */
+
 // body
 .textIntrod {
     font-size: 75%;
@@ -155,9 +187,7 @@ header[role="banner"] {
         span.cinza { background-color: $cinza; }
         span.laranja { background-color: $laranja; }
     }
-    li:last-child {
-        border-right: none;
-    }
+    li:last-child { border-right: none; }
 }
 
 // calendar attack: month, week and day
@@ -167,65 +197,111 @@ header[role="banner"] {
 #calendar {
     padding: 0 ($grid/4);
     font-size: 75%;
-    .fc-toolbar h2 {
+
+    .fc-toolbar h2 { // color text title
         color: #414042;
     }
 }
 
-//footer
-footer[role="contentinfo"] {
-    background-color: rgb(242,242,242);
-    margin-top: $meioGrid;
-    .wrapperFooter {
-        border: none;
-    }
+/* ==========================================================================
+   events: eventTest
+========================================================================== */
+// border Division
+.wrapperPageIntern { background: transparent url("../img/ui/borderDivision.png") 33.33% top repeat-y; }
+
+.dea { color: $magenta ;}
+.pgls { color: $cinza ;}
+.graduacao { color: $laranja ;}
+
+
+// namePalestrante
+.adjust { padding-left: 0; }
+.namePalestrante { margin-top: $meioGrid;
     ul {
         list-style: none;
-        padding: $meioGrid;
-        margin: 0 0 0 $grid;
-        li {
-            margin-bottom: $meioGrid*1.5;
-        }
-        h5 {
-            margin: 0 0 ($meioGrid/4) 0;
-            font-weight: normal;
-            font-size: 100%;
-            color: #414042;
-        }
-        p {
-            margin: 0;
-            font-size: 75%;
-        }
+        margin: 0;
+        padding: 0;
     }
-    .logoInsperFooter {
-        margin-top: $meioGrid;
+    li {
+        margin-bottom: $meioGrid;
+        border-bottom: 1px dotted $corBorda;
+        padding-bottom: $meioGrid/2;
+        &:last-child { border-bottom: none; }
+        img { border-radius: 50%; }
+        h5 {  
+            text-align: center;
+            font-size: .75rem;
+            margin: ($meioGrid/2) 0 $meioGrid 0;
+        }
+        p { font-size: .675rem; }
     }
 }
 
+// nameEvent
+.nameEvent {
+    h2 {
+        margin: 0;
+        border-bottom: 1px solid transparent;
+        font-size: 1.25rem;
+        padding-bottom: $meioGrid/2;
+        line-height: 125%;
+    }
+    h2.dea { border-color: $magenta; }
+    h2.pgls { border-color: $cinza; }
+    h2.graduacao { border-color: $laranja; }
+}
+.cols {
+    border-bottom: 1px solid $corBorda;
+    font-size: .75rem;
+    color: #414042;
+    line-height: 125%;
+    padding: 1rem 0;
+    margin-bottom: 20px !important;
+    span {
+        display: block;
+        font-weight: bold;
+    }
+}
+.btnInscreva {
+    margin-top: $grid !important;
+    a, a:active, a:hover, a:visited { color: #fff; }
+    a:hover { text-decoration: none; }
+    a {
+        background-color: $magenta;
+        padding: 1em;
+        border-radius: 4px;
+        border: 1px solid #DF2555;
+        &:hover {
+            background-color: #E22354;
+            border: 1px solid #D32351;
+        }
+    }
+}
 
 /*  $Sticky Footer | cssstickyfooter.com
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 // copy this code for all Media Queries and do adjustes necessary
-// html, body {height: 100%;}
+html, body {height: 100%;}
 
-// .wrapper {
-//     min-height: 100%;
-//     overflow:auto;
-//     padding-bottom: 310px; /* defined value here */
-// }
+.wrapperPageIntern {
+    min-height: 100%;
+    overflow:auto;
+    // padding-bottom: 100px; /* defined value here */
+}
 
-// div[role="main"] {
-//     min-height: 310px; }  /* must be same height as the footer */
+div[role="main"] {
+    min-height: 310px; }  /* must be same height as the footer */
 
-// footer.PageInterna {
-//     position: relative;
-//     margin-top: -310px; /* negative value of footer height */
-//     height: 310px; /* defined value here */
-//     clear:both;
-//     .wrapper {
-//         padding-bottom: 0;
-//     }
-// }
+// //FOOTER
+.footerPageIntern {
+    position: relative;
+    margin-top: -310px; /* negative value of footer height */
+    height: 310px; /* defined value here */
+    clear:both;
+    .wrapper {
+        padding-bottom: 0;
+    }
+}
 
 /*  $Media Queries
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -233,10 +309,33 @@ footer[role="contentinfo"] {
 /* Media query for 960 Screens - sets nested grids to 100%
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width:960px) {
-    .row .row .c1,.row .row .c2,.row .row .c3,.row .row .c4,.row .row .c5,.row .row .c6,.row .row .c7,.row .row .c8,.row .row .c9,.row .row .c10,.row .row .c11,.row .row .c12{width:100%;margin-bottom:20px}
-    .row .row > div:last-child{margin-bottom:0 !important}
+    .row .row .c1,
+    .row .row .c2,
+    .row .row .c3,
+    .row .row .c4,
+    .row .row .c5,
+    .row .row .c6,
+    .row .row .c7,
+    .row .row .c8,
+    .row .row .c9,
+    .row .row .c10,
+    .row .row .c11,
+    .row .row .c12 { 
+        width: 100%;
+        // margin-bottom: 20px;
+    }
+    .row .row > div:last-child { margin-bottom: 0 !important; }
     
-    body{ background: #e24304 !important; }
+    // body content
+    .boxLabel { width: 100%; }
+
+    /* ==========================================================================
+       events: eventTest
+    ========================================================================== */
+    .cols div {
+        margin: 0 0 5px 0;
+        padding: 0 0 5px 0;
+    }
 }
 
 
@@ -244,33 +343,149 @@ footer[role="contentinfo"] {
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
     
-    body{
-        font-size:90%;
-        background-color: orange !important;
+    body { font-size: 92.5%; }
+    .row { margin-bottom: 0 !important; }
+    .c1,
+    .c2,
+    .c3,
+    .c4,
+    .c5,
+    .c6,
+    .c7,
+    .c8,
+    .c9,
+    .c10,
+    .c11,
+    .c12 {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 0;
     }
-    
-    .row{ margin-bottom:0!important }
-    
-    .c1,.c2,.c3,.c4,.c5,.c6,.c7,.c8,.c9,.c10,.c11,.c12{width:100%;margin-right:0;margin-left:0;margin-bottom:20px}
 
-    // YOUR CODE HERE...
+    // header
+    header[role="banner"] {
+        background-position: left top;
+        .logoInsperHeader { display: none; }
+        h1 {
+            font-size: 1.925em;
+            line-height: 112.5%;
+        }
+    }
 
+    // footer
+    footer[role="contentinfo"] {
+        margin-top: 0;
+        ul {
+            padding: 0;
+            margin: 0;
+            p { font-size: 87.5%; }
+            li {
+                margin-bottom: $meioGrid/2;
+                padding-bottom: $meioGrid/2;
+                border-bottom: 1px solid $corBorda;
+            }
+            li:last-child { border-bottom: none }
+        }
+        .logoInsperFooter {
+            margin-bottom: $meioGrid;
+            img { margin: 0 auto; }
+        }
+    }
+
+    /* ==========================================================================
+       Index
+    ========================================================================== */
+    // body context
+    .textIntrod {
+        font-size: 87.5%;
+    }
+    .boxLabel {
+        width: 67.5%;
+        display: block;
+        margin: 0 auto;
+        box-shadow: none;
+        h6 {
+            padding: 1em 0;
+            font-size: 75%;
+        }
+        li {
+            padding: .5em 0;
+        }
+    }
+
+    // calendar
+    .areaCalendar { margin-top: $grid*1.5; }
+    #calendar { 
+        padding: 0 ($meioGrid/4);
+        font-size: 87.5%;
+    }
+
+    /* ==========================================================================
+       events: eventTest
+    ========================================================================== */
+    .cols div { font-size: .875rem; }
+    
+    .wrapperPageIntern {
+        background: none;
+    }
+
+    .namePalestrante {
+        border-top: 1px solid $corBorda;
+        margin-top: $grid;
+        padding-top: $meioGrid;
+    }
 }
-
 
 /* Media query for 480 Screens - sets for mobile phone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width:480px) {
-    .row .row .c1,.row .row .c2,.row .row .c3,.row .row .c4,.row .row .c5,.row .row .c6,.row .row .c7,.row .row .c8,.row .row .c9,.row .row .c10,.row .row .c11,.row .row .c12{ width:100%; margin-bottom:20px }
-    .row .row > div:last-child{ margin-bottom:0 !important }
+    .row .row .c1,
+    .row .row .c2,
+    .row .row .c3,
+    .row .row .c4,
+    .row .row .c5,
+    .row .row .c6,
+    .row .row .c7,
+    .row .row .c8,
+    .row .row .c9,
+    .row .row .c10,
+    .row .row .c11,
+    .row .row .c12 { 
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .row .row > div:last-child { margin-bottom: 0 !important; }
+
+    .wrapper { margin-top: 0; }
     
-    body{ 
-        background: gold !important; 
-        color: #000;
+    // header
+    header[role="banner"] {
+        background-size: cover;
+        text-align: center;
+        h1 {
+            font-size: 1.5em;
+            line-height: 125%;
+            padding: $meioGrid 0 0 0;
+        }
     }
 
-    // YOUR CODE HERE...
+    // body content
+    .textIntrod {
+        padding: 0;
+        font-size: 75%;
+    }
+    .boxLabel { width: 100%; }
 
+    //calendar 
+    #calendar { font-size: 75% }
+
+    //footer
+    footer[role="contentinfo"] {
+        ul { padding: $meioGrid 0;
+            h5 { font-size: 87.5%; }
+        }
+    }
 
 }
 /* $Helper classes
@@ -281,28 +496,23 @@ footer[role="contentinfo"] {
     overflow: hidden;
     *text-indent: -9999px;
 }
-
 .ir:before {
     content: "";
     display: block;
     width: 0;
     height: 150%;
 }
-
 .invisible {
     visibility: hidden;
 }
-
 .fix:before,
 .fix:after {
     content: " ";
     display: table;
 }
-
 .fix:after {
     clear: both;
 }
-
 .fix {
     *zoom: 1;
 }
@@ -376,3 +586,4 @@ footer[role="contentinfo"] {
     }
 }
 
+    
