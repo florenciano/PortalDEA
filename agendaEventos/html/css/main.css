@@ -94,6 +94,8 @@ textarea { resize: vertical; }
 
 body { font: normal 100% verdana, sans-serif; }
 
+a img { border: none; }
+
 a, a:active, a:hover { color: #d03238; }
 
 a, a:active { text-decoration: none; }
@@ -107,6 +109,8 @@ a:visited { color: #c43150; }
 /* header */
 header[role="banner"] { background: #d03238 url("../img/ui/bgHeader.png") left center no-repeat; border-bottom: 1px solid #e6e6e6; min-height: 125px; }
 header[role="banner"] h1 { color: #fff; font-size: 2em; margin: 0; padding: 10px 0 0 20px; line-height: 100%; text-shadow: 0px 2px 1px rgba(1, 1, 1, 0.4); }
+header[role="banner"] h1 a { color: #fff; display: block; }
+header[role="banner"] h1 a:hover { text-decoration: none; }
 header[role="banner"] img { margin-top: 17%; }
 
 /* footer */
@@ -137,6 +141,8 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 
 #calendar { padding: 0 10px; font-size: 75%; }
 #calendar .fc-toolbar h2 { color: #414042; }
+
+.formInscricao { display: none; }
 
 /* ========================================================================== events: eventTest
 ========================================================================== */
@@ -169,8 +175,17 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 .btnInscreva { margin-top: 40px !important; }
 .btnInscreva a, .btnInscreva a:active, .btnInscreva a:hover, .btnInscreva a:visited { color: #fff; }
 .btnInscreva a:hover { text-decoration: none; }
-.btnInscreva a { background-color: #ee2a5d; padding: 1em; border-radius: 4px; border: 1px solid #DF2555; }
-.btnInscreva a:hover { background-color: #E22354; border: 1px solid #D32351; }
+.btnInscreva a { background-color: #d03238; padding: 1em; border-radius: 4px; border: 1px solid #C5272D; }
+.btnInscreva a:hover { background-color: #C0262B; border: 1px solid #AE1D22; }
+.btnInscreva a.calendarEvent { background-color: #fff; color: #d03238; margin-left: 1em; }
+.btnInscreva a.calendarEvent img { display: inline-block; margin-right: .5em; margin-top: -3px; }
+.btnInscreva a.calendarEvent:hover { text-decoration: underline; background-color: #fff; border-color: #C5272D; }
+
+.video { position: relative; width: 100%; height: 0; padding-bottom: 60%; }
+.video iframe { position: absolute; left: 0; top: 0; width: 100%; height: 100%; }
+
+.formInscricao { width: 100%; margin: 20px 0; }
+.formInscricao iframe { width: 100%; height: 62em; }
 
 /*  $Sticky Footer | cssstickyfooter.com
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -215,10 +230,13 @@ div[role="main"] { min-height: 310px; }
   .boxLabel li { padding: .5em 0; }
   .areaCalendar { margin-top: 60px; }
   #calendar { padding: 0 5px; font-size: 87.5%; }
+  .footerPageIntern { height: auto; }
   /* ========================================================================== events: eventTest ========================================================================== */
-  .cols div { font-size: .875rem; }
   .wrapperPageIntern { background: none; }
-  .namePalestrante { border-top: 1px solid #e6e6e6; margin-top: 40px; padding-top: 20px; } }
+  .cols div { font-size: .875rem; }
+  .btnInscreva { text-align: center; }
+  .namePalestrante { border-top: 1px solid #e6e6e6; margin-top: 40px; padding-top: 20px; }
+  .formInscricao iframe { width: 100%; height: 58em; } }
 /* Media query for 480 Screens - sets for mobile phone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media only screen and (max-width: 480px) { .row .row .c1, .row .row .c2, .row .row .c3, .row .row .c4, .row .row .c5, .row .row .c6, .row .row .c7, .row .row .c8, .row .row .c9, .row .row .c10, .row .row .c11, .row .row .c12 { width: 100%; margin-bottom: 20px; }
@@ -230,7 +248,14 @@ div[role="main"] { min-height: 310px; }
   .boxLabel { width: 100%; }
   #calendar { font-size: 75%; }
   footer[role="contentinfo"] ul { padding: 20px 0; }
-  footer[role="contentinfo"] ul h5 { font-size: 87.5%; } }
+  footer[role="contentinfo"] ul h5 { font-size: 87.5%; }
+  /* ========================================================================== events: eventTest ========================================================================== */
+  .nameEvent h2 { font-size: 1rem; padding-bottom: 5px; margin-top: 20px; }
+  .cols div { margin-bottom: 0 !important; font-size: .75rem; }
+  .btnInscreva { text-align: center; }
+  .namePalestrante { margin-left: 20px; }
+  .footerPageIntern { height: auto; }
+  .formInscricao iframe { width: 100%; height: 74em; overflow: hidden; } }
 /* $Helper classes
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 .ir { background-color: transparent; border: 0; overflow: hidden; *text-indent: -9999px; }

@@ -118,8 +118,8 @@
                         title: 'FÓRUM: How Learning Work (capítulo 8)',
                         start: '2014-12-10T18:00:00',
                         end:   '2014-12-10T20:30:00',   
-                        url:   'http://insper.edu.br/',
-                        backgroundColor: '#ee2a5d'
+                        backgroundColor: '#ee2a5d',
+                        url:   'events/eventTest3.html'
                     },
                     {
 
@@ -127,14 +127,14 @@
                         start: '2014-12-12T12:30:00',
                         end: '2014-12-12T13:30:00',
                         backgroundColor: '#646464',
-                        url:   'http://portaldoprofessor.insper.edu.br/'    
+                        url:   'events/eventTest4.html'    
                     },
                     {
 
                         title: 'Workshop blackboard: Boas práticas',
                         start: '2014-12-12T10:00:00',
                         end: '2014-12-12T12:00:00',
-                        url:   'http://portaldoprofessor.insper.edu.br/'    
+                        url:   'events/eventTest.html'    
                     },
                     {
 
@@ -143,7 +143,7 @@
                         start: '2014-12-05T15:00:00',
                         end: '2014-12-05T16:45:00',
                         backgroundColor: '#f58220',
-                        url:   'http://insper.blackboard.com/'  
+                        url:   'events/eventTest2.html'  
                     }
                     // exemplo de eventos recorrentes
                     // {
@@ -159,7 +159,7 @@
                 ],
                 eventClick: function(event) {
                     if( event.url ) {
-                        window.open(event.url);
+                        window.open(event.url,_self);
                         return false;
                     }
                 }
