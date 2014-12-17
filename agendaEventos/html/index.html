@@ -21,7 +21,7 @@
         <header id="top" role="banner" class="containerHeader fix">
             <div class="row">
             	<div class="c9">
-            		<h1>Workshops,<br>Treinamentos<br>e Eventos em geral</h1>
+            		<h1>Iniciativas de Formação e Aperfeiçoamento de Docentes<br><small>(workshops, treinamentos e eventos)</small></h1>
             	</div>
             	<div class="c3 logoInsperHeader">
             		<a href="http://www.insper.edu.br/" title="Ensino Superior e Pesquisa em Negócios, Economia e Direito | Insper"><img src="img/ui/logoInsperHeader.png" alt="logo Insper" class="logoInsper"></a>
@@ -33,21 +33,18 @@
             <div class="row introd fix">
             	<div class="c8">
             		<div class="textIntrod">
-            			<p>Se houver algum texto introdutório ele ficará alocado aqui... lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc tristique vestibulum dui ac tristique. Donec ultrices interdum ex, non dapibus sapien commodo non.</p>
-            			<ul>
-            				<li>Nunc <strong>tristique</strong> vestibulum dui ac tristique;</li>
-            				<li>Donec ultrices interdum ex, non <strong>dapibus sapien</strong> commodo non;</li>
-            				<li>Nunc <strong>fermentum sapien</strong> mi, nec iaculis nunc lobortis at;</li>
-            			</ul>
+            			<p>Caro professor,<br>
+                        consulte aqui as principais iniciativas de formação e aperfeiçoamento que o Insper oferece para você.</p>
+                        <p>Clique no título de seu interesse para ver mais informações e realizar sua inscrição.</p>
             		</div>
             	</div>
             	<div class="c4">
             		<div class="boxLabel">
-            			<h6>Departamentos responsáveis</h6>
+            			<h6>Áreas responsáveis</h6>
             			<Ul>
             				<li><span class="labelColor magenta">&nbsp;</span>DEA</li>
-            				<li><span class="labelColor cinza">&nbsp;</span>PGLS</li>
             				<li><span class="labelColor laranja">&nbsp;</span>Graduação</li>
+            				<li><span class="labelColor cinza">&nbsp;</span>PGLS</li>
             			</Ul>
             		</div>
             	</div>
@@ -67,9 +64,8 @@
 						<li>
 							<h5>Desenvolvimento de Ensino e Aprendizagem (DEA)</h5>
 							<p><a href="mailto:dea@insper.edu.br" title="Entre em contato com o DEA">dea@insper.edu.br</a></p>
-							<p>Tel: 11 4504-9999</p>
 						</li>
-						<li>
+						<!-- <li>
 							<h5>Nome de outros departamentos (PGLS)</h5>
 							<p><a href="mailto:dea@insper.edu.br" title="Entre em contato com a PGLS">pgls@insper.edu.br</a></p>
 							<p>Tel: 11 4504-9999</p>
@@ -78,7 +74,7 @@
 							<h5>Nome de outros departamentos (Graduação)</h5>
 							<p><a href="mailto:dea@insper.edu.br" title="Entre em contato com a Graduação">graduacao@insper.edu.br</a></p>
 							<p>Tel: 11 4504-9999</p>
-						</li>
+						</li> -->
 					</ul>
             	</div>
             	<div class="c3 logoInsperFooter">
@@ -109,53 +105,79 @@
                 },
                 weekends: true, // will hide saturdays and sundays
                 eventLimit: true, // allow "more" link when too many events
-                eventColor: '#ee2a5d', // color default: DEA
+                eventColor: '#ee2a5d', // DEA; #646464:PGLS; #f58220:GRADUACAO
                 eventTextColor: '#fff', // color text default
                 eventBorderColor: 'transparent',
                 timeFormat: 'H(:mm)',
                 events: [
                     {
-                        title: 'FÓRUM: How Learning Work (capítulo 8)',
-                        start: '2014-12-10T18:00:00',
-                        end:   '2014-12-10T20:30:00',   
+                        title: 'Módulo 1 – Aprendizado Centrado no Aluno – Turma 3 (DEA)',
+                        start: '2015-02-25',
+                        end:   '2015-02-25',   
                         backgroundColor: '#ee2a5d',
-                        url:   'events/eventTest3.html'
+                        url:   'events/DEA/aprendizado-centrado-aluno-turma3.html'
                     },
                     {
-
-                        title: 'Aula Presencial',
-                        start: '2014-12-12T12:30:00',
-                        end: '2014-12-12T13:30:00',
-                        backgroundColor: '#646464',
-                        url:   'events/eventTest4.html'    
-                    },
+                        title: 'Módulo 1 – Aprendizado Centrado no Aluno – Turma 4 (DEA)',
+                        start: '2015-04-08',
+                        end:   '2015-04-08',   
+                        backgroundColor: '#ee2a5d',
+                        url:   'events/DEA/aprendizado-centrado-aluno-turma4.html'// ajustar url
+                    }, //////////////////////////////////////////////////////////////////// GRADUACAO
                     {
 
-                        title: 'Workshop blackboard: Boas práticas',
-                        start: '2014-12-12T10:00:00',
-                        end: '2014-12-12T12:00:00',
-                        url:   'events/eventTest.html'    
-                    },
-                    {
-
-                        title: 'Pré-Teste de Conhecimentos Prévios',
-                        // start: '2014-12-05', // evento dia todo
-                        start: '2014-12-05T15:00:00',
-                        end: '2014-12-05T16:45:00',
+                        id: 10,
+                        title: 'Iniciativas de Desenvolvimento de Docentes (Graduação)',
+                        start: '2015-04-15T14:00:00',
+                        end: '2015-04-15T18:00:00',
                         backgroundColor: '#f58220',
-                        url:   'events/eventTest2.html'  
+                        url:   'events/graduacao/iniciativa-desenvolvimento-docentes.html'
+                    },
+                    {
+
+                        id: 10,
+                        title: 'Iniciativas de Desenvolvimento de Docentes (Graduação)',
+                        start: '2015-10-07T14:00:00',
+                        end: '2015-10-07T18:00:00',
+                        backgroundColor: '#f58220',
+                        url:   'events/graduacao/iniciativa-desenvolvimento-docentes.html'
+                    }, //////////////////////////////////////////////////////////////////// PGLS
+                    {
+
+                        id: 11,
+                        title: 'Workshop de Professores (PGLS)',
+                        start: '2015-04-11T09:00:00',
+                        end: '2015-04-11T12:00:00',
+                        backgroundColor: '#646464',
+                        url:   'events/PGLS/workshop-professores.html'
+                    },
+                    {
+
+                        id: 11,
+                        title: 'Workshop de Professores (PGLS)',
+                        start: '2015-05-15T09:00:00',
+                        end: '2015-05-15T12:00:00',
+                        backgroundColor: '#646464',
+                        url:   'events/PGLS/workshop-professores.html'
+                    },
+                    {
+
+                        id: 11,
+                        title: 'Workshop de Professores (PGLS)',
+                        start: '2015-09-11T09:00:00',
+                        end: '2015-09-11T12:00:00',
+                        backgroundColor: '#646464',
+                        url:   'events/PGLS/workshop-professores.html'
+                    },
+                    {
+
+                        id: 11,
+                        title: 'Workshop de Professores (PGLS)',
+                        start: '2015-10-17T09:00:00',
+                        end: '2015-10-17T12:00:00',
+                        backgroundColor: '#646464',
+                        url:   'events/PGLS/workshop-professores.html'
                     }
-                    // exemplo de eventos recorrentes
-                    // {
-                    //  id: 999,
-                    //  title: 'Repeating Event',
-                    //  start: '2014-11-14T16:00:00'
-                    // },
-                    // {
-                    //  id: 999,
-                    //  title: 'Repeating Event',
-                    //  start: '2014-11-21T16:00:00'
-                    // }
                 ],
                 eventClick: function(event) {
                     if( event.url ) {

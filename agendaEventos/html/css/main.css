@@ -139,7 +139,7 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 
 #calendar * { transition: none; -o-transition: none; -ms-transition: none; -moz-transition: none; -webkit-transition: none; }
 
-#calendar { padding: 0 10px; font-size: 75%; }
+#calendar { padding: 0 10px; font-size: 75%; margin-top: 20px; }
 #calendar .fc-toolbar h2 { color: #414042; }
 
 .formInscricao { display: none; }
@@ -153,6 +153,8 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 .pgls { color: #646464; }
 
 .graduacao { color: #f58220; }
+
+.dea small, .pgls small, .graduacao small { display: inline-block; font-weight: normal; padding-right: .25em; }
 
 .adjust { padding-left: 0; }
 
@@ -193,10 +195,10 @@ html, body { height: 100%; }
 
 .wrapperPageIntern { min-height: 100%; overflow: auto; }
 
-div[role="main"] { min-height: 310px; }
+div[role="main"] { min-height: 130px; }
 
 /* must be same height as the footer */
-.footerPageIntern { position: relative; margin-top: -310px; /* negative value of footer height */ height: 310px; /* defined value here */ clear: both; }
+.footerPageIntern { position: relative; margin-top: -130px; /* negative value of footer height */ height: 130px; /* defined value here */ clear: both; }
 .footerPageIntern .wrapper { padding-bottom: 0; }
 
 /*  $Media Queries
@@ -243,7 +245,8 @@ div[role="main"] { min-height: 310px; }
   .row .row > div:last-child { margin-bottom: 0 !important; }
   .wrapper { margin-top: 0; }
   header[role="banner"] { background-size: cover; text-align: center; }
-  header[role="banner"] h1 { font-size: 1.5em; line-height: 125%; padding: 20px 0 0 0; }
+  header[role="banner"] h1 { font-size: 1.25em; line-height: 150%; padding: 20px 0; }
+  header[role="banner"] h1 small { display: block; padding: 0px 20px; }
   .textIntrod { padding: 0; font-size: 75%; }
   .boxLabel { width: 100%; }
   #calendar { font-size: 75%; }
@@ -253,6 +256,8 @@ div[role="main"] { min-height: 310px; }
   .nameEvent h2 { font-size: 1rem; padding-bottom: 5px; margin-top: 20px; }
   .cols div { margin-bottom: 0 !important; font-size: .75rem; }
   .btnInscreva { text-align: center; }
+  .btnInscreva a { display: inline-block; }
+  .btnInscreva a.calendarEvent { margin-top: 1em; }
   .namePalestrante { margin-left: 20px; }
   .footerPageIntern { height: auto; }
   .formInscricao iframe { width: 100%; height: 74em; overflow: hidden; } }

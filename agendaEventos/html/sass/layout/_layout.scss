@@ -204,6 +204,7 @@ footer[role="contentinfo"] {
 #calendar {
     padding: 0 ($grid/4);
     font-size: 75%;
+    margin-top: $meioGrid;
 
     .fc-toolbar h2 { // color text title
         color: #414042;
@@ -217,10 +218,17 @@ footer[role="contentinfo"] {
 // border Division
 .wrapperPageIntern { background: transparent url("../img/ui/borderDivision.png") 33.33% top repeat-y; }
 
-.dea { color: $magenta ;}
-.pgls { color: $cinza ;}
-.graduacao { color: $laranja ;}
+.dea { color: $magenta;}
+.pgls { color: $cinza;}
+.graduacao { color: $laranja;}
 
+.dea, .pgls, .graduacao {
+    small { 
+        display: inline-block;
+        font-weight: normal;
+        padding-right: .25em;
+    }
+}
 
 // namePalestrante
 .adjust { padding-left: 0; }
@@ -329,6 +337,8 @@ footer[role="contentinfo"] {
 // copy this code for all Media Queries and do adjustes necessary
 html, body {height: 100%;}
 
+// 310px com os três departamentos
+
 .wrapperPageIntern {
     min-height: 100%;
     overflow:auto;
@@ -336,13 +346,13 @@ html, body {height: 100%;}
 }
 
 div[role="main"] {
-    min-height: 310px; }  /* must be same height as the footer */
+    min-height: 130px; }  /* must be same height as the footer */
 
 // //FOOTER
 .footerPageIntern {
     position: relative;
-    margin-top: -310px; /* negative value of footer height */
-    height: 310px; /* defined value here */
+    margin-top: -130px; /* negative value of footer height */
+    height: 130px; /* defined value here */
     clear:both;
     .wrapper {
         padding-bottom: 0;
@@ -517,9 +527,13 @@ div[role="main"] {
         background-size: cover;
         text-align: center;
         h1 {
-            font-size: 1.5em;
-            line-height: 125%;
-            padding: $meioGrid 0 0 0;
+            font-size: 1.25em;
+            line-height: 150%;
+            padding: $meioGrid 0;
+            small {
+                display: block;
+                padding: 0px $meioGrid;
+            }
         }
     }
 
@@ -531,7 +545,7 @@ div[role="main"] {
     .boxLabel { width: 100%; }
 
     //calendar 
-    #calendar { font-size: 75% }
+    #calendar { font-size: 75%; }
 
     //footer
     footer[role="contentinfo"] {
@@ -556,7 +570,11 @@ div[role="main"] {
             font-size: .75rem;
         }
     }
-    .btnInscreva { text-align: center; }
+    .btnInscreva { 
+        text-align: center;
+        a { display: inline-block; }
+        a.calendarEvent { margin-top: 1em; }
+    }
     .namePalestrante { margin-left: $meioGrid; }
     .footerPageIntern { height: auto; }
 
