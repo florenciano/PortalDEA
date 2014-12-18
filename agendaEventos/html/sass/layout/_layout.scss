@@ -327,8 +327,9 @@ footer[role="contentinfo"] {
     width: 100%;
     margin: $meioGrid 0;
     iframe {
-        width: 100%;
-        height: 62em;
+        // quando vier do surveymonkey manter o configurado por lá
+        width: 100%; 
+        height: 48em;
     }
 }
 

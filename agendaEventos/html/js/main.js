@@ -28,4 +28,14 @@ $(document).ready(function(){
 	btnInscrevaSe.on( "click", swipeElements );
 	btnCancelarInscricao.on( "click", swipeElements );
 
+	// removing iframe while finished enrolment
+	// var clear = document.getElementById('DoneButton');
+	// clear.addEventListener("click",function(){
+	// 	console.log("asss");
+	// 	window.open("http://localhost/projetos/","_self");
+	// });
+	$( "#DoneButton" ).on( "click", function() {
+		window.open("http://localhost/projetos/","_self");
+	});
+
 });
