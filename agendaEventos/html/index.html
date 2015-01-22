@@ -15,7 +15,6 @@
     <![endif]-->
 </head>
 <body>
-
     <div class="wrapper">
         <!-- top -->
         <header id="top" role="banner" class="containerHeader fix">
@@ -31,23 +30,35 @@
         
         <div id="main" role="main" class="wfull fix">
             <div class="row introd fix">
-            	<div class="c8">
-            		<div class="textIntrod">
-            			<p>Caro professor,<br>
-                        consulte aqui as principais iniciativas de formação e aperfeiçoamento que o Insper oferece para você.</p>
-                        <p>Clique no título de seu interesse para ver mais informações e realizar sua inscrição.</p>
+            	<div class="c7">
+            		<div class="textIntrod textIntrodIndex">
+            			<p>Caro professor,</p>
+                        <p>consulte as principais iniciativas de formação e aperfeiçoamento oferecidas esse ano.</p>
+                        <p>Clique no título de seu interesse para ver mais informações e realizar sua inscrição, ou nas áreas responsáveis para ter acesso à lista completa.</p>
             		</div>
             	</div>
-            	<div class="c4">
-            		<div class="boxLabel">
-            			<h6>Áreas responsáveis</h6>
-            			<Ul>
-            				<li><span class="labelColor magenta">&nbsp;</span>DEA</li>
-            				<li><span class="labelColor laranja">&nbsp;</span>Graduação</li>
-            				<li><span class="labelColor cinza">&nbsp;</span>PGLS</li>
-            			</Ul>
+            	<div class="c5">
+            		<div class="solicitarEvento">
+                        <h6>Solicitação de evento</h6>
+                        <p>Agende um treinamento ou uma consultoria individual com o DEA.</p>
+                        <div class="btnInscreva btnInscrevaSolicit">
+                            <a href="#" title="Clique aqui para fazer sua inscrição" id="solicita">Envie sua solicitação</a>
+                        </div>    
             		</div>
             	</div>
+                <div class="c12 legenda">
+                    <div class="boxLabel">
+                        <h6>Áreas responsáveis</h6>
+                        <Ul>
+                            <li><a href="#" id="dea"><span class="labelColor magenta"></span>DEA</a></li>
+                            <li><a href="#" id="graduacao"><span class="labelColor laranja"></span>Graduação</a></li>
+                            <li><a href="#" id="pgls"><span class="labelColor cinza"></span>PGLS</a></li>
+                            <li><a href="#" id="educacaoExecutiva"><span class="labelColor ciano"></span>Educação Executiva</a></li>
+                            <li><a href="#" id="mba"><span class="labelColor verde"></span>MBA</a></li>
+                            <li><a href="#" id="engenharia"><span class="labelColor roxo"></span>Engenharia</a></li>
+                        </Ul>
+                    </div>
+                </div>
             </div>
             <!-- calendar -->
             <section class="areaCalendar fix">
@@ -65,16 +76,6 @@
 							<h5>Desenvolvimento de Ensino e Aprendizagem (DEA)</h5>
 							<p><a href="mailto:dea@insper.edu.br" title="Entre em contato com o DEA">dea@insper.edu.br</a></p>
 						</li>
-						<!-- <li>
-							<h5>Nome de outros departamentos (PGLS)</h5>
-							<p><a href="mailto:dea@insper.edu.br" title="Entre em contato com a PGLS">pgls@insper.edu.br</a></p>
-							<p>Tel: 11 4504-9999</p>
-						</li>
-						<li>
-							<h5>Nome de outros departamentos (Graduação)</h5>
-							<p><a href="mailto:dea@insper.edu.br" title="Entre em contato com a Graduação">graduacao@insper.edu.br</a></p>
-							<p>Tel: 11 4504-9999</p>
-						</li> -->
 					</ul>
             	</div>
             	<div class="c3 logoInsperFooter">
@@ -83,6 +84,185 @@
             </div>
         </section>
     </footer>
+
+    <!-- modais -->
+    <div class="bg-modal" aria-hidden="true">&nbsp;</div>
+    <div class="formSolicitarEvento">
+        <div class="closeBtn fechar"><a href="#" title="Fechar janela" id="fechar">X</a></div>
+        <iframe src="https://docs.google.com/forms/d/1JBx4np3a73nkuPMqcRtWQ2kA9JQV3e6eE3tH1p3WXBE/viewform?embedded=true" frameborder="0" marginheight="0" marginwidth="0">Carregando...</iframe>
+    </div>
+    <!-- eventos por departamento: DEA -->
+    <div class="modal modal-dea">
+        <div class="closeBtn fecharModal"><a href="#" title="Fechar janela">X</a></div>
+        <h4>Eventos: <span class="dea">DEA</span></h4>
+        <ul>
+            <li>
+                <h5>Fevereiro</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>25 (qua) - 22/04 (qua)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Módulo 1 – Aprendizado Centrado no Aluno – Turma 3</a></p>
+                            <!-- <p class="localSala">10h - 20h | Sala</p> -->
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Abril</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>08 (qua) - 02/06 (ter)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma4.html" title="Aprendizado Centrado no Aluno – Turma 4">Módulo 1 – Aprendizado Centrado no Aluno – Turma 4</a></p>
+                            <!-- <p class="localSala">10h - 20h | Sala</p> -->
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="modal modal-graduacao">
+        <div class="closeBtn fecharModal"><a href="#" title="Fechar janela">X</a></div>
+        <h4>Eventos: <span class="graduacao">Graduação</span></h4>
+        <ul>
+            <li>
+                <h5>Abril</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>15 (qua)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Iniciativas de Desenvolvimento de Docentes (Graduação)</a></p>
+                            <p class="localSala">10h - 20h | Sala</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Outubro</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>07 (qua)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma4.html" title="Aprendizado Centrado no Aluno – Turma 4">Iniciativas de Desenvolvimento de Docentes (Graduação)</a></p>
+                            <p class="localSala">10h - 20h | Sala</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+    <div class="modal modal-pgls">
+        <div class="closeBtn fecharModal"><a href="#" title="Fechar janela">X</a></div>
+        <h4>Eventos: <span class="pgls">PGLS</span></h4>
+        <ul>
+            <li>
+                <h5>Abril</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>11 (sab)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Workshop de Professores da PGLS</a></p>
+                            <p class="localSala">9h - 12h | Sala</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Maio</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>15 (sab)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Workshop de Professores da PGLS</a></p>
+                            <p class="localSala">18h - 21h | Sala</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Setembro</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>11 (sab)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Workshop de Professores da PGLS</a></p>
+                            <p class="localSala">18h - 21h | Sala</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Outubro</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>17 (sab)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Workshop de Professores da PGLS</a></p>
+                            <p class="localSala">9h - 12h | Sala</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+
+     <div class="modal modal-edExecutiva">
+        <div class="closeBtn fecharModal"><a href="#" title="Fechar janela">X</a></div>
+        <h4>Eventos: <span class="edExecutiva">Educação executiva</span></h4>
+        <ul>
+            <li>
+                <h5>Abril</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>10 (seg)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Estratégias e mercados multilaterais - novos modelos de negócios</a></p>
+                            <p class="localSala">9h - 12h | Auditório Steffi e Max Perlmann</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Maio</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>18 (qui)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Ciclo de Diálogos sobre Negócios Conscientes</a></p>
+                            <p class="localSala">19h - 22h | Sala Amador Aguiar</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Setembro</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>11 (sex)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Speed Networking de Carreiras</a></p>
+                            <p class="localSala">10:45h - 14:30h | Sala 307</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h5>Outubro</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>17 (qua)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="events/DEA/aprendizado-centrado-aluno-turma3.html" title="Aprendizado Centrado no Aluno – Turma 3">Bancas de Avaliação do Empreenda</a></p>
+                            <p class="localSala">14h - 17:30h e 19h - 22h  | Sala Souza Dantas</p>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 
     <!-- scripts 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script> -->
@@ -93,6 +273,7 @@
 	<script src='js/libs/fullcalendar-2.1.1/lang-all.js'></script>
 	<!-- scripts adds -->
     <script src="js/main.js"></script>
+    
     <!-- data calendar -->
     <script type="text/javascript">
         $(document).ready(function() {
@@ -188,6 +369,7 @@
             });
         });
     </script>
+    
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <!-- <script>
         (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=

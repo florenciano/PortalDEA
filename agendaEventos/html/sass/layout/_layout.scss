@@ -21,12 +21,32 @@ $red: #d03238;
 $magenta: #ee2a5d;
 $cinza: #646464;
 $laranja: #f58220;
+$ciano: rgb(0, 172, 200);
+$verde: rgb(0,148,145);
+$roxo: rgb(125,25,230);
 $corBorda: rgb(230,230,230);
 $cinzaTexto: rgb(65,65,65);
 
 /////////////////////////////////////////////////////////////////////
 // Mixin
 /////////////////////////////////////////////////////////////////////
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y); // IE9+
+          transform: translate($x, $y);
+}
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+          transition: $transition;
+}
+// @include transition-transform("0.3s ease-out");
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
 
 @mixin font($fstyle, $fsize) {
     font: $fstyle $fsize $font;
@@ -76,6 +96,7 @@ $cinzaTexto: rgb(65,65,65);
 
 body { 
     @include font(normal, 100%);
+    position: relative;
 }
 
 a img { border: none; }
@@ -152,25 +173,203 @@ footer[role="contentinfo"] {
     font-size: 75%;
     padding: $meioGrid;
     line-height: 1.5em;
+    p {
+        font-size: 1em;
+        line-height: 1.5em;
+        color: $cinzaTexto;
+        text-rendering: optimizeLegibility;
+        -webkit-font-smoothing: none;
+        -webkit-font-smoothing: subpixel-antialiased;
+        margin: 0 0 1em;
+    }
     ul {
         list-style-type: square;
         padding-left: $meioGrid*1.5;
     }
 }
-.boxLabel {
-    display: inline-block;
-    width: 87.5%;
+.introd {  }
+.textIntrodIndex {
+    padding: ($meioGrid*1.5) 0;
+    p { font-size: 1.25em }
+    p:first-child { font-weight: 700; }
+}
+
+.solicitarEvento {
     border: 1px solid $corBorda;
-    background-color: #fff;
-    box-shadow: 0px 2px 1px rgba(1, 1, 1, 0.2);
-    margin: 40px auto 0;
+    background-color: rgb(250,250,250);
+    width: 80%;
+    margin: $grid 0 0 20%;
+    padding: $meioGrid/2;
+    @include radius(4px,4px,4px,4px);
+    @include bShadow(0px, 1px, 1px, 0px, rgba(1, 1, 1, 0.1));
     h6 {
         margin: 0;
-        background-color: #e6e7e8;
+        font-size: .875em;
+        font-weight: 600;
+    }
+    p { font-size: .75em; }
+    .btnInscrevaSolicit {
+        margin-top: $meioGrid !important;
+        text-align: center;
+        margin-bottom: $meioGrid/4;
+        a {
+            padding: .75em 1em;
+            font-size: .75em;
+            display: inline-block;
+        }
+    }
+}
+
+// modais
+.bg-modal {
+    display: none;
+    background: transparent url("../img/ui/bg-modal-ie.png") repeat center center;
+    background: -webkit-radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    background: -o-radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    background: -moz-radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    background: radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+
+}
+.formSolicitarEvento, .modal {
+    display: none;
+    width: 40%;
+    max-width: 570px;
+    height: 50em;
+    margin: 0 auto;
+    position: fixed;
+    top: 5%;
+    left: 30%;
+    z-index: 20;
+    background-color: #fff;
+    border: 1px solid $corBorda;
+    padding: .5em;
+    border-radius: $meioGrid/4;
+    overflow: hidden;
+    // content embeded: google or surveyMonkey
+    iframe {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 515px;
+        display: block;
+    }
+}
+.closeBtn {
+    display: block;
+    text-align: right;
+    margin: 5px 5px 10px 0;
+    clear: both;
+    a, a:active, a:hover, a:visited { color: #fff; }
+    a:hover { text-decoration: none; }
+    a {
+        background-color: $red;
+        padding: .125em .5em;
+        border-radius: 4px;
+        border: 1px solid #C5272D;
+        &:hover {
+            background-color: #C0262B;
+            border: 1px solid #AE1D22;
+        }
+    }
+}
+.modal { 
+    padding: 1em;
+    width: 40%;
+    height: auto;
+    position: fixed;
+    top: 15%;
+    left: 30%;
+      -webkit-box-shadow: 0px 5px 20px 5px rgb(150,150,150);
+        box-shadow: 0px 5px 20px 5px rgb(150,150,150);
+    h4 {
+        font-weight: normal;
+        margin: 0 auto $meioGrid;
+        border-bottom: 1px solid $corBorda;
+        padding-bottom: $meioGrid/4;
+        span { font-weight: bold; }
+    }
+    h5 {
+        margin: 0;
+    }
+    p { font-size: 87.5%; }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        > li:nth-child(even) {  background-color: rgb(250,250,250); }
+        li {
+            padding: .5em;
+            ul {
+                 > li:nth-child(even) {  background-color: transparent; }
+                li {
+                    margin-top: $meioGrid/2;
+                    padding: 0;
+                    background-color: none;
+                }
+            }
+        }
+    }
+    .dias, .descricaoEvento { float: left; }
+    .dias {
+        width: 40%;
+        span {
+            color: $magenta;
+            // font-weight: bold;
+            font-size: 87.5%;
+        }
+    }
+    .descricaoEvento {
+        width: 60%;
+        p {
+            margin: 0;
+        }
+        .localSala {
+            font-size: 87.5%;
+            color: #6C6C6C;
+            margin-bottom: $meioGrid/4;
+        }
+    }
+}
+.modal-graduacao {
+    .dias { span { color: $laranja } }
+}
+.modal-pgls {
+    .dias { span { color: $cinza } }
+}
+.modal-edExecutiva {
+    .dias { span { color: $ciano } }
+}
+.modal-mba {
+    .dias { span { color: $verde } }
+}
+.modal-engenharia {
+    .dias { span { color: $roxo } }
+}
+
+.legenda { text-align: center; }
+.boxLabel {
+    display: inline-block;
+    // border: 1px solid $corBorda;
+    // background-color: #fff;
+    // box-shadow: 0px 1px 1px rgba(1, 1, 1, 0.1);
+    margin: ($meioGrid*1.5) 0;
+    width: 80%;
+    h6 {
+        margin: 0;
+        // background-color: #efefef;
         padding: $meioGrid/2 0;
         text-align: center;
-        font-size: 68.75%;
+        font-size: 100%;
         color: #414042;
+        font-weight: normal;
     }
     ul {
         list-style: none;
@@ -180,19 +379,23 @@ footer[role="contentinfo"] {
     }
     li {
         display: inline-block;
-        width: 32%; // % per 3
-        padding: 1em 0;
+        padding: 1em;
         text-align: center;
-        border-right: 1px solid $corBorda;
+        // border-right: 1px solid $corBorda;
+        min-width: 15%;
         span {
             display: block;
-            width: 1.5em;
+            width: 3em;
             margin: 0 auto 5px;
-            height: 1.5em;
+            height: 3em;
+            border-radius: 2px;
         }
         span.magenta { background-color: $magenta; }
         span.cinza { background-color: $cinza; }
         span.laranja { background-color: $laranja; }
+        span.ciano { background-color: $ciano; }
+        span.verde { background-color: $verde; }
+        span.roxo { background-color: $roxo; }
     }
     li:last-child { border-right: none; }
 }
@@ -221,6 +424,9 @@ footer[role="contentinfo"] {
 .dea { color: $magenta;}
 .pgls { color: $cinza;}
 .graduacao { color: $laranja;}
+.edExecutiva { color: $ciano; }
+.mba { color: $verde; }
+.engenhari { color: $roxo; }
 
 .dea, .pgls, .graduacao {
     small { 
@@ -265,6 +471,19 @@ footer[role="contentinfo"] {
     h2.dea { border-color: $magenta; }
     h2.pgls { border-color: $cinza; }
     h2.graduacao { border-color: $laranja; }
+    // select datas
+    .datas {
+        display: block;
+        height: 1.5rem;
+        margin-top: 2px;
+        color: $magenta;
+        font-weight: bold;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        @include radius(4px, 4px, 4px, 4px);
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    }
 }
 .cols {
     border-bottom: 1px solid $corBorda;
