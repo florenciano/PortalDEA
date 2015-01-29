@@ -1,0 +1,41 @@
+/* CSS para controlar o formulário */
+.ss-form-container {
+	box-shadow: none;
+	border: 1px solid rgb(230,230,230);
+}
+.ss-top-of-page {
+	padding-top: 2rem;
+	margin-bottom: 2rem;
+}
+.ss-q-title {
+	font-weight: normal;
+}
+.ss-form-entry {
+	margin-bottom: 1em;
+}
+input[type='text'], input:not([type]), textarea {
+	width: 80%;
+}
+.ss-q-long {
+	width: 80%;
+}
+.ss-form-entry input {
+	border-radius: 2px;
+}
+.ss-top-of-page, .ss-form, .ss-footer {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+.ss-resp-card {
+	box-shadow: none;
+}
+
+/* responsive mobile */
+@media only screen and (max-width: 480px) {
+	.ss-item {
+		margin: 0;
+	}
+	.ss-form-question {
+		padding-bottom: 0px;
+	}
+}

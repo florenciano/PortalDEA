@@ -116,13 +116,15 @@ a:visited { color: #c43150 }
 header[role="banner"] {
     background: $red url('../img/ui/bgHeader.png') left center no-repeat;
     border-bottom: 1px solid $corBorda;
-    min-height: 125px;
+    height: 125px;
+    overflow: hidden;
+    small { display: block; }
     h1 {
         color: #fff;
-        font-size: 2em;
+        font-size: 1.8em;
         margin: 0;
-        padding: ($grid/4) 0 0 ($meioGrid);
-        line-height: 100%;
+        padding: .675em 2em 0 $meioGrid;
+        line-height: 107.5%;
         text-shadow: 0px 2px 1px rgba(1,1,1,.4);
         a {
             color: #fff;
@@ -191,30 +193,37 @@ footer[role="contentinfo"] {
 .textIntrodIndex {
     padding: ($meioGrid*1.5) 0;
     p { font-size: 1.25em }
-    p:first-child { font-weight: 700; }
+    // p:first-child { font-weight: 700; }
 }
 
 .solicitarEvento {
     border: 1px solid $corBorda;
-    background-color: rgb(250,250,250);
-    width: 80%;
-    margin: $grid 0 0 20%;
+    // background-color: rgb(250,250,250);
+    color: $cinzaTexto;
+    width: 100%;
+    margin: 27px 0 0 0;
     padding: $meioGrid/2;
+    text-align: center;
     @include radius(4px,4px,4px,4px);
-    @include bShadow(0px, 1px, 1px, 0px, rgba(1, 1, 1, 0.1));
+    @include bShadow(0px, 3px, 2px, -1px, rgba(1, 1, 1, 0.1));
     h6 {
         margin: 0;
-        font-size: .875em;
+        font-size: 100%;
         font-weight: 600;
     }
-    p { font-size: .75em; }
+    p { 
+        font-size: 92.5%;
+        margin-top: $meioGrid/2;
+        color: $cinzaTexto;
+        line-height: 1.5em;
+    }
     .btnInscrevaSolicit {
         margin-top: $meioGrid !important;
         text-align: center;
         margin-bottom: $meioGrid/4;
         a {
             padding: .75em 1em;
-            font-size: .75em;
+            font-size: .825em;
             display: inline-block;
         }
     }
@@ -240,13 +249,13 @@ footer[role="contentinfo"] {
 }
 .formSolicitarEvento, .modal {
     display: none;
-    width: 40%;
-    max-width: 570px;
-    height: 50em;
+    width: 45%;
+    max-width: 1080px;
+    height: 870px;
     margin: 0 auto;
-    position: fixed;
-    top: 5%;
-    left: 30%;
+    position: absolute;
+    top: 16%;
+    left: 27.5%;
     z-index: 20;
     background-color: #fff;
     border: 1px solid $corBorda;
@@ -258,7 +267,7 @@ footer[role="contentinfo"] {
         width: 100%;
         height: 100%;
         margin: 0 auto;
-        max-width: 515px;
+        max-width: 555px;
         display: block;
     }
 }
@@ -357,11 +366,12 @@ footer[role="contentinfo"] {
 .legenda { text-align: center; }
 .boxLabel {
     display: inline-block;
-    // border: 1px solid $corBorda;
-    // background-color: #fff;
-    // box-shadow: 0px 1px 1px rgba(1, 1, 1, 0.1);
-    margin: ($meioGrid*1.5) 0;
-    width: 80%;
+    border: 1px solid $corBorda;
+    background-color: rgb(250,250,250);
+    border-radius: 4px;
+    padding: .5em 1em;
+    margin: $grid 0;
+    width: 50%; // aumentar conforme novas inserções de novas áreas
     h6 {
         margin: 0;
         // background-color: #efefef;
@@ -381,8 +391,7 @@ footer[role="contentinfo"] {
         display: inline-block;
         padding: 1em;
         text-align: center;
-        // border-right: 1px solid $corBorda;
-        min-width: 15%;
+        min-width: 30%; // aumentar conforme novas inserções de novas áreas
         span {
             display: block;
             width: 3em;
@@ -484,6 +493,11 @@ footer[role="contentinfo"] {
         -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
         box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
     }
+    .datasGraduacao { color: $laranja }
+    .datasPGLS { color: $cinza }
+    .datasEduExecutiva { color: $ciano }
+    .datasMBA { color: $verde; }
+    .datasEngenharia { color: $roxo; }
 }
 .cols {
     border-bottom: 1px solid $corBorda;
@@ -602,8 +616,33 @@ div[role="main"] {
     }
     .row .row > div:last-child { margin-bottom: 0 !important; }
     
+    /* ==========================================================================
+       patterns
+    ========================================================================== */
+    header[role="banner"] {
+        h1 {
+            padding: .675em 0 0 0px;
+        }
+    }
+
+    /* ==========================================================================
+       Index
+    ========================================================================== */
     // body content
     .boxLabel { width: 100%; }
+
+    // modais
+    .formSolicitarEvento {
+        display: none;
+        width: 45%;
+        left: 27.5%;
+        height: 870px;
+    }
+    .modal {
+        width: 70%;
+        left: 15%;
+    }
+
 
     /* ==========================================================================
        events: eventTest
@@ -641,11 +680,14 @@ div[role="main"] {
 
     // header
     header[role="banner"] {
+        height: 110px;
         background-position: left top;
         .logoInsperHeader { display: none; }
         h1 {
-            font-size: 1.925em;
+            font-size: 1.5em;
             line-height: 112.5%;
+            width: 100%;
+            padding: $meioGrid;
         }
     }
 
@@ -669,6 +711,7 @@ div[role="main"] {
         }
     }
 
+
     /* ==========================================================================
        Index
     ========================================================================== */
@@ -676,17 +719,24 @@ div[role="main"] {
     .textIntrod {
         font-size: 87.5%;
     }
+    // Texto de introdução
+    .solicitarEvento {
+        width: 60%;
+        margin: 0px 0 $grid 20%;
+    }
     .boxLabel {
-        width: 67.5%;
-        display: block;
+        width: 100%;
         margin: 0 auto;
         box-shadow: none;
         h6 {
             padding: 1em 0;
-            font-size: 75%;
+            font-size: 100%;
         }
+        ul { padding: 0; }
         li {
-            padding: .5em 0;
+            padding: .25em 0;
+            width: 16.65%;
+            float: left;
         }
     }
 
@@ -698,6 +748,15 @@ div[role="main"] {
     }
 
     .footerPageIntern { height: auto; }
+
+    // modal: solicitar evento
+    .formSolicitarEvento {
+        min-height: 810px;
+        max-width: none;
+        width: 470px;
+        left: 50%;
+        margin-left: -235px;
+    }
 
     /* ==========================================================================
        events: eventTest
@@ -746,26 +805,20 @@ div[role="main"] {
     header[role="banner"] {
         background-size: cover;
         text-align: center;
+        height: auto;
+        padding: $meioGrid 0;
         h1 {
-            font-size: 1.25em;
-            line-height: 150%;
-            padding: $meioGrid 0;
+            font-size: 1.45em;
+            line-height: 117.5%;
+            padding: 0;
+            margin: 0;
             small {
-                display: block;
-                padding: 0px $meioGrid;
+                display: inline-block;
+                padding: 0;
+                line-height: 100%;
             }
         }
     }
-
-    // body content
-    .textIntrod {
-        padding: 0;
-        font-size: 75%;
-    }
-    .boxLabel { width: 100%; }
-
-    //calendar 
-    #calendar { font-size: 75%; }
 
     //footer
     footer[role="contentinfo"] {
@@ -773,6 +826,52 @@ div[role="main"] {
             h5 { font-size: 87.5%; }
         }
     }
+
+    /* ==========================================================================
+       Index
+    ========================================================================== */
+
+    // body content
+    .textIntrod {
+        padding: $meioGrid 0;
+        font-size: 75%;
+    }
+    .solicitarEvento {
+        width: 100%;
+        margin: 0px 0 $meioGrid 0%;
+    }
+    .boxLabel { 
+        width: 100%;
+        li {
+            width: 33%;
+            margin-bottom: 1em;
+        }
+     }
+    .areaCalendar {
+        margin-top: $meioGrid;
+    }
+
+    .formSolicitarEvento {
+        height: 870px;
+        max-width: none;
+        width: 95%;
+        left: 2.5%;
+        top: 65%;
+        margin-left: 0;
+    }
+    .modal {
+        width: 95%;
+        left: 2.5%;
+        top: 120%;
+        position: absolute;
+    }
+
+    //calendar 
+    #calendar { font-size: 75%; }
+    #calendar .fc-toolbar h2 {
+        margin-top: 1em;
+    }
+
 
     /* ==========================================================================
        events: eventTest
