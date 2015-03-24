@@ -200,7 +200,7 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 
 .formInscricao { display: none; }
 
-/* ========================================================================== events: eventTest
+/* ========================================================================== events: general
 ========================================================================== */
 .wrapperPageIntern { background: transparent url("../img/ui/borderDivision.png") 33.33% top repeat-y; }
 
@@ -223,7 +223,7 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 .namePalestrante { margin-top: 20px; }
 .namePalestrante ul { list-style: none; margin: 0; padding: 0; }
 .namePalestrante li { margin-bottom: 20px; border-bottom: 1px dotted #e6e6e6; padding-bottom: 10px; }
-.namePalestrante li:last-child { border-bottom: none; }
+.namePalestrante li:last-child { border-bottom: none; padding-bottom: 0; }
 .namePalestrante li img { border-radius: 50%; }
 .namePalestrante li h5 { text-align: center; font-size: .75rem; margin: 10px 0 20px 0; }
 .namePalestrante li p { font-size: .675rem; }
@@ -242,12 +242,13 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 .cols { border-bottom: 1px solid #e6e6e6; font-size: .75rem; color: #414042; line-height: 125%; padding: 1rem 0; margin-bottom: 20px !important; }
 .cols span { display: block; font-weight: bold; }
 
-.btnInscreva { margin-top: 40px !important; }
+.btnInscreva { margin: 40px 0 40px 0 !important; }
 .btnInscreva a, .btnInscreva a:active, .btnInscreva a:hover, .btnInscreva a:visited { color: #fff; }
 .btnInscreva a:hover { text-decoration: none; }
 .btnInscreva a { background-color: #d03238; padding: 1em; border-radius: 4px; border: 1px solid #C5272D; }
 .btnInscreva a:hover { background-color: #C0262B; border: 1px solid #AE1D22; }
-.btnInscreva a.calendarEvent { background-color: #fff; color: #d03238; margin-left: 1em; }
+.btnInscreva a.inscrevaBtn { margin-right: 1em; border-bottom: 2px solid #B51D22; }
+.btnInscreva a.calendarEvent { background-color: #fff; color: #d03238; }
 .btnInscreva a.calendarEvent img { display: inline-block; margin-right: .5em; margin-top: -3px; }
 .btnInscreva a.calendarEvent:hover { text-decoration: underline; background-color: #fff; border-color: #C5272D; }
 
@@ -256,6 +257,13 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 
 .formInscricao { width: 100%; margin: 20px 0; }
 .formInscricao iframe { width: 100%; height: 48em; }
+
+.coordenadoresPGLS { display: block; text-align: center; padding: 20px 0; }
+.coordenadoresPGLS div { padding: 0 5px; }
+.coordenadoresPGLS p { margin: 0; line-height: 1.2em; }
+.coordenadoresPGLS img { border: 1px solid #e6e6e6; border-radius: 50%; }
+.coordenadoresPGLS .name { font-size: 100%; margin: 10px 0 5px 0; }
+.coordenadoresPGLS .cargo { font-weight: bold; color: #646464; font-size: 92.5%; }
 
 /*  $Sticky Footer | cssstickyfooter.com
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -282,7 +290,10 @@ div[role="main"] { min-height: 130px; }
   .formSolicitarEvento { display: none; width: 45%; left: 27.5%; height: 870px; }
   .modal { width: 70%; left: 15%; }
   /* ========================================================================== events: eventTest ========================================================================== */
-  .cols div { margin: 0 0 5px 0; padding: 0 0 5px 0; } }
+  .cols div { margin: 0 0 5px 0; padding: 0 0 5px 0; }
+  .coordenadoresPGLS { text-align: left; padding: 10px 0; }
+  .coordenadoresPGLS div { margin-bottom: 10px; padding: 0; }
+  .coordenadoresPGLS img { display: none; } }
 /* Media query for iPad and tablets
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
 @media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation: portrait) { body { font-size: 92.5%; }
@@ -313,7 +324,9 @@ div[role="main"] { min-height: 130px; }
   .wrapperPageIntern { background: none; }
   .cols div { font-size: .875rem; }
   .btnInscreva { text-align: center; }
-  .namePalestrante { border-top: 1px solid #e6e6e6; margin-top: 40px; padding-top: 20px; }
+  .namePalestrante { border-top: 1px solid #e6e6e6; margin-top: 40px; padding-top: 40px; }
+  /* content text */
+  .contentEvent { padding: 20px 0; }
   .formInscricao iframe { width: 100%; height: 58em; } }
 /* Media query for 480 Screens - sets for mobile phone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
