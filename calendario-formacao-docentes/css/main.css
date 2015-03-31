@@ -151,11 +151,14 @@ footer[role="contentinfo"] .logoInsperFooter img { margin-top: 20px; }
 .closeBtn a { background-color: #d03238; padding: .125em .5em; border-radius: 4px; border: 1px solid #C5272D; }
 .closeBtn a:hover { background-color: #C0262B; border: 1px solid #AE1D22; }
 
-.modal { padding: 1em; width: 40%; max-width: 800px; height: auto; position: fixed; top: 15%; left: 30%; -webkit-box-shadow: 0px 5px 20px 5px #969696; box-shadow: 0px 5px 20px 5px #969696; }
+.modal { padding: 1em; width: 40%; height: auto; position: fixed; top: 15%; left: 30%; -webkit-box-shadow: 0px 5px 20px 5px #969696; box-shadow: 0px 5px 20px 5px #969696; }
 .modal h4 { font-weight: normal; margin: 0 auto 20px; border-bottom: 1px solid #e6e6e6; padding-bottom: 5px; }
 .modal h4 span { font-weight: bold; }
 .modal h5 { margin: 0; }
 .modal p { font-size: 87.5%; }
+.modal p.titleDate { margin: 20px 0; color: #646464; text-transform: uppercase; font-style: italic; font-size: 67.5%; }
+.modal p.titleDate:first-child { margin-top: 0; }
+.modal .contentModal { height: 32em; overflow-y: auto; }
 .modal ul { margin: 0; padding: 0; list-style: none; }
 .modal ul > li:nth-child(even) { background-color: #fafafa; }
 .modal ul li { padding: .5em; }

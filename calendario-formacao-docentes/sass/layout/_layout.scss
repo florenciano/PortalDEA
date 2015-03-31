@@ -294,8 +294,8 @@ footer[role="contentinfo"] {
 .modal { 
     padding: 1em;
     width: 40%;
-    max-width: 800px;
     height: auto;
+    // max-height: 36em;
     position: fixed;
     top: 15%;
     left: 30%;
@@ -312,6 +312,20 @@ footer[role="contentinfo"] {
         margin: 0;
     }
     p { font-size: 87.5%; }
+    p.titleDate {
+        margin: $meioGrid 0;
+        color: $cinza;
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 67.5%;
+    }
+    p.titleDate:first-child { margin-top: 0; }
+    // container scroll
+    .contentModal {
+        /////////////////////////// fazer testes com responsivos
+        height: 32em;
+        overflow-y: auto;
+    }
     ul {
         margin: 0;
         padding: 0;

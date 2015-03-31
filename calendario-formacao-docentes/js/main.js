@@ -20,6 +20,8 @@ $(document).ready(function(){
 	/* 4. Listagem geral de eventos de todas as áreas */
 	var fecharModal = $( ".fecharModal" ), btnOnClickArea = $( ".boxLabel a" );
 
+	/* 5. estilizando scroolbar nos modais com listas grandes */
+
 	
 	/////////////////////////////////////////////////////////////////////
 	// functions
