@@ -1,0 +1,1076 @@
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    B- content
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+//  $settings SASS/COMPASS
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+/////////////////////////////////////////////////////////////////////
+// Vars
+/////////////////////////////////////////////////////////////////////
+
+$font: verdana, sans-serif;
+$grid: 40px;
+$meioGrid: $grid / 2;
+
+
+/////////////////////////////////////////////////////////////////////
+// colors
+/////////////////////////////////////////////////////////////////////
+$red: #d03238;
+$magenta: #ee2a5d;
+$cinza: #646464;
+$laranja: #f58220;
+$ciano: rgb(0, 172, 200);
+$verde: rgb(0,148,145);
+$roxo: rgb(125,25,230);
+$corBorda: rgb(230,230,230);
+$cinzaTexto: rgb(65,65,65);
+
+/////////////////////////////////////////////////////////////////////
+// Mixin
+/////////////////////////////////////////////////////////////////////
+
+@mixin translate($x, $y) {
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y); // IE9+
+          transform: translate($x, $y);
+}
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+          transition: $transition;
+}
+// @include transition-transform("0.3s ease-out");
+@mixin transition-transform($transition) {
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
+
+@mixin font($fstyle, $fsize) {
+    font: $fstyle $fsize $font;
+}
+
+@mixin bShadow($lenH,$lenV,$blur,$spread,$rgba) {
+    box-shadow: $lenH $lenV $blur $spread $rgba;
+    -o-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -ms-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -moz-box-shadow: $lenH $lenV $blur $spread $rgba;
+    -webkit-box-shadow: $lenH $lenV $blur $spread $rgba;
+}
+
+@mixin box-size($boxSize) {
+    box-sizing: $boxSize;
+    -o-box-sizing: $boxSize;
+    -ms-box-sizing: $boxSize;
+    -moz-box-sizing: $boxSize;
+    -webkit-box-sizing: $boxSize;
+}
+
+@mixin radius($radT,$radR,$radB,$radL) {
+    border-radius: $radT $radR $radB $radL;
+    -o-border-radius: $radT $radR $radB $radL;
+    -ms-border-radius: $radT $radR $radB $radL;
+    -moz-border-radius: $radT $radR $radB $radL;
+    -webkit-border-radius: $radT $radR $radB $radL;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+}
+
+/////////////////////////////////////////////////////////////////////
+// Resets
+/////////////////////////////////////////////////////////////////////
+
+* {
+    @include box-size(border-box);
+    // @include transition(all .125s ease);
+    // Trasition removed in all style, it's not a good pratice
+}
+
+body { 
+    @include font(normal, 100%);
+    position: relative;
+}
+
+a img { border: none; }
+
+a, a:active, a:hover { color: $red; }
+a, a:active { text-decoration: none }
+a:hover { text-decoration: underline }
+a:visited { color: #c43150 }
+
+iframe {
+    margin: 0 auto;
+    border: none;
+}
+
+.wrapper {
+    border: 1px solid $corBorda;
+    margin-top: $meioGrid;
+    padding-bottom: $meioGrid;
+}
+
+.noWrap { white-space: nowrap; }
+
+/* header */
+header[role="banner"] {
+    background: $red url('../img/ui/bgHeader.png') left center no-repeat;
+    border-bottom: 1px solid $corBorda;
+    height: 125px;
+    overflow: hidden;
+    small { display: block; }
+    h1 {
+        color: #fff;
+        font-size: 1.8em;
+        margin: 0;
+        padding: .675em 2em 0 $meioGrid;
+        line-height: 107.5%;
+        text-shadow: 0px 2px 1px rgba(1,1,1,.4);
+        a {
+            color: #fff;
+            display: block;
+            &:hover { text-decoration: none; }
+        }
+    }
+    img { margin-top: 17%; }
+}
+
+/* footer */
+footer[role="contentinfo"] {
+    background-color: rgb(242,242,242);
+    margin-top: $meioGrid;
+
+    .wrapperFooter { border: none; }
+
+    ul {
+        list-style: none;
+        padding: $meioGrid;
+        margin: 0 0 0 $grid;
+        li {
+            margin-bottom: $meioGrid*1.5;
+        }
+        h5 {
+            margin: 0 0 ($meioGrid/4) 0;
+            font-weight: normal;
+            font-size: 100%;
+            color: #414042;
+        }
+        p {
+            margin: 0;
+            font-size: 75%;
+        }
+    }
+    .logoInsperFooter { 
+        img { margin-top: $meioGrid; }
+    }
+}
+
+/* ==========================================================================
+   index
+========================================================================== */
+
+// body
+.textIntrod {
+    font-size: 75%;
+    padding: $meioGrid;
+    line-height: 1.5em;
+    p {
+        font-size: 1em;
+        line-height: 1.5em;
+        color: $cinzaTexto;
+        margin: 0 0 1em;
+    }
+    ul {
+        list-style-type: square;
+        padding-left: $meioGrid*1.5;
+    }
+}
+.introd {  }
+.textIntrodIndex {
+    padding: ($meioGrid*1.5) 0;
+    p { font-size: 1.25em }
+    // p:first-child { font-weight: 700; }
+}
+
+.solicitarEvento {
+    border: 1px solid $corBorda;
+    // background-color: rgb(250,250,250);
+    color: $cinzaTexto;
+    width: 100%;
+    margin: 27px 0 0 0;
+    padding: $meioGrid/2;
+    text-align: center;
+    @include radius(4px,4px,4px,4px);
+    @include bShadow(0px, 3px, 2px, -1px, rgba(1, 1, 1, 0.1));
+    h6 {
+        margin: 0;
+        font-size: 100%;
+        font-weight: 600;
+    }
+    p { 
+        font-size: 92.5%;
+        margin-top: $meioGrid/2;
+        color: $cinzaTexto;
+        line-height: 1.5em;
+    }
+    .btnInscrevaSolicit {
+        margin-top: $meioGrid !important;
+        text-align: center;
+        margin-bottom: $meioGrid/4;
+        a {
+            padding: .75em 1em;
+            font-size: .825em;
+            display: inline-block;
+            border-bottom: 2px solid #B51D22;
+        }
+    }
+}
+
+// modais
+.bg-modal {
+    display: none;
+    background: transparent url("../img/ui/bg-modal-ie.png") repeat center center;
+    background: -webkit-radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    background: -o-radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    background: -moz-radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    background: radial-gradient(ellipse, rgba(1, 1, 1, 0.05) 30%, rgba(1, 1, 1, 0.5));
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 10;
+
+}
+.formSolicitarEvento, .modal {
+    display: none;
+    width: 45%;
+    max-width: 1080px;
+    height: 870px;
+    margin: 0 auto;
+    position: absolute;
+    top: 16%;
+    left: 27.5%;
+    z-index: 20;
+    background-color: #fff;
+    border: 1px solid $corBorda;
+    padding: .5em;
+    border-radius: $meioGrid/4;
+    overflow: hidden;
+    // content embeded: google or surveyMonkey
+    iframe {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        max-width: 555px;
+        display: block;
+        border: none;
+        margin: 0 auto;  
+    }
+}
+.closeBtn {
+    display: block;
+    text-align: right;
+    margin: 5px 5px 10px 0;
+    clear: both;
+    a, a:active, a:hover, a:visited { color: #fff; }
+    a:hover { text-decoration: none; }
+    a {
+        background-color: $red;
+        padding: .125em .5em;
+        border-radius: 4px;
+        border: 1px solid #C5272D;
+        &:hover {
+            background-color: #C0262B;
+            border: 1px solid #AE1D22;
+        }
+    }
+}
+.modal { 
+    padding: 1em;
+    width: 40%;
+    height: auto;
+    // max-height: 36em;
+    position: fixed;
+    top: 15%;
+    left: 30%;
+      -webkit-box-shadow: 0px 5px 20px 5px rgb(150,150,150);
+        box-shadow: 0px 5px 20px 5px rgb(150,150,150);
+    h4 {
+        font-weight: normal;
+        margin: 0 auto $meioGrid;
+        border-bottom: 1px solid $corBorda;
+        padding-bottom: $meioGrid/4;
+        span { font-weight: bold; }
+    }
+    h5 {
+        margin: 0;
+    }
+    p { font-size: 87.5%; }
+    p.titleDate {
+        margin: $meioGrid 0;
+        color: $cinza;
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 67.5%;
+    }
+    p.titleDate:first-child { margin-top: 0; }
+    // container scroll
+    .contentModal {
+        /////////////////////////// fazer testes com responsivos
+        height: 32em;
+        overflow-y: auto;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        > li:nth-child(even) {  background-color: rgb(250,250,250); }
+        li {
+            padding: .5em;
+            ul {
+                 > li:nth-child(even) {  background-color: transparent; }
+                li {
+                    margin-top: $meioGrid/2;
+                    padding: 0;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .dias, .descricaoEvento { float: left; }
+    .dias {
+        width: 40%;
+        span {
+            color: $magenta;
+            // font-weight: bold;
+            font-size: 87.5%;
+        }
+    }
+    .descricaoEvento {
+        width: 60%;
+        p {
+            margin: 0;
+        }
+        .localSala {
+            font-size: 87.5%;
+            color: #6C6C6C;
+            margin-bottom: $meioGrid/4;
+        }
+    }
+}
+.modal-graduacao {
+    .dias { span { color: $laranja } }
+}
+.modal-pgls {
+    .dias { span { color: $cinza } }
+}
+.modal-edExecutiva {
+    .dias { span { color: $ciano } }
+}
+.modal-mba {
+    .dias { span { color: $verde } }
+}
+.modal-engenharia {
+    .dias { span { color: $roxo } }
+}
+
+.legenda { text-align: center; }
+.boxLabel {
+    display: inline-block;
+    border: 1px solid $corBorda;
+    background-color: rgb(250,250,250);
+    border-radius: 4px;
+    padding: .5em 1em;
+    margin: $grid 0;
+    width: 50%; // aumentar conforme novas inserções de novas áreas
+    h6 {
+        margin: 0;
+        // background-color: #efefef;
+        padding: $meioGrid/2 0;
+        text-align: center;
+        font-size: 100%;
+        color: #414042;
+        font-weight: normal;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 75%;
+    }
+    li {
+        display: inline-block;
+        padding: 1em;
+        text-align: center;
+        min-width: 32%; // aumentar conforme novas inserções de novas áreas
+        span {
+            display: block;
+            width: 3em;
+            margin: 0 auto 5px;
+            height: 3em;
+            border-radius: 2px;
+        }
+        span.magenta { background-color: $magenta; }
+        span.cinza { background-color: $cinza; }
+        span.laranja { background-color: $laranja; }
+        span.ciano { background-color: $ciano; }
+        span.verde { background-color: $verde; }
+        span.roxo { background-color: $roxo; }
+    }
+    li:last-child { border-right: none; }
+}
+
+// calendar attack: month, week and day
+#calendar * {
+    @include transition(none);
+}
+#calendar {
+    padding: 0 ($grid/4);
+    font-size: 75%;
+    margin-top: $meioGrid;
+
+    .fc-toolbar h2 { // color text title
+        color: #414042;
+    }
+}
+.formInscricao { display: none }
+
+/* ==========================================================================
+   events: general
+========================================================================== */
+// border Division
+.wrapperPageIntern { background: transparent url("../img/ui/borderDivision.png") 33.33% top repeat-y; }
+
+.dea { color: $magenta;}
+.pgls { color: $cinza;}
+.graduacao { color: $laranja;}
+.edExecutiva { color: $ciano; }
+.mba { color: $verde; }
+.engenharia { color: $roxo; }
+
+.dea, .pgls, .graduacao {
+    small { 
+        display: inline-block;
+        font-weight: normal;
+        padding-right: .25em;
+    }
+}
+
+// namePalestrante
+.adjust { padding-left: 0; }
+.namePalestrante { margin-top: $meioGrid;
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    li {
+        margin-bottom: $meioGrid;
+        border-bottom: 1px dotted $corBorda;
+        padding-bottom: $meioGrid/2;
+        &:last-child { border-bottom: none; padding-bottom: 0; }
+        img { border-radius: 50%; }
+        h5 {  
+            text-align: center;
+            font-size: .75rem;
+            margin: ($meioGrid/2) 0 $meioGrid 0;
+        }
+        p { font-size: .675rem; }
+    }
+}
+
+// nameEvent
+.nameEvent {
+    h2 {
+        margin: 0;
+        border-bottom: 1px solid transparent;
+        font-size: 1.25rem;
+        padding-bottom: $meioGrid/2;
+        line-height: 125%;
+    }
+    h2.dea { border-color: $magenta; }
+    h2.pgls { border-color: $cinza; }
+    h2.graduacao { border-color: $laranja; }
+    // select datas
+    .datas {
+        display: block;
+        height: 1.5rem;
+        margin-top: 2px;
+        color: $magenta;
+        font-weight: bold;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        @include radius(4px, 4px, 4px, 4px);
+        -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+        box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
+    }
+    .datasGraduacao { color: $laranja }
+    .datasPGLS { color: $cinza }
+    .datasEduExecutiva { color: $ciano }
+    .datasMBA { color: $verde; }
+    .datasEngenharia { color: $roxo; }
+}
+.cols {
+    border-bottom: 1px solid $corBorda;
+    font-size: .75rem;
+    color: #414042;
+    line-height: 125%;
+    padding: 1rem 0;
+    margin-bottom: 20px !important;
+    span {
+        display: block;
+        font-weight: bold;
+    }
+}
+.btnInscreva {
+    margin: $grid 0 $grid 0 !important;
+    a, a:active, a:hover, a:visited { color: #fff; }
+    a:hover { text-decoration: none; }
+    a {
+        background-color: $red;
+        padding: 1em;
+        border-radius: 4px;
+        border: 1px solid #C5272D;
+        &:hover {
+            background-color: #C0262B;
+            border: 1px solid #AE1D22;
+        }
+    }
+    a.inscrevaBtn { margin-right: 1em; border-bottom: 2px solid #B51D22;}
+    a.calendarEvent {
+        background-color: #fff;
+        color: $red;
+        // margin-left: 1em;
+        img {
+            display: inline-block;
+            margin-right: .5em;
+            margin-top: -3px;
+        }
+        &:hover { 
+            text-decoration: underline;
+            background-color: #fff;
+            border-color: #C5272D;
+        }
+    }
+}
+
+.video {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    iframe {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.formInscricao {
+    width: 100%;
+    margin: $meioGrid 0;
+    iframe {
+        // quando vier do surveymonkey manter o configurado por lá
+        width: 100%; 
+        height: 48em;
+    }
+    // estilizando cada iframe de acordo com o seu conteúdo
+    // departamento + ano + nºEvento
+//     #grad-2015-1 { height: 76em; }
+}
+// PGLS (Workshops)
+.coordenadoresPGLS {
+    display: block;
+    text-align: center;
+    padding: $meioGrid 0;
+    div { padding: 0 ($meioGrid/4); }
+    p { 
+        margin: 0;
+        line-height: 1.2em;
+
+    }
+    img { 
+        border: 1px solid $corBorda;
+        border-radius: 50%;
+    }
+    .name {
+        font-size: 100%;
+        margin: ($meioGrid/2) 0 ($meioGrid/4) 0;
+    }
+    .cargo {
+        font-weight: bold;
+        color: $cinza;
+        font-size: 92.5%;
+    }
+}
+
+/*  $Sticky Footer | cssstickyfooter.com
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+// copy this code for all Media Queries and do adjustes necessary
+html, body {height: 100%;}
+
+// 310px com os três departamentos
+
+.wrapperPageIntern {
+    min-height: 100%;
+    overflow:auto;
+    // padding-bottom: 100px; /* defined value here */
+}
+
+div[role="main"] {
+    min-height: 130px; }  /* must be same height as the footer */
+
+// //FOOTER
+.footerPageIntern {
+    position: relative;
+    margin-top: -130px; /* negative value of footer height */
+    height: 130px; /* defined value here */
+    clear:both;
+    .wrapper {
+        padding-bottom: 0;
+    }
+}
+
+/*  $Media Queries
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+/* Media query for 960 Screens - sets nested grids to 100%
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (max-width:960px) {
+    .row .row .c1,
+    .row .row .c2,
+    .row .row .c3,
+    .row .row .c4,
+    .row .row .c5,
+    .row .row .c6,
+    .row .row .c7,
+    .row .row .c8,
+    .row .row .c9,
+    .row .row .c10,
+    .row .row .c11,
+    .row .row .c12 { 
+        width: 100%;
+        // margin-bottom: 20px;
+    }
+    .row .row > div:last-child { margin-bottom: 0 !important; }
+    
+    /* ==========================================================================
+       patterns
+    ========================================================================== */
+    header[role="banner"] {
+        h1 {
+            padding: .675em 0 0 0px;
+        }
+    }
+
+    /* ==========================================================================
+       Index
+    ========================================================================== */
+    // body content
+    .boxLabel { width: 100%; }
+
+    // modais
+    .formSolicitarEvento {
+        display: none;
+        width: 45%;
+        left: 27.5%;
+        height: 870px; 
+    }
+    .modal {
+        width: 70%;
+        left: 15%;
+    }
+
+
+    /* ==========================================================================
+       events: eventTest
+    ========================================================================== */
+    .cols div {
+        margin: 0 0 5px 0;
+        padding: 0 0 5px 0;
+    }
+
+    // PGLS (Workshops)
+    .coordenadoresPGLS {
+        text-align: left;
+        padding: $meioGrid/2 0;
+        div { 
+            margin-bottom: $meioGrid/2;
+            padding: 0;}
+        p { 
+
+        }
+        img { display: none; }
+    }
+}
+
+
+/* Media query for iPad and tablets
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media handheld, only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+    
+    body { font-size: 92.5%; }
+    .row { margin-bottom: 0 !important; }
+    .c1,
+    .c2,
+    .c3,
+    .c4,
+    .c5,
+    .c6,
+    .c7,
+    .c8,
+    .c9,
+    .c10,
+    .c11,
+    .c12 {
+        width: 100%;
+        margin-right: 0;
+        margin-left: 0;
+        margin-bottom: 0;
+    }
+
+    // header
+    header[role="banner"] {
+        height: 110px;
+        background-position: left top;
+        .logoInsperHeader { display: none; }
+        h1 {
+            font-size: 1.5em;
+            line-height: 112.5%;
+            width: 100%;
+            padding: $meioGrid;
+        }
+    }
+
+    // footer
+    footer[role="contentinfo"] {
+        margin-top: 0;
+        ul {
+            padding: 0;
+            margin: 0;
+            p { font-size: 87.5%; }
+            li {
+                margin-bottom: $meioGrid/2;
+                padding-bottom: $meioGrid/2;
+                border-bottom: 1px solid $corBorda;
+            }
+            li:last-child { border-bottom: none }
+        }
+        .logoInsperFooter {
+            margin-bottom: $meioGrid;
+            img { margin: 0 auto; }
+        }
+    }
+
+
+    /* ==========================================================================
+       Index
+    ========================================================================== */
+    // body context
+    .textIntrod {
+        font-size: 87.5%;
+    }
+    // Texto de introdução
+    .solicitarEvento {
+        width: 60%;
+        margin: 0px 0 $grid 20%;
+    }
+    .boxLabel {
+        width: 100%;
+        margin: 0 auto;
+        box-shadow: none;
+        h6 {
+            padding: 1em 0;
+            font-size: 100%;
+        }
+        ul { padding: 0; }
+        li {
+            padding: .25em 0;
+            width: 32%; // alterar conforme novas inclusões
+            float: left;
+        }
+    }
+
+    // calendar
+    .areaCalendar { margin-top: $grid*1.5; }
+    #calendar { 
+        padding: 0 ($meioGrid/4);
+        font-size: 87.5%;
+    }
+
+    .footerPageIntern { height: auto; }
+
+    // modal: solicitar evento
+    .formSolicitarEvento {
+        min-height: 810px;
+        max-width: none;
+        width: 470px;
+        left: 50%;
+        margin-left: -235px;
+    }
+
+    /* ==========================================================================
+       events: eventTest
+    ========================================================================== */
+    .wrapperPageIntern {
+        background: none;
+    }
+    .cols div { font-size: .875rem; }
+    
+    .btnInscreva { text-align: center; }
+    
+    .namePalestrante {
+        border-top: 1px solid $corBorda;
+        margin-top: $grid;
+        padding-top: $grid;
+    }
+
+    /* content text */
+    .contentEvent {
+        padding: $meioGrid 0;
+    }    
+    .formInscricao {
+        iframe { width: 100%; height: 58em;
+        }
+    }
+}
+
+/* Media query for 480 Screens - sets for mobile phone
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (max-width:480px) {
+    .row .row .c1,
+    .row .row .c2,
+    .row .row .c3,
+    .row .row .c4,
+    .row .row .c5,
+    .row .row .c6,
+    .row .row .c7,
+    .row .row .c8,
+    .row .row .c9,
+    .row .row .c10,
+    .row .row .c11,
+    .row .row .c12 { 
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .row .row > div:last-child { margin-bottom: 0 !important; }
+
+    .wrapper { margin-top: 0; }
+    
+    // header
+    header[role="banner"] {
+        background-size: cover;
+        text-align: center;
+        height: auto;
+        padding: $meioGrid 0;
+        h1 {
+            font-size: 1.45em;
+            line-height: 117.5%;
+            padding: 0;
+            margin: 0;
+            small {
+                display: inline-block;
+                padding: 0;
+                line-height: 100%;
+            }
+        }
+    }
+
+    //footer
+    footer[role="contentinfo"] {
+        ul { padding: $meioGrid 0;
+            h5 { font-size: 87.5%; }
+        }
+    }
+
+    /* ==========================================================================
+       Index
+    ========================================================================== */
+
+    // body content
+    .textIntrod {
+        padding: $meioGrid 0;
+        font-size: 75%;
+    }
+    .solicitarEvento {
+        width: 100%;
+        margin: 0px 0 $meioGrid 0%;
+    }
+    .boxLabel { 
+        width: 100%;
+        li {
+            width: 32%;  // alterar conforme novas inclusões
+            margin-bottom: 1em;
+        }
+     }
+    .areaCalendar {
+        margin-top: $meioGrid;
+    }
+
+    .formSolicitarEvento {
+        height: 870px;
+        max-width: none;
+        width: 95%;
+        left: 2.5%;
+        top: 65%;
+        margin-left: 0;
+    }
+    .modal {
+        width: 95%;
+        left: 2.5%;
+        top: 120%;
+        position: absolute;
+    }
+
+    //calendar 
+    #calendar { font-size: 75%; }
+    #calendar .fc-toolbar h2 {
+        margin-top: 1em;
+    }
+
+
+    /* ==========================================================================
+       events: eventTest
+    ========================================================================== */
+    .nameEvent {
+        h2 {
+            font-size: 1rem;
+            padding-bottom: $meioGrid/4;
+            margin-top: $meioGrid;
+        }
+    }
+    .cols {
+        div { 
+            margin-bottom: 0!important;
+            font-size: .75rem;
+        }
+    }
+    .btnInscreva { 
+        text-align: center;
+        a { display: inline-block; }
+        a.calendarEvent { margin-top: 1em; }
+    }
+    .namePalestrante { margin-left: $meioGrid; }
+    .footerPageIntern { height: auto; }
+
+    .formInscricao {
+        iframe { 
+            width: 100%;
+            height: 74em;
+            overflow: hidden;
+        }
+    }
+
+
+}
+/* $Helper classes
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.ir {
+    background-color: transparent;
+    border: 0;
+    overflow: hidden;
+    *text-indent: -9999px;
+}
+.ir:before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 150%;
+}
+.invisible {
+    visibility: hidden;
+}
+.fix:before,
+.fix:after {
+    content: " ";
+    display: table;
+}
+.fix:after {
+    clear: both;
+}
+.fix {
+    *zoom: 1;
+}
+
+/* $Print Styles
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media print {
+    * {
+        background: transparent !important;
+        color: #000 !important; /* Black prints faster: h5bp.com/s */
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    a,
+    a:visited {
+        text-decoration: underline;
+    }
+
+    a[href]:after {
+        content: " (" attr(href) ")";
+    }
+
+    abbr[title]:after {
+        content: " (" attr(title) ")";
+    }
+
+    /*
+     * Don't show links for images, or javascript/internal links
+     */
+
+    .ir a:after,
+    a[href^="javascript:"]:after,
+    a[href^="#"]:after {
+        content: "";
+    }
+
+    pre,
+    blockquote {
+        border: 1px solid #999;
+        page-break-inside: avoid;
+    }
+
+    thead {
+        display: table-header-group; /* h5bp.com/t */
+    }
+
+    tr,
+    img {
+        page-break-inside: avoid;
+    }
+
+    img {
+        max-width: 100% !important;
+    }
+
+    @page {
+        margin: 0.5cm;
+    }
+
+    p,
+    h2,
+    h3 {
+        orphans: 3;
+        widows: 3;
+    }
+
+    h2,
+    h3 {
+        page-break-after: avoid;
+    }
+}
+
+    
