@@ -16,28 +16,220 @@
 			max-width: 1024px;
 			padding: 1em;
 		}
-		h1 { margin-bottom: .25em; line-height: 1.125em;}
+		h1 { margin-bottom: .25em;}
 		h2 { margin: 2em 0 0; }
-		h4 { margin: 0; padding: 0; 	}
+		h4 { margin: 0; padding: 0; }
+		h1, h2, h3, h4, h5, h6 { line-height: 1.125em; }
 		a, a:hover, a:active, a:focus { color: #cf1432;	}
 		ul li { margin: .25em 0; font-size: 92.5%;	}
 		ul li ul li { font-size: 100%; }
+		dt { font-weight: bold; }
+		dd { margin: 0 0 1em 0; }
 		li figure {	margin-top: .5em;	}
 		figcaption {
 			border-left: 2px solid #5a5a5a;
 			padding: .25em .5em;
 			font-size: 82.5%;
 			margin: .5em 0 1em 0;
+			line-height: 1.25em;
 		}
-		img { border: 1px solid #E9E9E9; }
+		img { border: 1px solid #E9E9E9; max-width: 100% }
 	</style>
 </head>
 <body>
 	<div class="wrapper">
-		<h1 id="inicio">Calendário de Workshops,Treinamentos e Eventos em geral</h1>
-		<h4 class="nameProject">Documentação do Projeto</h4>
-		<p>Este documento esclarece todas as diretrizes necessárias ao(s) desenvolvedor(es) responsável(is) visando atender qualquer alteração necessária no projeto ou, simplesmente, o contínuo desenvolvimento do mesmo.</p>
-		<p>Aqui também estão descritas todas as lógicas de funcionamento dos scripts (js), das marcações HTML (semântica), regras de estilos (CSS) e o detalhamento da estrutura de diretórios.</p>
+		<article>
+			<section class="inicio">
+				<h1 id="title">Calendário de Workshops,Treinamentos e Eventos em geral</h1>
+				<h4>Documentação do Projeto</h4>
+				<p>URI <a href="https://insper.blackboard.com/bbcswebdav/institution/DEA/calendario-formacao-docentes/">https://insper.blackboard.com/bbcswebdav/institution/DEA/calendario-formacao-docentes/</a></p>
+				<p>Este documento esclarece todas as diretrizes necessárias ao(s) desenvolvedor(es) responsável(is) visando atender qualquer alteração necessária no projeto ou, simplesmente, o contínuo desenvolvimento do mesmo.</p>
+				<p>Aqui também estão descritas a estrutura de diretório do projeto, as marcações semântica do HTML, as regras de estilos (CSS) e as lógicas de funcionamento dos scripts (js).</p>	
+			</section>
+			<section class="detailsGeneral">
+				<h2 id="detailsGeneralTitle">Detalhes gerais do Projeto</h2>
+				<dl>
+					<dt>Nome do Projeto</dt>
+					<dd>Calendário Formação de Docentes (Workshops,Treinamentos e Eventos em geral)</dd>
+					<dt>Diretório de gravação do Projeto</dt>
+					<dd>Material armazenado no seguinte endereço: 				<strong>/Applications/MAMP/htdocs/projetos/PortalDEA/calendario-formacao-docentes</strong>.<br>
+						Backup da última versão deste projeto esta sendo armazenada em: <strong>smb://servidor-82/TAI-DEA$/Administrativo/Pastas Individuais/RodrigoFS3/PortalDEA/calendario-formacao-docentes</strong>.
+					</dd>
+					<dt>Requisitos míninos do Projeto</dt>
+					<dd>Responsive web design (RWD); Cross-browser compatível com todos os browser que recebem suporte do Blackboard (<a href="https://insper.blackboard.com/bbcswebdav/institution/TAI/pagLogin/requisitos-sistemas/">veja lista</a>).</dd>
+					<dt>Metas do Projeto</dt>
+					<dd>Facilitar a consulta e a inscrição em workshops, treinamentos e eventos oferecidos aos professores tanto institucionalmente quanto pelos diferentes programas.</dd>
+				</dl>
+			</section>
+			<section class="requirements">
+				<h2 class="requirementsTitle">Requisitos</h2>
+				<p>As tecnologias utilizadas no desenvolvimento deste projetos foram:</p>
+				<ul>
+					<li>HTML5/CSS3</li>
+					<li>Framework de autoração de css: COMPASS. (<a href="http://compass-style.org">mais informação</a>)</li>
+					<li>Extensão de linguagem css: SASS. (<a href="http://sass-lang.com">mais informação</a>)</li>
+					<li>Javascript, JSON, e biblitoteca de script: jQuery.</li>
+					<li>Plugin jQuery open source: FullCalendar. (<a href="http://fullcalendar.io/">mais informação</a>)</li>
+				</ul>
+			</section>
+			<section class="sctrutureFolder">
+				<h2 id="sctrutureFolderTitle">Estrutura de diretórios</h2>
+				<p>Para adequar-se as boas práticas de desenvolvimento web a organização do conteúdo esta dividido em dois grupos:</p>
+				<ol>
+					<li><em>html:</em> Local de armazenamento dos conteúdos de desenvolvimento front-end;</li>
+					<li><em>layouts:</em> Local de armazenamento dos GUI (graphical user interface) do projeto;</li>
+				</ol>
+				<p><strong>Obs:</strong> demais conteúdos complementares podem ser adicionados no projeto em outros diretórios. Recomenda-se identificar tais conteúdos avulsos com o sinal de "_" <em>(underline)</em> no início do nome.</p>
+				<figure>
+					<img src="img/structureFolder.png" alt="Diretório raiz do projeto">
+					<figcaption>Diretório raiz do projeto.</figcaption>
+				</figure>
+				<ul>
+					<li>
+						<p><strong>Diretório <em>html</em></strong></p>
+						<p>Responsável para armazenar os conteúdos do desenvolvimento front-end (assets) e para arquivar as páginas dos eventos de cada departamento do Insper.</p>
+						<p>Obs: Pode ser necessário adicionar novas categorias/departamentos, basta adicionar a pasta com o nome do departamento. Recomenda-se utilizar os critérios de nomenclatura adotados nos padrões de <em>Friendly URLs</em>.</p>
+						<figure>
+							<img src="img/structureFolder-html.png" alt="Estrutura de diretório do projeto: diretório html">
+							<figcaption>Estrutura do diretório <em>html</em> aberta. Estrutura dividida entre dois grupos: assets (conteúdos relacionados ao desenvolivemento front-end) e os nomes dos departamentos (categoria, áreas responsáveis) dos eventos institucionais.</figcaption>
+						</figure>
+					</li>
+					<li>
+						<p><strong>Diretório <em>layouts</em></strong></p>
+						<p>A organização dos materiais de direção de arte contém o diretório <em>psd</em> para armazenar os aquivos fontes e o diretório <em>img</em> para armazenar o arquivo final, para este caso recomenda-se adotar um padrão de controle de versões ficando a critério do desenvolvedor.</p>
+						<figure>
+							<img src="img/structureFolder-layouts.png" alt="Estrutura de diretório do projeto: diretório layouts">
+							<figcaption>Estrutura do diretório <em>layouts</em>.</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</section>
+			<section class="managerhtml">
+				<h2 id="managerhtmlTitle">Gerenciamento das páginas HTML's</h2>
+				<p>Nesta seção será descrita as diretrizes referentes as páginas html's do projeto.</p>
+				<ul>
+					<li>
+						<h4>Diretório e rotulagem</h4>
+						<p>As páginas html's ficam armazenadas dentro do seu respectivo departamento de referência. O rotulagem segue os padrões de Friendly URLs contendo o nome completo do evento.</p>
+						<figure>
+							<img src="img/html.png" alt="Local de armazenamento dos html's">
+							<figcaption>Diretório e rotulagem dos html's do projeto.</figcaption>
+						</figure>
+					</li>
+					<li>
+						<h4>Marcação semântica</h4>
+						<p>Visando atingir uma alta perfomance nas páginas HTML's do projeto foi adotado algumas medidas para evitar o máximo possível de redundância e complexidade com os vários elementos da página. A seguir algumas diretrizes recomendada para o desenvolvimento de novos conteúdos.</p>
+						<figure>
+							<img src="img/printCode-html.jpg" alt="Local de armazenamento dos html's">
+							<figcaption>Exemplo de aplicação dos requisitos mínimos de marcação semântica no projeto para alcançar um <a href="https://samdutton.wordpress.com/2015/04/02/high-performance-html/" title="High Perfomance HTML - Sam Dutton's Blog">html de alta perfomance</a>.</figcaption>
+						</figure>
+					</li>
+					<li>
+						<h4>Validação</h4>
+						<p>Procure sempre validar as páginas html para manter um padrão de Web Standards</p>
+						<figure>
+							<img src="img/validator-html.png" alt="Validação das páginas html's do projeto">
+							<figcaption>Exemplo de uma das páginas html's validada pela <a href="http://validator.w3.org/" title="Markup Validator Service - W3C">W3C</a>.</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</section>
+			<section class="managercss">
+				<h2 id="managercsslTitle">Gerenciamento dos arquivos CSS's</h2>
+				<p>Nesta seção será descrita as diretrizes referentes aos arquivos css's do projeto.</p>
+				<ul>
+					<li>
+						<h4>Diretório e organização dos arquivos CSS's</h4>
+						<p>O local de armazenamento dos arquivos CSS's é o diretório <strong>SASS</strong> (linguagem de extensão de css). Neste diretório temos o armazenamento do arquivo raiz <strong>main.scss</strong> além de outros adicionais para conteúdos de impressão e bug fix (hacks para IE).</p>
+						<p>O diretório <em>layout</em> contém o arquivos SCSS responsável pela geração de todos os estilos da página. E para eventual necessita de adicionar complementos no projeto, o diretório <em>plugins</em> foi criado.</p>
+						<p><strong>Para utlizar o diretório plugins é necessário que o css esteja convertido em formato scss!</strong> (<a href="http://sass-lang.com/documentation/#_2" title="Sass reference - sass-convert">Veja como fazer</a>)</p>
+						<figure>
+							<img src="img/diretorio-sass.png" alt="Diretório e organização dos arquivos CSS's">
+							<figcaption>Diretório geral de organização dos arquivos fontes do CSS's</figcaption>
+						</figure>
+					</li>
+					<li>
+						<h4>Gerando os arquivos CSS's</h4>
+						<p>No <strong>terminal</strong> acessar o diretório raiz do projeto localizado em: <code>/Applications/MAMP/htdocs/projetos/PortalDEA/calendario-formacao-docentes/html/assets/sass</code></p>
+						<figure>
+							<img src="img/terminal1.png" alt="Acesso ao diretório raiz do SASS">
+							<figcaption>Execução no terminal para o acesso ao diretório geral dos arquivos CSS's</figcaption>
+						</figure>
+						<p>Digitar o comando a seguir:</p>
+						<figure>
+							<img src="img/terminal2.png" alt="Linha de comando para compilar arquivos .scss">
+							<figcaption>Para mais detalhes sobre os comandos de gerenciamento do COMPASS/SASS acesse a <a href="http://compass-style.org/help/">documentação</a> da plataforma, ou digite o comando <code>compass --help</code>.</figcaption>
+						</figure>
+						<p>Verificando status de compilação. A cada alteração/edição nos arquivos .scss é gerado automaticamente os arquivos .css no seu respectivo diretório:</p>
+						<figure>
+							<img src="img/terminal3.png" alt="Verificando status da compilação dos arquivos .scss">
+							<figcaption>Status indicando que o arquivo <em>_layout.scss</em> foi alterado e consequentemente o arquivo <em>main.css</em> foi atualizado.</figcaption>
+						</figure>
+						<p>Para interromper a compilação automática dos arquivos .scss pressionar <code>Command + C</code>.</p>
+						<p><strong>Obs:</strong> A compilação dos arquivos SCSS's são automaticamente inseridos no diretório <em>CSS</em>, criado nas configurações do SASS conforme imagem abaixo:</p>
+						<figure>
+							<img src="img/settings-sass.png" alt="Configuração do diretório SASS, e os locais de armazenamento dos CSS's">
+							<figcaption>Configuração do diretório SASS.</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</section>
+			<section class="managerjs">
+				<h2 id="managerjsTitle">Gerenciamento dos arquivos JS's</h2>
+				<p>Nesta seção será descrita as diretrizes referentes aos arquivos .js's do projeto.</p>
+				<ul>
+					<li>
+						<h4>Diretório e organização</h4>
+						<p>O diretório raiz armazena os scripts da biblioteca jQuery (a versão mais atualizada do momento da criação deste documento); script para inserir eventos no calendário; e o script de gerenciamento do projeto.</p>
+						<figure>
+							<img src="img/js.png" alt="Diretório e organização dos arquivos JS's">
+							<figcaption>Diretório e organização dos arquivos .js</figcaption>
+						</figure>
+					</li>
+					<li>
+						<h4>Gerenciando eventos no calendário</h4>
+						<p>Qualquer alteração nos eventos do calendário é necessário editar o arquivo <strong>eventsCalendar.js</strong> localizado no diretório js dentro dos <em>assets</em> do projeto. O script esta escrito em notação de objetos javascript.</p>
+						<figure>
+							<img src="img/eventsCalendar.png" alt="Editando eventos em javascript e visualizando o resultado no browser">
+							<figcaption>Para melhor entendimento das opções disponíveis de edição de eventos consultar a <a href="http://fullcalendar.io/docs/event_data/Event_Object/" title="FullCalendar - documentation - Event Object">documentação</a> do projeto.</figcaption>
+						</figure>
+					</li>
+					<li>
+						<h4>Organização e otimização dos scripts (jQuery)</h4>
+						<p>Para ajudar nossos scritps a ficarem mais organizados procurando sempre ter ganho na qualidade perfomática dos mesmos, recomenda-se seguir estas diretrizes:</p>
+						<figure>
+							<img src="img/goodPractices-jquery.png" alt="Boas práticas com JQuery">
+							<figcaption>Exemplo de apliacação de <a href="http://www.frontendbrasil.com.br/tutoriais/boas-praticas-com-jquery/" title="Veja mais dicas de boas práticas em jQuery">boas práticas em jQuery</a>.</figcaption>
+						</figure>
+					</li>
+					<li>
+						<h4>Diretório <em>libs</em></h4>
+						<p>Responsável pelo armazenamento de plugins do projeto. Ao utilizar novos plugins fazer referência ao arquivo .js <a href="http://javascript-minifier.com/" title="Minify your JavaScript">minificado</a>.</p>
+						<figure>
+							<img src="img/jsminifier.png" alt="Exemplo de link de bibliotecas de plugins em versão minificado.">
+							<figcaption>Exemplo de link de bibliotecas de plugins em versão minificado.</figcaption>
+						</figure>
+					</li>
+				</ul>
+			</section>
+			<section class="managerHost">
+				<h2 id="managerHostTitle">Local de upload dos materiais no Blackboard</h2>
+				<p>Local para realizar o upload do diretório encontra-se na plataforma <a href="http://insper.blackboard.com" title="Blackboard Learn - Insper">Blackboard</a> ® conforme imagem a seguir:</p>
+				<figure>
+					<img src="img/blackboard1.png" alt="Local de armazenamento do Blackboard dos materiais do projeto">
+					<figcaption>Local de armazenamento do Blackboard dos materiais do projeto</figcaption>
+				</figure>
+			</section>
+			<section class="recommendaction">
+				<h2 id="recommendactionTitle">Recomendações de uso</h2>
+				<ul>
+					<li>Continue o desenvolvimento de produção de novos eventos mantendo a estrutura de diretórios e a regra de rotulagem descritas neste material;</li>
+					<li>Evite alterar a URL raiz do Projeto, localizado atualmente no endereço: <code>https://insper.blackboard.com/bbcswebdav/institution/DEA/calendario-formacao-docentes/...</code></li>
+					<li>As regras/estrutura de marcações, estilos e scripts possuem comentários locais para melhor entendimento. Em caso de mudança ou adaptação do código adicionar comentários adicionais;</li>
+					<li>Os códigos de cores para identificação dos departamentos neste projeto foram baseados na identidade visual da instituição, segue o mesmo critério para a expansão da paleta cromática na eventual necessidade de inserir novos departamentos.</li>
+				</ul>
+			</section>
+		</article>
 	<div>
 </body>
 </html>

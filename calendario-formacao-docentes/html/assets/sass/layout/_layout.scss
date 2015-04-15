@@ -229,6 +229,7 @@ footer[role="contentinfo"] {
             font-size: .825em;
             display: inline-block;
             border-bottom: 2px solid #B51D22;
+            &:hover { border-bottom: 2px solid #B51D22; }
         }
     }
 }
