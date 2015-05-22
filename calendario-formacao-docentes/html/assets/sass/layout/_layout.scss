@@ -542,15 +542,18 @@ footer[role="contentinfo"] {
         padding: 1em;
         border-radius: 4px;
         border: 1px solid #C5272D;
+        border-bottom: 2px solid #B51D22;
         &:hover {
             background-color: #C0262B;
             border: 1px solid #AE1D22;
+            border-bottom: 2px solid #B51D22;
         }
     }
     a.inscrevaBtn { margin-right: 1em; border-bottom: 2px solid #B51D22;}
     a.calendarEvent {
         background-color: #fff;
         color: $red;
+        border-bottom: 1px solid #C5272D;
         // margin-left: 1em;
         img {
             display: inline-block;

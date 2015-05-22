@@ -43,7 +43,14 @@ $(document).ready(function() {
                 end:   '2015-04-01',   
                 backgroundColor: '#ee2a5d',
                 url:   'geral/lecture-turma1.html'
-            }, //////////////////// GRADUACAO ////////////////////
+            }, 
+            {
+                title: 'Módulo Avaliações – Turma 1 \n (Geral)',
+                start: '2015-08-05',
+                end:   '2015-08-05',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/avaliacoes-turma1.html'
+            },//////////////////// GRADUACAO ////////////////////
             {
 
                 title: 'Elaboração de questões de múltipla escolha e sua contribuição para a gestão do aprendizado (Graduação)',
