@@ -45,11 +45,18 @@ $(document).ready(function() {
                 url:   'geral/lecture-turma1.html'
             }, 
             {
-                title: 'Módulo Avaliações – Turma 1 \n (Geral)',
+                title: 'Módulo Avaliações – Turma 1 (Geral)',
                 start: '2015-08-05',
                 end:   '2015-08-05',   
                 backgroundColor: '#ee2a5d',
                 url:   'geral/avaliacoes-turma1.html'
+            },
+            {
+                title: 'Módulo Planejamento de Curso – Turma 1 (Geral)',
+                start: '2015-08-23',
+                end:   '2015-08-23',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/planejamento-curso-turma1.html'
             },//////////////////// GRADUACAO ////////////////////
             {
 
