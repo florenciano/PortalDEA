@@ -52,6 +52,20 @@ $(document).ready(function() {
                 url:   'geral/avaliacoes-turma1.html'
             },
             {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 5 (Geral)',
+                start: '2015-08-12',
+                end:   '2015-08-12',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma5.html'
+            },
+            {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 6 (Geral)',
+                start: '2015-09-23',
+                end:   '2015-09-23',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma6.html'
+            },
+            {
                 title: 'Módulo Planejamento de Curso – Turma 1 (Geral)',
                 start: '2015-08-23',
                 end:   '2015-08-23',   
