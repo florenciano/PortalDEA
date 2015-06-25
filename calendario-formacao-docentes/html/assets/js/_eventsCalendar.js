@@ -71,6 +71,13 @@ $(document).ready(function() {
                 end:   '2015-08-23',   
                 backgroundColor: '#ee2a5d',
                 url:   'geral/planejamento-curso-turma1.html'
+            },
+            {
+                title: 'Workshop: Aprendizado entre Pares (Geral - Público Interno)',
+                start: '2015-08-03',
+                end:   '2015-08-03',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/workshop-aprendizado-entre-pares.html'
             },//////////////////// GRADUACAO ////////////////////
             {
 
