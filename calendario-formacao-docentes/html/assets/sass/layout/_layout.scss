@@ -499,11 +499,15 @@ footer[role="contentinfo"] {
         font-size: 1.25rem;
         padding-bottom: $meioGrid/2;
         line-height: 125%;
+        .smaller-title {
+            font-weight: normal;
+            font-size: 92.5%;
+        }
     }
     h2.dea { border-color: $magenta; }
     h2.pgls { border-color: $cinza; }
     h2.graduacao { border-color: $laranja; }
-    // select datas
+    // select 
     .datas {
         display: block;
         height: 1.5rem;
@@ -595,6 +599,7 @@ footer[role="contentinfo"] {
     // departamento + ano + nºEvento
 //     #grad-2015-1 { height: 76em; }
 }
+
 // PGLS (Workshops)
 .coordenadoresPGLS {
     display: block;
@@ -619,6 +624,17 @@ footer[role="contentinfo"] {
         color: $cinza;
         font-size: 92.5%;
     }
+}
+
+// Descrição do evento da PGLS
+.descricao-workshop-pgls {
+    background: #f3f3f7;
+    border: 1px solid #dedee3;
+    padding: 1em;
+    border-radius: 2px;
+    margin: 1em 0;
+    font-size: .925em;
+    p:last-child { margin-bottom: 0; } 
 }
 
 /*  $Sticky Footer | cssstickyfooter.com
