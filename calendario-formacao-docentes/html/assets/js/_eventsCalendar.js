@@ -89,11 +89,19 @@ $(document).ready(function() {
             },
             {
 
-                title: 'Iniciativa de Desenvolvimento de Docentes (Graduação)',
-                start: '2015-10-07',
-                end: '2015-10-07',
+                title: 'Elaboração de questões de múltipla escolha e sua contribuição para a gestão do aprendizado (Graduação)',
+                start: '2015-10-07T09:00:00',
+                end: '2015-10-07T12:00:00',
                 backgroundColor: '#f58220',
                 url:   'graduacao/iniciativa-desenvolvimento-docentes2.html'
+            },
+            {
+
+                title: 'Oficina de elaboração de questões de múltipla escolha (Graduação)',
+                start: '2015-10-07T14:00:00',
+                end: '2015-10-07T16:00:00',
+                backgroundColor: '#f58220',
+                url:   'graduacao/iniciativa-desenvolvimento-docentes2-oficina.html'
             }, //////////////////// PGLS ////////////////////
             {
                 title: 'Workshop de Professores - Plano de Aula 1 (PGLS)',

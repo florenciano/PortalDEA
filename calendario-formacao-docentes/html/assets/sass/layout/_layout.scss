@@ -178,12 +178,10 @@ footer[role="contentinfo"] {
 
 // body
 .textIntrod {
-    font-size: 75%;
+    font-size: .875em;
     padding: $meioGrid;
     line-height: 1.5em;
     p {
-        font-size: 1em;
-        line-height: 1.5em;
         color: $cinzaTexto;
         margin: 0 0 1em;
     }
@@ -367,6 +365,7 @@ footer[role="contentinfo"] {
             font-size: 87.5%;
             color: #6C6C6C;
             margin-bottom: $meioGrid/4;
+            margin-top: $meioGrid/4;
         }
     }
 }
@@ -487,7 +486,10 @@ footer[role="contentinfo"] {
             font-size: .75rem;
             margin: ($meioGrid/2) 0 $meioGrid 0;
         }
-        p { font-size: .675rem; }
+        p { 
+            font-size: .875em;
+            color: #696969;
+        }
     }
 }
 
@@ -635,6 +637,20 @@ footer[role="contentinfo"] {
     margin: 1em 0;
     font-size: .925em;
     p:last-child { margin-bottom: 0; } 
+}
+
+// alert - baseado no bootstrap
+.alert {
+    padding: 1em;
+    margin-bottom: $meioGrid;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    p:last-child { margin-bottom: 0; }
+}
+.alert-warning {
+    p { color: #6F582F; }
+    background-color: #fcf8e3;
+    border-color: #faebcc;
 }
 
 /*  $Sticky Footer | cssstickyfooter.com
