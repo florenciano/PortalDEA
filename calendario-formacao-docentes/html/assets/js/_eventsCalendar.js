@@ -89,7 +89,7 @@ $(document).ready(function() {
             },
             {
 
-                title: 'Elaboração de questões de múltipla escolha e sua contribuição para a gestão do aprendizado (Graduação)',
+                title: 'Elaboração de questões de múltipla escolha e sua contribuição... (Graduação)',
                 start: '2015-10-07T09:00:00',
                 end: '2015-10-07T12:00:00',
                 backgroundColor: '#f58220',
