@@ -464,6 +464,7 @@ footer[role="contentinfo"] {
         display: inline-block;
         font-weight: normal;
         padding-right: .25em;
+        font-size: .925em;
     }
 }
 
@@ -510,7 +511,7 @@ footer[role="contentinfo"] {
     h2.pgls { border-color: $cinza; }
     h2.graduacao { border-color: $laranja; }
     // select 
-    .datas {
+    .datas, .datas-eng {
         display: block;
         height: 1.5rem;
         margin-top: 2px;

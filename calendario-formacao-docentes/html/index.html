@@ -8,7 +8,10 @@
     <title>Workshops,Treinamentos e Eventos em geral</title>
 
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel='stylesheet' href='assets/css/fullcalendar-2.1.1/fullcalendar.min.css' />
+    <link rel='stylesheet' href='//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.css'>
+    <style>
+        .fc-day-grid-event .fc-content { white-space: normal; }
+    </style>
     <link rel="icon" type="image/png" href="favicon.png">
     <!--[if lt IE 9]>
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -260,6 +263,25 @@
                     </li>
                 </ul>
             </li>
+             <li>
+                <h5>Novembro</h5>
+                <ul>
+                    <li class="fix">
+                        <div class="dias"><span>04/11 (qua)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="graduacao/workshop-novos-professores-engenharia.html" title="Iniciativa de desenvolvimento de docentes">Workshop de Novos Professores da Engenharia</a></p>
+                            <p class="localSala">9h - 12h30 | Sala 202 - 2º andar</p>
+                        </div>
+                    </li>
+                    <!-- <li class="fix">
+                        <div class="dias"><span>26/11 (qua)</span></div>
+                        <div class="descricaoEvento">
+                            <p><a href="graduacao/workshop-novos-professores-engenharia.html" title="Iniciativa de desenvolvimento de docentes">Workshop de Novos Professores da Engenharia</a></p>
+                            <p class="localSala">14h - 17h30 | Sala 202 - 2º andar</p>
+                        </div>
+                    </li> -->
+                </ul>
+            </li>
         </ul>
     </div> <!-- fim do modal: graduacao -->
     
@@ -327,19 +349,19 @@
     <div class="modal modal-engenharia">
     </div> -->
 
-    <!-- scripts  -->
+    <!-- scripts -->
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script>window.jQuery || document.write('<script src="/assets/js/jquery-1.10.2.min.js"><\/script>')</script>
+    <script>window.jQuery || document.write('<script src="assets/js/jquery-1.10.2.min.js"><\/script>')</script>
 	<!-- plugins -->
     <script src='assets/js/libs/fullcalendar-2.1.1/moment.min.js'></script>
-	<script src='assets/js/libs/fullcalendar-2.1.1/fullcalendar.min.js'></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.4.0/fullcalendar.min.js"></script>
 	<script src='assets/js/libs/fullcalendar-2.1.1/lang/pt-br.js'></script>
     
     <!-- scripts adds -->
     <script src="assets/js/main.js"></script>
     
     <!-- data calendar -->
-    <script src="assets/js/_eventsCalendar.js"></script>
+    <script src="assets/js/eventsCalendar.js"></script>
     
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
     <script>

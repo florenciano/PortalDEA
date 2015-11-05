@@ -16,6 +16,9 @@ $(document).ready(function(){
 
 	/* 4. Listagem geral de eventos de todas as áreas */
 	var fecharModal = $( ".fecharModal" ), btnOnClickArea = $( ".boxLabel a" );
+
+	/* 5. Alterando o texto dos horários do evento */
+	var listaDate_eng = $( ".datas-eng" );
 	
 	/////////////////////////////////////////////////////////////////////
 	// functions
@@ -83,6 +86,21 @@ $(document).ready(function(){
 		ev.preventDefault();
 	}
 
+	/* 5. */
+	function altText () {
+		var value = $(this).val(),
+			hora = $( "#hora" ),
+			horaCafe = $( "#hora-cafe" );
+		if(value == 1) {
+			$(hora).text( "9h às 12h30" );
+			$(horaCafe).text( "(café a partir das 8h30)" );
+		} else if(value == 2) {
+			$(hora).text( "14h às 17h30" );
+			$(horaCafe).text( "(café a partir das xhxx)" );
+		}
+	}
+
+
 	/////////////////////////////////////////////////////////////////////
 	// events
 	/////////////////////////////////////////////////////////////////////
@@ -91,7 +109,7 @@ $(document).ready(function(){
 	btnCancelarInscricao.on( "click", swipeElements );
 
 	/* 2. */
-	$(listDate).on( "change", goDate2);
+	$(listDate).on( "change", goDate2 );
 
 	/* 3. */
 	$(btnSolicita).on( "click", openModal );
@@ -105,5 +123,8 @@ $(document).ready(function(){
 	$(fecharModal).each( function () {
 		$(this).on( "click", hideModalArea );
 	});
+
+	/* 5. */
+	$(listaDate_eng).on( "change", altText );
 
 });
