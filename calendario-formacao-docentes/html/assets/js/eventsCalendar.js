@@ -109,6 +109,13 @@ $(document).ready(function() {
                 end:   '2015-11-04T12:30:00',   
                 backgroundColor: '#f58220',
                 url:   'graduacao/workshop-novos-professores-engenharia.html'
+            },
+            {
+                title: 'Workshop de Novos Professores da Engenharia (Graduação)',
+                start: '2015-11-26T14:00:00',
+                end:   '2015-11-26T18:00:00',   
+                backgroundColor: '#f58220',
+                url:   'graduacao/workshop-novos-professores-engenharia.html'
             }, //////////////////// PGLS ////////////////////
             {
                 title: 'Workshop de Professores - Plano de Aula 1 (PGLS)',

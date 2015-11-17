@@ -90,13 +90,16 @@ $(document).ready(function(){
 	function altText () {
 		var value = $(this).val(),
 			hora = $( "#hora" ),
-			horaCafe = $( "#hora-cafe" );
+			horaCafe = $( "#hora-cafe" ),
+			sala = $( "#sala" );
 		if(value == 1) {
 			$(hora).text( "9h às 12h30" );
 			$(horaCafe).text( "(café a partir das 8h30)" );
+			$(sala).text( "Sala 202 - 2º andar" );
 		} else if(value == 2) {
-			$(hora).text( "14h às 17h30" );
-			$(horaCafe).text( "(café a partir das xhxx)" );
+			$(hora).text( "14h às 18h" );
+			$(horaCafe).text( "" );
+			$(sala).text( "Sala 404 - 4º andar" );
 		}
 	}
 
