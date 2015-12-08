@@ -5,27 +5,47 @@ $(document).ready(function(){
 	========================================================================== */
 
 	/* 1. Inscreva-se já e Cancelar inscrição */
-	var btnInscrevaSe = $( "#inscreva-se" ), btnCancelarInscricao = $( "#cancelarInscricao" );
+	var btnInscrevaSe = $( "#inscreva-se" ),
+		btnCancelarInscricao = $( "#cancelarInscricao" );
 
 	/* 2. Lista das datas dos eventos */
 	var listDate = $( ".datas" );
 
 	/* 3. Solicitando novos eventos com o DEA */
-	var btnSolicita = $( "#solicita" ), bgModal = $( ".bg-modal" ),
-	formEvent = $( ".formSolicitarEvento" ), modais = $( ".modal" ), fechar = $( "#fechar" );
+	var btnSolicita = $( "#solicita" ),
+		bgModal = $( ".bg-modal" ),
+		formEvent = $( ".formSolicitarEvento" ),
+		modais = $( ".modal" ),
+		fechar = $( "#fechar" );
 
 	/* 4. Listagem geral de eventos de todas as áreas */
-	var fecharModal = $( ".fecharModal" ), btnOnClickArea = $( ".boxLabel a" );
+	var fecharModal = $( ".fecharModal" ),
+		btnOnClickArea = $( ".boxLabel a" );
 
 	/* 5. Alterando o texto dos horários do evento */
 	var listaDate_eng = $( ".datas-eng" );
+
+	/* 6 */
+	
+	// a] Toggle eventos concluídos
+	var btn_exp_rec = $( ".concluido" );
+
+	// b] Toggle área
+	var btnGeral, btnGraduacao, btnPGLS;
+		btnGeral = $( "#geral" ),
+		btnGraduacao = $( "#graduacao" ),
+		btnPGLS = $( "#pgls" );
+	var listGeral_magenta, listGeral_laranja, listGeral_cinza;
+		listGeral_magenta = $( "#listagem-geral-magenta" ),
+		listGeral_laranja = $( "#listagem-geral-laranja" ),
+		listGeral_cinza = $( "#listagem-geral-cinza" );
 	
 	/////////////////////////////////////////////////////////////////////
 	// functions
 	/////////////////////////////////////////////////////////////////////
 	/* 1. */
 	function swipeElements (ev) {
-		$( ".contentEvent, .formInscricao" ).toggle( 'fast' );
+		$( ".contentEvent, .formInscricao" ).toggle( 400 );
 		ev.preventDefault();
 	}
 
@@ -50,7 +70,7 @@ $(document).ready(function(){
 		});
 	}
 
-	/* 4. */
+	/* 4.
 	function openModalArea (event) {
 		var a = $(this).attr( "id" );
 
@@ -84,7 +104,8 @@ $(document).ready(function(){
 		$(this).parent( ".modal" ).fadeOut( 400 );
 		$(bgModal).fadeOut( 400 );
 		ev.preventDefault();
-	}
+	} 
+	*/
 
 	/* 5. */
 	function altText () {
@@ -103,6 +124,28 @@ $(document).ready(function(){
 		}
 	}
 
+	/* 6. */
+	// a.
+	function girarIcone (el) {
+		var i = el.children( "img" );
+		if (i.attr( "data-rotate" ) == "0") {
+			i.css({
+    			"-webkit-transform": "rotate(90deg)",
+				"-ms-transform": "rotate(90deg)",
+    			"-0-transform": "rotate(90deg)",
+    			transform: "rotate(90deg)"
+    		});
+    		i.attr( "data-rotate", "90" );
+		} else {
+			i.css({
+    			"-webkit-transform": "rotate(0deg)",
+				"-ms-transform": "rotate(0deg)",
+    			"-0-transform": "rotate(0deg)",
+    			transform: "rotate(0deg)"
+    		});
+    		i.attr( "data-rotate", "0" );
+		}
+	}
 
 	/////////////////////////////////////////////////////////////////////
 	// events
@@ -119,15 +162,51 @@ $(document).ready(function(){
 	$(fechar).on( "click", hideModal );
 	$(bgModal).on( "click", hideModal );
 
-	/* 4. */
+	/* 4. 
 	$(btnOnClickArea).each( function () {
 		$(this).on( "click", openModalArea );
 	});
 	$(fecharModal).each( function () {
 		$(this).on( "click", hideModalArea );
 	});
+	*/
 
 	/* 5. */
 	$(listaDate_eng).on( "change", altText );
 
+	/* 6. */
+	//  a.
+	$(btn_exp_rec).on( "click", function (ev) {
+		$(this).parent().next( "ul.events-finished" ).toggle( 400 );
+		girarIcone( $(this) );
+		ev.preventDefault();
+	});
+
+	//  b.
+	$(btnGeral).on( "click", function (ev) {
+		$(this).toggleClass( "active-magenta-listEvent" ); // add style 'active'
+		$( ".listagem-geral" ).hide();
+		$(btnGraduacao).removeClass( "active-laranja-listEvent" ); // remove style 'active' graduacao
+		$(btnPGLS).removeClass( "active-cinza-listEvent" ); // remove style 'active' pgls
+		$(listGeral_magenta).fadeIn( 400 ); // toggle view content
+		ev.preventDefault();
+	});
+
+	$(btnGraduacao).on( "click", function (ev) {
+		$(this).toggleClass( "active-laranja-listEvent" );
+		$( ".listagem-geral" ).hide();
+		$(btnGeral).removeClass( "active-magenta-listEvent" );
+		$(btnPGLS).removeClass( "active-cinza-listEvent" );
+		$(listGeral_laranja).fadeIn( 400 );
+		ev.preventDefault();
+	});
+
+	$(btnPGLS).on( "click", function (ev) {
+		$(this).toggleClass( "active-cinza-listEvent" );
+		$( ".listagem-geral" ).hide();
+		$(btnGeral).removeClass( "active-magenta-listEvent" );
+		$(btnGraduacao).removeClass( "active-laranja-listEvent" );
+		$(listGeral_cinza).fadeIn( 400 );
+		ev.preventDefault();
+	});
 });

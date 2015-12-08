@@ -78,7 +78,49 @@ $(document).ready(function() {
                 end:   '2015-08-03',   
                 backgroundColor: '#ee2a5d',
                 url:   'geral/workshop-aprendizado-entre-pares.html'
-            },//////////////////// GRADUACAO ////////////////////
+            },
+            {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 7 (Geral)',
+                start: '2016-02-16',
+                end:   '2016-02-16',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma7.html'
+            },
+            {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 8 (Geral)',
+                start: '2016-03-01',
+                end:   '2016-03-01',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma8.html'
+            },
+            {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 9 (Geral)',
+                start: '2016-05-03',
+                end:   '2016-05-03',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma9.html'
+            },
+            {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 10 (Geral)',
+                start: '2016-08-02',
+                end:   '2016-08-02',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma10.html'
+            },
+            {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 11 (Geral)',
+                start: '2016-09-06',
+                end:   '2016-09-06',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma11.html'
+            },
+            {
+                title: 'Módulo Aprendizado Centrado no Aluno – Turma 12 (Geral)',
+                start: '2016-10-04',
+                end:   '2016-10-04',   
+                backgroundColor: '#ee2a5d',
+                url:   'geral/aprendizado-centrado-aluno-turma12.html'
+            },/////////////////////// GERAL ///////////////////////
             {
 
                 title: 'Elaboração de questões de múltipla escolha e sua contribuição para a gestão do aprendizado (Graduação)',

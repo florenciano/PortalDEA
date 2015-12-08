@@ -68,6 +68,21 @@ $cinzaTexto: rgb(65,65,65);
     -webkit-box-sizing: $boxSize;
 }
 
+@mixin radius($radT,$radR,$radB,$radL) {
+    border-radius: $radT $radR $radB $radL;
+    -o-border-radius: $radT $radR $radB $radL;
+    -ms-border-radius: $radT $radR $radB $radL;
+    -moz-border-radius: $radT $radR $radB $radL;
+    -webkit-border-radius: $radT $radR $radB $radL;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -o-transition: $transition;
+    -ms-transition: $transition;
+    -moz-transition: $transition;
+    -webkit-transition: $transition;
+}
 
 /////////////////////////////////////////////////////////////////////
 // Resets
@@ -175,18 +190,23 @@ footer[role="contentinfo"] {
         padding-left: $meioGrid*1.5;
     }
 }
+.introd {  }
 .textIntrodIndex {
     padding: ($meioGrid*1.5) 0;
     p { font-size: 1.25em }
+    // p:first-child { font-weight: 700; }
 }
 
 .solicitarEvento {
     border: 1px solid $corBorda;
+    // background-color: rgb(250,250,250);
     color: $cinzaTexto;
     width: 100%;
-    margin: ($grid - 10) 0 0 0;
+    margin: 27px 0 0 0;
     padding: $meioGrid/2;
     text-align: center;
+    @include radius(4px,4px,4px,4px);
+    @include bShadow(0px, 3px, 2px, -1px, rgba(1, 1, 1, 0.1));
     h6 {
         margin: 0;
         font-size: 100%;
@@ -199,8 +219,9 @@ footer[role="contentinfo"] {
         line-height: 1.5em;
     }
     .btnInscrevaSolicit {
-        margin: $meioGrid auto ($meioGrid/2) !important;
+        margin-top: $meioGrid !important;
         text-align: center;
+        margin-bottom: $meioGrid/4;
         a {
             padding: .75em 1em;
             font-size: .825em;
@@ -210,172 +231,6 @@ footer[role="contentinfo"] {
         }
     }
 }
-.listEvent-container {
-    width: 79.8%; // aumentar conforme novas inserções de novas áreas
-    display: block;
-    margin: $grid auto $meioGrid;
-    text-align: center;
-}
-// itens of menu
-.boxLabel {
-    width: 100%;
-    h6 {
-        margin: 0;
-        padding: $meioGrid/2 0;
-        text-align: center;
-        font-size: 125%;
-        color: #414042;
-        font-weight: normal;
-    }
-    ul {
-        list-style: none;
-        margin: 0;
-        padding: 0;
-    }
-    li {
-        display: inline-block;
-        text-align: center;
-        min-width: 31.3%; // aumentar conforme novas inserções de novas áreas
-        &:nth-child(even) { margin: 0 2%; }
-        a {
-            display: block;
-            padding: 2em 1em;
-            font-size: 87.5%;
-            border: 3px solid #E2E2E2;
-            @include transition(all .200s ease);
-            &:hover { color: #fff; text-decoration: none; }
-            span {
-                display: block;
-                width: 2.5em;
-                margin: 0 auto 5px;
-                height: 2.5em;
-                border-radius: 2px;
-            }
-        }
-        // active list item menu calendar
-        .active-magenta-listEvent {
-            color: #fff;
-            border-color: $magenta;
-            background-color: $magenta;
-            span.magenta { background-color: #fff; }
-        }
-        .active-laranja-listEvent {
-            color: #fff;
-            border-color: $laranja;
-            background-color: $laranja;
-            span.laranja { background-color: #fff; }
-        }
-        .active-cinza-listEvent {
-            color: #fff;
-            border-color: $cinza;
-            background-color: $cinza;
-            span.cinza { background-color: #fff; }
-        }
-        a#geral:hover { @extend .active-magenta-listEvent; }
-        a#graduacao:hover { @extend .active-laranja-listEvent; }
-        a#pgls:hover { @extend .active-cinza-listEvent; }
-
-        span.magenta { background-color: $magenta; }
-        span.cinza { background-color: $cinza; }
-        span.laranja { background-color: $laranja; }
-        span.ciano { background-color: $ciano; }
-        span.verde { background-color: $verde; }
-        span.roxo { background-color: $roxo; }
-    }
-}
-/* general event list for departament */
-.listagem-geral {
-    width: 79.5%;
-    display: block;
-    margin: 0 auto;
-    padding: 1em;
-    border: 1px solid $corBorda;
-    h4 {
-        font-weight: normal;
-        margin: ($meioGrid/2) auto $meioGrid;
-        // border-bottom: 1px solid $corBorda;
-        // padding-bottom: $meioGrid/4;
-        img { display: inline-block; margin: -4px .5em 0 0; }
-    }
-    h5 { margin: 0; }
-    p { font-size: 87.5%; }
-    p.asterisco { 
-        font-size: 75%;
-        margin: 1em 0 0;
-        font-style: italic;
-    }
-    p.titleDate {
-        margin: $meioGrid 0 ($meioGrid/2);
-        color: $cinza;
-        text-transform: uppercase;
-        font-style: italic;
-        font-size: 67.5%;
-    }
-    p.titleDate:first-child { margin-top: 0; }
-    ul {
-        margin: 0;
-        padding: 0;
-        list-style: none;
-        // > li:nth-child(even) { background-color: rgb(250,250,250); }
-        li {
-            padding: .25em 0;
-            border-bottom: 1px dotted $corBorda;
-            padding-bottom: $meioGrid/2;
-            margin-bottom: $meioGrid/4;
-            ul {
-                 // > li:nth-child(even) {  background-color: transparent; }
-                li {
-                    margin: $meioGrid/2 0 0;
-                    padding: 0;
-                    border: none;
-                }
-            }
-        }
-    }
-    ul.events-finished { display: none;
-        li:last-child { border-bottom: none; }
-    }
-    .dias, .descricaoEvento { float: left; }
-    .dias {
-        width: 40%;
-        span {
-            color: $magenta;
-            font-size: 87.5%;
-        }
-    }
-    .descricaoEvento {
-        width: 60%;
-        p {
-            margin: 0;
-        }
-        .localSala {
-            font-size: 87.5%;
-            color: #6C6C6C;
-            margin-bottom: $meioGrid/4;
-            margin-top: $meioGrid/4;
-        }
-    }
-}
-
-// #listagem-geral-magenta,
-#listagem-geral-laranja,
-#listagem-geral-cinza { display: none; }
-
-// calendar attack: month, week and day
-#calendar * {
-    @include transition(none);
-}
-#calendar {
-    padding: 0 ($grid/4);
-    font-size: 75%;
-    margin-top: $meioGrid;
-
-    .fc-toolbar h2 { // color text title
-        color: #414042;
-    }
-}
-.formInscricao { display: none }
-
 
 // modais
 .bg-modal {
@@ -393,6 +248,7 @@ footer[role="contentinfo"] {
     right: 0;
     bottom: 0;
     z-index: 10;
+
 }
 .formSolicitarEvento, .modal {
     display: none;
@@ -442,11 +298,76 @@ footer[role="contentinfo"] {
     padding: 1em;
     width: 40%;
     height: auto;
+    // max-height: 36em;
     position: fixed;
     top: 15%;
     left: 30%;
-    -webkit-box-shadow: 0px 5px 20px 5px rgb(150,150,150);
-            box-shadow: 0px 5px 20px 5px rgb(150,150,150);
+      -webkit-box-shadow: 0px 5px 20px 5px rgb(150,150,150);
+        box-shadow: 0px 5px 20px 5px rgb(150,150,150);
+    h4 {
+        font-weight: normal;
+        margin: 0 auto $meioGrid;
+        border-bottom: 1px solid $corBorda;
+        padding-bottom: $meioGrid/4;
+        span { font-weight: bold; }
+    }
+    h5 {
+        margin: 0;
+    }
+    p { font-size: 87.5%; }
+    p.asterisco { font-size: 75%; margin-top: 1.5em; }
+    p.titleDate {
+        margin: $meioGrid 0;
+        color: $cinza;
+        text-transform: uppercase;
+        font-style: italic;
+        font-size: 67.5%;
+    }
+    p.titleDate:first-child { margin-top: 0; }
+    // container scroll
+    .contentModal {
+        /////////////////////////// fazer testes com responsivos
+        height: 32em;
+        overflow-y: auto;
+    }
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        > li:nth-child(even) {  background-color: rgb(250,250,250); }
+        li {
+            padding: .5em;
+            ul {
+                 > li:nth-child(even) {  background-color: transparent; }
+                li {
+                    margin-top: $meioGrid/2;
+                    padding: 0;
+                    background-color: transparent;
+                }
+            }
+        }
+    }
+    .dias, .descricaoEvento { float: left; }
+    .dias {
+        width: 40%;
+        span {
+            color: $magenta;
+            // font-weight: bold;
+            font-size: 87.5%;
+        }
+    }
+    .descricaoEvento {
+        width: 60%;
+        p {
+            margin: 0;
+        }
+        .localSala {
+            font-size: 87.5%;
+            color: #6C6C6C;
+            margin-bottom: $meioGrid/4;
+            margin-top: $meioGrid/4;
+        }
+    }
 }
 .modal-graduacao {
     .dias { span { color: $laranja } }
@@ -463,6 +384,67 @@ footer[role="contentinfo"] {
 .modal-engenharia {
     .dias { span { color: $roxo } }
 }
+
+.legenda { text-align: center; }
+.boxLabel {
+    display: inline-block;
+    border: 1px solid $corBorda;
+    background-color: rgb(250,250,250);
+    border-radius: 4px;
+    padding: .5em 1em;
+    margin: $grid 0;
+    width: 50%; // aumentar conforme novas inserções de novas áreas
+    h6 {
+        margin: 0;
+        // background-color: #efefef;
+        padding: $meioGrid/2 0;
+        text-align: center;
+        font-size: 100%;
+        color: #414042;
+        font-weight: normal;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 75%;
+    }
+    li {
+        display: inline-block;
+        padding: 1em;
+        text-align: center;
+        min-width: 32%; // aumentar conforme novas inserções de novas áreas
+        span {
+            display: block;
+            width: 3em;
+            margin: 0 auto 5px;
+            height: 3em;
+            border-radius: 2px;
+        }
+        span.magenta { background-color: $magenta; }
+        span.cinza { background-color: $cinza; }
+        span.laranja { background-color: $laranja; }
+        span.ciano { background-color: $ciano; }
+        span.verde { background-color: $verde; }
+        span.roxo { background-color: $roxo; }
+    }
+    li:last-child { border-right: none; }
+}
+
+// calendar attack: month, week and day
+#calendar * {
+    @include transition(none);
+}
+#calendar {
+    padding: 0 ($grid/4);
+    font-size: 75%;
+    margin-top: $meioGrid;
+
+    .fc-toolbar h2 { // color text title
+        color: #414042;
+    }
+}
+.formInscricao { display: none }
 
 /* ==========================================================================
    events: general
@@ -537,7 +519,7 @@ footer[role="contentinfo"] {
         font-weight: bold;
         background-color: #fff;
         border: 1px solid #ccc;
-        border-radius: 4px;
+        @include radius(4px, 4px, 4px, 4px);
         -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
         box-shadow: inset 0 1px 1px rgba(0,0,0,0.075);
     }
@@ -843,10 +825,6 @@ div[role="main"] {
         width: 60%;
         margin: 0px 0 $grid 20%;
     }
-    .listEvent-container {
-        width: 100%;
-        margin: 0 auto $grid;
-    }
     .boxLabel {
         width: 100%;
         margin: 0 auto;
@@ -858,10 +836,10 @@ div[role="main"] {
         ul { padding: 0; }
         li {
             padding: .25em 0;
-            width: 30%; // alterar conforme novas inclusões
+            width: 32%; // alterar conforme novas inclusões
+            float: left;
         }
     }
-    .listagem-geral { width: 100%; }
 
     // calendar
     .areaCalendar { margin-top: $grid*1.5; }
@@ -968,19 +946,11 @@ div[role="main"] {
         width: 100%;
         margin: 0px 0 $meioGrid 0%;
     }
-    .listEvent-container { margin-bottom: $meioGrid; }
     .boxLabel { 
         width: 100%;
         li {
-            width: 100%;  // alterar conforme novas inclusões
-            margin-bottom: 0;
-            &:nth-child(even) { margin: 0; }
-            a {
-                font-size: 92.5%;
-                padding: 1em 0;
-                border-width: 1px;
-                span { margin: 0 auto; }
-            }
+            width: 32%;  // alterar conforme novas inclusões
+            margin-bottom: 1em;
         }
      }
     .areaCalendar {
