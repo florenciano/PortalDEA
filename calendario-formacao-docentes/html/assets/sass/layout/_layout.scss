@@ -325,7 +325,7 @@ footer[role="contentinfo"] {
             ul {
                  // > li:nth-child(even) {  background-color: transparent; }
                 li {
-                    margin: $meioGrid/2 0 0;
+                    margin: ($meioGrid/2) 0 0;
                     padding: 0;
                     border: none;
                 }
