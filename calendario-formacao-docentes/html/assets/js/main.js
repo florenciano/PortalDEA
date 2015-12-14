@@ -22,15 +22,22 @@ $(document).ready(function(){
 	var fecharModal = $( ".fecharModal" ),
 		btnOnClickArea = $( ".boxLabel a" );
 
-	/* 5. Alterando o texto dos horários do evento */
-	var listaDate_eng = $( ".datas-eng" );
+	/* 5. Alterando o texto dos horários do evento */	
+		// a] workshop novos professores engenharia
+	var listaDate_eng = $( ".datas-eng" ),
+		hora = $( "#hora" ),
+		horaCafe = $( "#hora-cafe" ),
+		sala = $( "#sala" );
+
+		// b] workshop Olin [engenharia]
+	var listaDate_Olin = $( "#dates-workshops" );
+
 
 	/* 6 */
-	
-	// a] Toggle eventos concluídos
+		// a] Toggle eventos concluídos
 	var btn_exp_rec = $( ".concluido" );
 
-	// b] Toggle área
+		// b] Toggle área
 	var btnGeral, btnGraduacao, btnPGLS;
 		btnGeral = $( "#geral" ),
 		btnGraduacao = $( "#graduacao" ),
@@ -39,6 +46,7 @@ $(document).ready(function(){
 		listGeral_magenta = $( "#listagem-geral-magenta" ),
 		listGeral_laranja = $( "#listagem-geral-laranja" ),
 		listGeral_cinza = $( "#listagem-geral-cinza" );
+
 	
 	/////////////////////////////////////////////////////////////////////
 	// functions
@@ -108,20 +116,28 @@ $(document).ready(function(){
 	*/
 
 	/* 5. */
+	// a.
 	function altText () {
-		var value = $(this).val(),
-			hora = $( "#hora" ),
-			horaCafe = $( "#hora-cafe" ),
-			sala = $( "#sala" );
-		if(value == 1) {
+		var value = $(this).val();
+		if (value == 1) {
 			$(hora).text( "9h às 12h30" );
 			$(horaCafe).text( "(café a partir das 8h30)" );
 			$(sala).text( "Sala 202 - 2º andar" );
-		} else if(value == 2) {
+		} else if (value == 2) {
 			$(hora).text( "14h às 18h" );
 			$(horaCafe).text( "" );
 			$(sala).text( "Sala 404 - 4º andar" );
 		}
+	}
+
+	// b.
+	function textEventOlin (text) { $(hora).text( text ); }
+	
+	function altText_Olin () {
+		var v = $(this).val();
+		if (v == 0) { textEventOlin( "9h às 17h" ); } 	// dia 14
+		if (v == 1) { textEventOlin( "9h às 16h30" ); } // dia 15
+		if (v == 2) { textEventOlin( "9h às 15h" ); } 	// dia 16
 	}
 
 	/* 6. */
@@ -131,20 +147,29 @@ $(document).ready(function(){
 		if (i.attr( "data-rotate" ) == "0") {
 			i.css({
     			"-webkit-transform": "rotate(90deg)",
-				"-ms-transform": "rotate(90deg)",
-    			"-0-transform": "rotate(90deg)",
-    			transform: "rotate(90deg)"
+				    "-ms-transform": "rotate(90deg)",
+    			     "-0-transform": "rotate(90deg)",
+    			          transform: "rotate(90deg)"
     		});
     		i.attr( "data-rotate", "90" );
 		} else {
 			i.css({
     			"-webkit-transform": "rotate(0deg)",
-				"-ms-transform": "rotate(0deg)",
-    			"-0-transform": "rotate(0deg)",
-    			transform: "rotate(0deg)"
+				    "-ms-transform": "rotate(0deg)",
+    			     "-0-transform": "rotate(0deg)",
+    			          transform: "rotate(0deg)"
     		});
     		i.attr( "data-rotate", "0" );
 		}
+	}
+
+	// b.
+	function tabs (btnClick, tabActive, btn1, hideTab1, btn2, hideTab2, listEvents) {
+		btnClick.addClass( "active-" + tabActive + "-listEvent" ); 		// add style 'active'
+		$( ".listagem-geral" ).hide();									// hide all content
+		btn1.removeClass( "active-" + hideTab1 + "-listEvent" ); 		// remove style 'active' item1
+		btn2.removeClass( "active-" + hideTab2 + "-listEvent" ); 		// remove style 'active' item2
+		listEvents.fadeIn( 400 ); 										// view list of events
 	}
 
 	/////////////////////////////////////////////////////////////////////
@@ -172,41 +197,34 @@ $(document).ready(function(){
 	*/
 
 	/* 5. */
+	// a]
 	$(listaDate_eng).on( "change", altText );
 
+	// b]
+	$(listaDate_Olin).on( "change", altText_Olin );
+
 	/* 6. */
-	//  a.
+	//  a] 
 	$(btn_exp_rec).on( "click", function (ev) {
 		$(this).parent().next( "ul.events-finished" ).toggle( 400 );
 		girarIcone( $(this) );
 		ev.preventDefault();
 	});
 
-	//  b.
+	//  b] effect tabs
 	$(btnGeral).on( "click", function (ev) {
-		$(this).toggleClass( "active-magenta-listEvent" ); // add style 'active'
-		$( ".listagem-geral" ).hide();
-		$(btnGraduacao).removeClass( "active-laranja-listEvent" ); // remove style 'active' graduacao
-		$(btnPGLS).removeClass( "active-cinza-listEvent" ); // remove style 'active' pgls
-		$(listGeral_magenta).fadeIn( 400 ); // toggle view content
+		tabs( $(this), "magenta", $(btnGraduacao), "laranja", $(btnPGLS), "cinza", $(listGeral_magenta) );
 		ev.preventDefault();
 	});
 
 	$(btnGraduacao).on( "click", function (ev) {
-		$(this).toggleClass( "active-laranja-listEvent" );
-		$( ".listagem-geral" ).hide();
-		$(btnGeral).removeClass( "active-magenta-listEvent" );
-		$(btnPGLS).removeClass( "active-cinza-listEvent" );
-		$(listGeral_laranja).fadeIn( 400 );
+		tabs( $(this), "laranja", $(btnGeral), "magenta", $(btnPGLS), "cinza", $(listGeral_laranja) );
 		ev.preventDefault();
 	});
 
 	$(btnPGLS).on( "click", function (ev) {
-		$(this).toggleClass( "active-cinza-listEvent" );
-		$( ".listagem-geral" ).hide();
-		$(btnGeral).removeClass( "active-magenta-listEvent" );
-		$(btnGraduacao).removeClass( "active-laranja-listEvent" );
-		$(listGeral_cinza).fadeIn( 400 );
+		tabs( $(this), "cinza", $(btnGeral), "magenta", $(btnGraduacao), "laranja", $(listGeral_cinza) );
 		ev.preventDefault();
 	});
+
 });

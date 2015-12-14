@@ -467,7 +467,10 @@ footer[role="contentinfo"] {
 /* ==========================================================================
    events: general
 ========================================================================== */
-// border Division
+
+// reset 
+
+    // - border Division
 .wrapperPageIntern { background: transparent url("../img/ui/borderDivision.png") 33.33% top repeat-y; }
 
 .dea { color: $magenta;}
@@ -529,7 +532,7 @@ footer[role="contentinfo"] {
     h2.pgls { border-color: $cinza; }
     h2.graduacao { border-color: $laranja; }
     // select 
-    .datas, .datas-eng {
+    .datas, .datas-eng, .datas-null {
         display: block;
         height: 1.5rem;
         margin-top: 2px;

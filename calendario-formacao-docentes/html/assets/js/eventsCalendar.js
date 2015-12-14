@@ -158,7 +158,14 @@ $(document).ready(function() {
                 end:   '2015-11-26T18:00:00',   
                 backgroundColor: '#f58220',
                 url:   'graduacao/workshop-novos-professores-engenharia.html'
-            }, //////////////////// PGLS ////////////////////
+            },
+            {
+                title: 'Workshop Olin',
+                start: '2015-12-14',
+                end:   '2015-12-17',   
+                backgroundColor: '#f58220',
+                url:   'graduacao/workshop-olin.html'
+            }, //////////////////// GRADUAÇÃO //////////////////////
             {
                 title: 'Workshop de Professores - Plano de Aula 1 (PGLS)',
                 start: '2015-04-11T08:30:00',
@@ -186,7 +193,7 @@ $(document).ready(function() {
                 end: '2015-10-17T12:00:00',
                 backgroundColor: '#646464',
                 url:   'pgls/workshop-professores2b.html'
-            } //////////////////// EDUCACAO EXECUTIVA //////////////////// 
+            } //////////////////// PGLS ////////////////////// 
         ],
         eventClick: function(event) {
             if( event.url ) {
