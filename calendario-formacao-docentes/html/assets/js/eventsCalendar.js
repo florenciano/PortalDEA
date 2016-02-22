@@ -78,7 +78,7 @@ $(document).ready(function() {
                 end:   '2015-08-03',   
                 backgroundColor: '#ee2a5d',
                 url:   'geral/workshop-aprendizado-entre-pares.html'
-            },
+            }, //// 2016 ////
             {
                 title: 'Módulo Aprendizado Centrado no Aluno – Turma 7 (Geral)',
                 start: '2016-02-16',
@@ -165,6 +165,20 @@ $(document).ready(function() {
                 end:   '2015-12-17',   
                 backgroundColor: '#f58220',
                 url:   'graduacao/workshop-olin.html'
+            }, //// 2016 ////
+            {
+                title: 'Iniciativas de Desenvolvimento de Docentes',
+                start: '2016-04-13',
+                end:   '2016-04-13',   
+                backgroundColor: '#f58220',
+                url:   'graduacao/iniciativa-desenvolvimento-docentes1-2016.html'
+            },
+            {
+                title: 'Iniciativas de Desenvolvimento de Docentes',
+                start: '2016-11-29',
+                end:   '2016-11-29',   
+                backgroundColor: '#f58220',
+                url:   'graduacao/iniciativa-desenvolvimento-docentes2-2016.html'
             }, //////////////////// GRADUAÇÃO //////////////////////
             {
                 title: 'Workshop de Professores - Plano de Aula 1 (PGLS)',
@@ -193,6 +207,34 @@ $(document).ready(function() {
                 end: '2015-10-17T12:00:00',
                 backgroundColor: '#646464',
                 url:   'pgls/workshop-professores2b.html'
+            }, //// 2016 ////
+            {
+                title: 'Workshop de Professores',
+                start: '2016-04-16',
+                end: '2016-04-16',
+                backgroundColor: '#646464',
+                url:   'pgls/workshop-professores1-2016.html'
+            },
+            {
+                title: 'Workshop de Professores',
+                start: '2016-05-13',
+                end: '2016-05-13',
+                backgroundColor: '#646464',
+                url:   'pgls/workshop-professores2-2016.html'
+            },
+            {
+                title: 'Workshop de Professores',
+                start: '2016-09-09',
+                end: '2016-09-09',
+                backgroundColor: '#646464',
+                url:   'pgls/workshop-professores3-2016.html'
+            },
+            {
+                title: 'Workshop de Professores',
+                start: '2016-10-15',
+                end: '2016-10-15',
+                backgroundColor: '#646464',
+                url:   'pgls/workshop-professores4-2016.html'
             } //////////////////// PGLS ////////////////////// 
         ],
         eventClick: function(event) {

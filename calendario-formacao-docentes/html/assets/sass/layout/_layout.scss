@@ -571,28 +571,27 @@ footer[role="contentinfo"] {
         padding: 1em;
         border-radius: 4px;
         border: 1px solid #C5272D;
-        border-bottom: 2px solid #B51D22;
+        border-bottom: 3px solid #B51D22;
         &:hover {
             background-color: #C0262B;
             border: 1px solid #AE1D22;
-            border-bottom: 2px solid #B51D22;
+            border-bottom: 3px solid #B51D22;
         }
     }
-    a.inscrevaBtn { margin-right: 1em; border-bottom: 2px solid #B51D22;}
+    a.inscrevaBtn { margin-right: 1em; border-bottom: 3px solid #B51D22;}
     a.calendarEvent {
-        background-color: #fff;
         color: $red;
-        border-bottom: 1px solid #C5272D;
-        // margin-left: 1em;
+        border: 1px solid #C5272D;
+        background-color: #fff;
+        border-bottom-width: 3px;
         img {
             display: inline-block;
             margin-right: .5em;
             margin-top: -3px;
         }
         &:hover { 
-            text-decoration: underline;
-            background-color: #fff;
-            border-color: #C5272D;
+            background-color: rgb(250,250,250);
+            border-color: #B51D22;
         }
     }
 }
