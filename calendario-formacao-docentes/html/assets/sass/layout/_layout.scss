@@ -213,7 +213,7 @@ footer[role="contentinfo"] {
 .listEvent-container {
     width: 79.8%; // aumentar conforme novas inserções de novas áreas
     display: block;
-    margin: $grid auto $meioGrid;
+    margin: $grid auto 0;
     text-align: center;
 }
 // itens of menu
@@ -287,9 +287,9 @@ footer[role="contentinfo"] {
 .listagem-geral {
     width: 79.5%;
     display: block;
-    margin: 0 auto;
-    padding: 1em;
-    border: 1px solid $corBorda;
+    margin: ($meioGrid/2) auto 0;
+    padding: 2em 1em 1em;
+    border: 3px solid transparent;
     h4 {
         font-weight: normal;
         margin: ($meioGrid/2) auto $meioGrid;
@@ -361,6 +361,10 @@ footer[role="contentinfo"] {
 #listagem-geral-laranja,
 #listagem-geral-cinza { display: none; }
 
+#listagem-geral-magenta { border-color: $magenta; }
+#listagem-geral-laranja { border-color: $laranja; }
+#listagem-geral-cinza { border-color: $cinza; }
+
 // calendar attack: month, week and day
 #calendar * {
     @include transition(none);
@@ -396,13 +400,13 @@ footer[role="contentinfo"] {
 }
 .formSolicitarEvento, .modal {
     display: none;
-    width: 45%;
+    width: 52%;
     max-width: 1080px;
-    height: 870px;
+    height: 50em;
     margin: 0 auto;
     position: absolute;
-    top: 16%;
-    left: 27.5%;
+    top: 10%;
+    left: 24%;
     z-index: 20;
     background-color: #fff;
     border: 1px solid $corBorda;
@@ -412,18 +416,21 @@ footer[role="contentinfo"] {
     // content embeded: google or surveyMonkey
     iframe {
         width: 100%;
-        height: 100%;
-        margin: 0 auto;
-        max-width: 555px;
+        height: calc(100% - 3em);
         display: block;
         border: none;
-        margin: 0 auto;  
+        margin: 0 auto;
     }
+}
+// sobrescrevendo o style do form Google®
+// input full width
+.freebirdFormviewerViewItemsTextTextItem .freebirdFormviewerViewItemsTextShortText {
+    width: 100%
 }
 .closeBtn {
     display: block;
     text-align: right;
-    margin: 5px 5px 10px 0;
+    margin: 5px 5px 1em 0;
     clear: both;
     a, a:active, a:hover, a:visited { color: #fff; }
     a:hover { text-decoration: none; }
@@ -847,7 +854,7 @@ div[role="main"] {
     }
     .listEvent-container {
         width: 100%;
-        margin: 0 auto $grid;
+        margin: 0 auto ($meioGrid/4);
     }
     .boxLabel {
         width: 100%;
@@ -860,7 +867,8 @@ div[role="main"] {
         ul { padding: 0; }
         li {
             padding: .25em 0;
-            width: 30%; // alterar conforme novas inclusões
+            width: 31.3%; // alterar conforme novas inclusões
+            min-width: initial;
         }
     }
     .listagem-geral { width: 100%; }
@@ -908,6 +916,18 @@ div[role="main"] {
         }
     }
 }
+/* evitando quebras na HOME
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
+@media only screen and (min-width: 480px) and (max-width: 540px) {
+    
+    // largura das abas de navegação
+    .boxLabel {
+        li {
+            width: 30%;
+            min-width: auto;
+        }
+    }
+}
 
 /* Media query for 480 Screens - sets for mobile phone
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -952,7 +972,9 @@ div[role="main"] {
 
     //footer
     footer[role="contentinfo"] {
-        ul { padding: $meioGrid 0;
+        ul { 
+            padding: $meioGrid 0;
+            text-align: center;
             h5 { font-size: 87.5%; }
         }
     }
@@ -970,7 +992,7 @@ div[role="main"] {
         width: 100%;
         margin: 0px 0 $meioGrid 0%;
     }
-    .listEvent-container { margin-bottom: $meioGrid; }
+    .listEvent-container { margin-bottom: $meioGrid/2; }
     .boxLabel { 
         width: 100%;
         li {
