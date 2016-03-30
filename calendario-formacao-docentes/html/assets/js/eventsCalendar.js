@@ -19,10 +19,10 @@ $(document).ready(function() {
             center:         'title',
             right:          'month,agendaWeek,agendaDay'
         },
-        weekends:           true, // will hide saturdays and sundays
-        eventLimit:         true, // allow "more" link when too many events
+        weekends:           true,           // will hide saturdays and sundays
+        eventLimit:         true,           // allow "more" link when too many events
         eventColor:         '#000000',
-        eventTextColor:     '#fff', // color text default
+        eventTextColor:     '#fff',         // color text default
         eventBorderColor:   'transparent',
         timeFormat:         'H(:mm)',
         events: [
@@ -170,11 +170,11 @@ $(document).ready(function() {
                 url:    'graduacao/workshop-olin.html'
             }, //// 2016 ////
             {
-                title:  'Iniciativas de Desenvolvimento de Docentes',
+                title:  'Planejamento Estratégico: Insper 2016-2020',
                 start:  '2016-04-13',
                 end:    '2016-04-13',   
                 backgroundColor: laranja,
-                url:    'graduacao/iniciativa-desenvolvimento-docentes1-2016.html'
+                url:    'graduacao/planejamento-estrategico-insper--2016-2020.html'
             },
             {
                 title:  'Iniciativas de Desenvolvimento de Docentes',

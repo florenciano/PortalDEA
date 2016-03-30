@@ -5,6 +5,9 @@ $(document).ready(function(){
 	========================================================================== */
 
 	/* 1. Inscreva-se já e Cancelar inscrição */
+	// No momento sem utilidade... algumas páginas
+	// tem o iframe do formulário de inscrição 
+	// embedados no html, enviabilizando esta fn()
 	var btnInscrevaSe = $( "#inscreva-se" ),
 		btnCancelarInscricao = $( "#cancelarInscricao" );
 

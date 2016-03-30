@@ -210,6 +210,7 @@ footer[role="contentinfo"] {
         }
     }
 }
+
 .listEvent-container {
     width: 79.8%; // aumentar conforme novas inserções de novas áreas
     display: block;
@@ -378,7 +379,6 @@ footer[role="contentinfo"] {
         color: #414042;
     }
 }
-.formInscricao { display: none }
 
 
 // modais
@@ -479,6 +479,7 @@ footer[role="contentinfo"] {
 
     // - border Division
 .wrapperPageIntern { background: transparent url("../img/ui/borderDivision.png") 33.33% top repeat-y; }
+.no-wrapperPageIntern {  background: transparent url("../img/ui/borderDivision.png") 66.66% top repeat-y; }
 
 .dea { color: $magenta;}
 .pgls { color: $cinza;}
@@ -602,6 +603,7 @@ footer[role="contentinfo"] {
         }
     }
 }
+.btnInscreva_iframe { margin: 0 !important; }
 
 .video {
     position: relative;
@@ -623,12 +625,12 @@ footer[role="contentinfo"] {
     iframe {
         // quando vier do surveymonkey manter o configurado por lá
         width: 100%; 
-        height: 48em;
+        height: 100%;
     }
-    // estilizando cada iframe de acordo com o seu conteúdo
-    // departamento + ano + nºEvento
-//     #grad-2015-1 { height: 76em; }
 }
+// estilizando cada iframe de acordo com o seu conteúdo
+// departamento + ano + nºEvento |  #grad-2015-1 { height: 76em; }
+#grad-2016-1 { height: 54em; }
 
 // PGLS (Workshops)
 .coordenadoresPGLS {
@@ -654,6 +656,10 @@ footer[role="contentinfo"] {
         color: $cinza;
         font-size: 92.5%;
     }
+}
+// icones coordenadores no sidebar
+.coordenadoresPGLS_sidebar { 
+    p { text-align: center; }
 }
 
 // Descrição do evento da PGLS
@@ -900,7 +906,7 @@ div[role="main"] {
     .cols div { font-size: .875rem; }
     
     .btnInscreva { text-align: center; }
-    
+
     .namePalestrante {
         border-top: 1px solid $corBorda;
         margin-top: $grid;
@@ -915,6 +921,8 @@ div[role="main"] {
         iframe { width: 100%; height: 58em;
         }
     }
+    // form survey-monkey: graduacao 1-2016
+    #grad-2016-1 { height: 44em; }
 }
 /* evitando quebras na HOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -927,6 +935,8 @@ div[role="main"] {
             min-width: auto;
         }
     }
+    // form survey-monkey: graduacao 1-2016
+    #grad-2016-1 { height: 46em; }
 }
 
 /* Media query for 480 Screens - sets for mobile phone
