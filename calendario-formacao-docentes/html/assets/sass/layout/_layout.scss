@@ -275,6 +275,16 @@ footer[role="contentinfo"] {
         a#geral:hover { @extend .active-magenta-listEvent; }
         a#graduacao:hover { @extend .active-laranja-listEvent; }
         a#pgls:hover { @extend .active-cinza-listEvent; }
+        // inserindo texto para a legenda PGLS
+        a#pgls { position: relative; }
+        a#pgls:after {
+            content: "(Pós Graduação Lato Sensu)";
+            display: block;
+            font-size: .75em;
+            position: absolute;
+            left: 0;
+            margin-left: 15.65%; // li / 2
+        }
 
         span.magenta { background-color: $magenta; }
         span.cinza { background-color: $cinza; }
@@ -630,7 +640,7 @@ footer[role="contentinfo"] {
 }
 // estilizando cada iframe de acordo com o seu conteúdo
 // departamento + ano + nºEvento |  #grad-2015-1 { height: 76em; }
-#grad-2016-1 { height: 54em; }
+#grad-2016-1 { height: 58em; }
 
 // PGLS (Workshops)
 .coordenadoresPGLS {
@@ -900,9 +910,7 @@ div[role="main"] {
     /* ==========================================================================
        events: eventTest
     ========================================================================== */
-    .wrapperPageIntern {
-        background: none;
-    }
+    .wrapperPageIntern { background: none; }
     .cols div { font-size: .875rem; }
     
     .btnInscreva { text-align: center; }
@@ -914,15 +922,10 @@ div[role="main"] {
     }
 
     /* content text */
-    .contentEvent {
-        padding: $meioGrid 0;
-    }    
-    .formInscricao {
-        iframe { width: 100%; height: 58em;
-        }
-    }
+    .contentEvent { padding: $meioGrid 0; }
+
     // form survey-monkey: graduacao 1-2016
-    #grad-2016-1 { height: 44em; }
+    #grad-2016-1 { height: 63em; }
 }
 /* evitando quebras na HOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -933,10 +936,12 @@ div[role="main"] {
         li {
             width: 30%;
             min-width: auto;
+            a#pgls:after { left: 0; margin-left: 0; }
         }
     }
+
     // form survey-monkey: graduacao 1-2016
-    #grad-2016-1 { height: 46em; }
+    #grad-2016-1 { height: 50em; }
 }
 
 /* Media query for 480 Screens - sets for mobile phone
@@ -1015,8 +1020,10 @@ div[role="main"] {
                 border-width: 1px;
                 span { margin: 0 auto; }
             }
+            a#pgls { padding-bottom: 2em; }
+            a#pgls:after { margin-left: 31.3%; }
         }
-     }
+    }
     .areaCalendar {
         margin-top: $meioGrid;
     }
