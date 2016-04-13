@@ -36,7 +36,7 @@ $(document).ready(function(){
 	var listaDate_Olin = $( "#dates-workshops" );
 
 
-	/* 6 */
+	/* 6. Efeito tabs */
 		// a] Toggle eventos concluídos
 	var btn_exp_rec = $( ".concluido" );
 
@@ -49,6 +49,21 @@ $(document).ready(function(){
 		listGeral_magenta = $( "#listagem-geral-magenta" ),
 		listGeral_laranja = $( "#listagem-geral-laranja" ),
 		listGeral_cinza = $( "#listagem-geral-cinza" );
+
+	/* 7. Fornecendo mais detalhes no email de contato da página clicada */
+	function aboutEvent_mail() {
+		var a = document.querySelector("#footer a[href^='mailto:']"),
+			t = document.title,
+			fras;
+		
+		a.setAttribute("href", a.getAttribute("href") + "?&subject=Informações%20do%20evento:%20" + t_slice() + "&body=Prezados,%20");
+
+		function t_slice() { 
+			fras = t.substring(t.indexOf("-")+1,t.length);
+			return fras = fras.replace(/ +/g,"%20");
+		}
+	}
+	aboutEvent_mail();
 
 	
 	/////////////////////////////////////////////////////////////////////
