@@ -56,7 +56,7 @@ $(document).ready(function(){
 			t = document.title,
 			fras;
 		
-		a.setAttribute("href", a.getAttribute("href") + "?&subject=Informações%20do%20evento:%20" + t_slice() + "&body=Prezados,%20");
+		a.setAttribute("href", a.getAttribute("href") + "?subject=Informações%20do%20evento:%20" + t_slice());
 
 		function t_slice() { 
 			fras = t.substring(t.indexOf("-")+1,t.length);
