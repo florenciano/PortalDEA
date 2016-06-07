@@ -50,21 +50,6 @@ $(document).ready(function(){
 		listGeral_laranja = $( "#listagem-geral-laranja" ),
 		listGeral_cinza = $( "#listagem-geral-cinza" );
 
-	/* 7. Fornecendo mais detalhes no email de contato da página clicada */
-	function aboutEvent_mail() {
-		var a = document.querySelector("#footer a[href^='mailto:']"),
-			t = document.title,
-			fras;
-		
-		a.setAttribute("href", a.getAttribute("href") + "?subject=Informações%20do%20evento:%20" + t_slice());
-
-		function t_slice() { 
-			fras = t.substring(t.indexOf("-")+1,t.length);
-			return fras = fras.replace(/ +/g,"%20");
-		}
-	}
-	aboutEvent_mail();
-
 	
 	/////////////////////////////////////////////////////////////////////
 	// functions
@@ -159,7 +144,7 @@ $(document).ready(function(){
 	}
 
 	/* 6. */
-	// a.
+		// a.
 	function girarIcone (el) {
 		var i = el.children( "img" );
 		if (i.attr( "data-rotate" ) == "0") {
@@ -181,7 +166,7 @@ $(document).ready(function(){
 		}
 	}
 
-	// b.
+		// b.
 	function tabs (btnClick, tabActive, btn1, hideTab1, btn2, hideTab2, listEvents) {
 		btnClick.addClass( "active-" + tabActive + "-listEvent" ); 		// add style 'active'
 		$( ".listagem-geral" ).hide();									// hide all content
@@ -189,6 +174,31 @@ $(document).ready(function(){
 		btn2.removeClass( "active-" + hideTab2 + "-listEvent" ); 		// remove style 'active' item2
 		listEvents.fadeIn( 400 ); 										// view list of events
 	}
+
+	/* 7. Fornecendo mais detalhes no email de contato da página clicada */
+	function aboutEvent_mail() {
+		var a = document.querySelector("#footer a[href^='mailto:']"),
+			t = document.title,
+			fras;
+		
+		a.setAttribute("href", a.getAttribute("href") + "?subject=Informações%20do%20evento:%20" + t_slice());
+
+		function t_slice() { 
+			fras = t.substring(t.indexOf("-")+1,t.length);
+			return fras = fras.replace(/ +/g,"%20");
+		}
+	}
+	aboutEvent_mail();
+
+	/* 8. Inserindo URL de inscrição do form dos cursos do ACA */
+	function getURLFormACA (el) {
+		if(document.getElementById(el) !== null) {
+			var linkPermanent = "https://insper.eu.qualtrics.com/SE/?SID=SV_af1hqJJ3pr0eYn3";
+			document.getElementById(el).setAttribute("href", linkPermanent);
+		}
+	}
+	// Aplicar em todos os elementos que tenham este ID
+	getURLFormACA("formQualtrics-aca");
 
 	/////////////////////////////////////////////////////////////////////
 	// events
