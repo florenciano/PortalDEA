@@ -641,6 +641,7 @@ footer[role="contentinfo"] {
 // estilizando cada iframe de acordo com o seu conteúdo
 // departamento + ano + nºEvento |  #grad-2015-1 { height: 76em; }
 #grad-2016-1 { height: 58em; }
+#pgls-2016-3 { height:  55em; }
 
 // PGLS (Workshops)
 .coordenadoresPGLS {
@@ -926,6 +927,7 @@ div[role="main"] {
 
     // form survey-monkey: graduacao 1-2016
     #grad-2016-1 { height: 63em; }
+    #pgls-2016-3 { height:  64em; }
 }
 /* evitando quebras na HOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -1001,7 +1003,7 @@ div[role="main"] {
     // body content
     .textIntrod {
         padding: $meioGrid 0;
-        font-size: 75%;
+        // font-size: 75%;
     }
     .solicitarEvento {
         width: 100%;
@@ -1081,6 +1083,8 @@ div[role="main"] {
             overflow: hidden;
         }
     }
+
+    #pgls-2016-3 { height: 70em; }
 
 
 }

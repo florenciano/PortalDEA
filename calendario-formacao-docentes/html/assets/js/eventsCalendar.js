@@ -227,17 +227,17 @@ $(document).ready(function() {
             },
             { 
                 title:  'Workshop de Professores',
-                start:  '2016-09-09',
-                end:    '2016-09-09',
+                start:  '2016-09-09T18:00:00',
+                end:    '2016-09-09T21:00:00',
                 backgroundColor: cinza,
-                url:    'pgls/workshop-professores3-2016.html'
+                url:    'pgls/workshop-professores-combinando-motivacao-extrinseca-e-intrinseca.html'
             },
             {
                 title:  'Workshop de Professores',
-                start:  '2016-10-15',
-                end:    '2016-10-15',
+                start:  '2016-10-15T09:00:00',
+                end:    '2016-10-15T012:00:00',
                 backgroundColor: cinza,
-                url:    'pgls/workshop-professores4-2016.html'
+                url:    'pgls/workshop-professores-combinando-motivacao-extrinseca-e-intrinseca.html'
             } 
         ],
         eventClick: function(event) {

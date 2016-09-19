@@ -84,7 +84,6 @@ $(document).ready(function(){
 	/* 4.
 	function openModalArea (event) {
 		var a = $(this).attr( "id" );
-
 		switch(a) {
 			case "dea":
 				$( ".modal-dea" ).add( $(bgModal) ).fadeIn( 400 );
@@ -107,10 +106,8 @@ $(document).ready(function(){
 			default:
 				break;
 		}
-
 		event.preventDefault();
 	}
-
 	function hideModalArea (ev) {
 		$(this).parent( ".modal" ).fadeOut( 400 );
 		$(bgModal).fadeOut( 400 );
