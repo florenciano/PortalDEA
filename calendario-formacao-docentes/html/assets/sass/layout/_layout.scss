@@ -163,7 +163,7 @@ footer[role="contentinfo"] {
 
 // body
 .textIntrod {
-    font-size: .875em;
+    font-size: 1em;
     padding: $meioGrid;
     line-height: 1.5em;
     p {
@@ -533,6 +533,25 @@ footer[role="contentinfo"] {
     }
 }
 
+/*
+    Quando o DEA é o palestrante não tem avatar.
+    Use o logo do DEA.
+*/
+.palestrantes {
+    margin-left: 1em;
+    .palestrantes-list {
+        list-style-type: none;
+        padding: 0;
+    }
+}
+
+.palestrantes-list-item {
+
+}
+.palestrantes-list-img {
+    margin: 0;
+}
+
 // nameEvent
 .nameEvent {
     h2 {
@@ -570,7 +589,7 @@ footer[role="contentinfo"] {
 }
 .cols {
     border-bottom: 1px solid $corBorda;
-    font-size: .75rem;
+    font-size: .875rem;
     color: #414042;
     line-height: 125%;
     padding: 1rem 0;
@@ -602,6 +621,7 @@ footer[role="contentinfo"] {
         border: 1px solid #C5272D;
         background-color: #fff;
         border-bottom-width: 3px;
+        white-space: nowrap;
         img {
             display: inline-block;
             margin-right: .5em;
@@ -862,7 +882,7 @@ div[role="main"] {
     ========================================================================== */
     // body context
     .textIntrod {
-        font-size: 87.5%;
+        font-size: 100%;
     }
     // Texto de introdução
     .solicitarEvento {
@@ -928,6 +948,15 @@ div[role="main"] {
     // form survey-monkey: graduacao 1-2016
     #grad-2016-1 { height: 63em; }
     #pgls-2016-3 { height:  64em; }
+
+    /*
+        Palestrantes: DEA
+        Em versões mobile ocultar aside
+    */
+    .palestrantes {
+        display: none;
+    }
+
 }
 /* evitando quebras na HOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
@@ -1065,7 +1094,7 @@ div[role="main"] {
     .cols {
         div { 
             margin-bottom: 0!important;
-            font-size: .75rem;
+            font-size: .875rem;
         }
     }
     .btnInscreva { 
@@ -1119,7 +1148,7 @@ div[role="main"] {
 
 /* $Print Styles
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ */
-@media print {
+@print {
     * {
         background: transparent !important;
         color: #000 !important; /* Black prints faster: h5bp.com/s */

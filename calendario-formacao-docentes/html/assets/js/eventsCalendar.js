@@ -177,11 +177,11 @@ $(document).ready(function() {
                 url:    'graduacao/planejamento-estrategico-insper--2016-2020.html'
             },
             {
-                title:  'Iniciativas de Desenvolvimento de Docentes',
+                title:  'Design Thinking: cocriando maneiras de motivar nossos alunos',
                 start:  '2016-11-29',
                 end:    '2016-11-29',   
                 backgroundColor: laranja,
-                url:    'graduacao/iniciativa-desenvolvimento-docentes2-2016.html'
+                url:    'graduacao/design-thinking.html'
             }, 
             { //////////////////// PGLS ////////////////////// 
                 title:  'Workshop de Professores - Plano de Aula 1 (PGLS)',
