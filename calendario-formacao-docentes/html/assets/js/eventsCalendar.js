@@ -124,6 +124,13 @@ $(document).ready(function() {
                 backgroundColor: magenta,
                 url:    'geral/aprendizado-centrado-aluno-turma12.html'
             },
+            {
+                title:  'Módulo Aprendizado Centrado no Aluno – Turma 13 (Geral)',
+                start:  '2017-03-07',
+                end:    '2017-03-07',   
+                backgroundColor: magenta,
+                url:    'geral/aprendizado-centrado-aluno-turma13.html'
+            },
             { //////////////////// GRADUAÇÃO //////////////////////
 
                 title:  'Elaboração de questões de múltipla escolha e sua contribuição para a gestão do aprendizado (Graduação)',

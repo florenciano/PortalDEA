@@ -349,10 +349,7 @@ footer[role="contentinfo"] {
     .dias, .descricaoEvento { float: left; }
     .dias {
         width: 40%;
-        span {
-            color: $magenta;
-            font-size: 87.5%;
-        }
+        span { font-size: 87.5%; }
     }
     .descricaoEvento {
         width: 60%;
