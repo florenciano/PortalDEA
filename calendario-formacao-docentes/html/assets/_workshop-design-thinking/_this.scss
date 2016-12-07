@@ -27,21 +27,29 @@ $text-legend-movie: rgb(150,150,150);
 /********************************************************** 
 	PATTENERS
 ***********************************************************/
-// paragraph's page
+// images content
 .nameEvent {
+	// paragraph's page
 	p {
 		line-height: 1.35em;
     	margin: 1em 0;
 	}
-}
-// images content
-.nameEvent {
+	// border image
 	img {
 	    border: 2px solid $corDefault;
     	margin: 1em auto;
 	}
+	// icos for link '_blank' (other tabs)
+	a[target="_blank"]:after {
+		content: "";
+	    width: .825em;
+	    height: .825em;
+	    background: url("icos/blank.png") center center no-repeat;
+	    background-size: 100%;
+	    display: inline-block;
+	    margin-left: .25em;
+	}
 }
-
 
 /********************************************************** 
 	LAYOUT

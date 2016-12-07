@@ -13,10 +13,17 @@
 .nameEvent p {
   line-height: 1.35em;
   margin: 1em 0; }
-
 .nameEvent img {
   border: 2px solid #faa61a;
   margin: 1em auto; }
+.nameEvent a[target="_blank"]:after {
+  content: "";
+  width: .825em;
+  height: .825em;
+  background: url("icos/blank.png") center center no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  margin-left: .25em; }
 
 /********************************************************** 
 	LAYOUT
