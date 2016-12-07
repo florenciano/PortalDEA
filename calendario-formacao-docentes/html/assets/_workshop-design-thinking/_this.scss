@@ -1,0 +1,226 @@
+/********************************************************** 
+	VARIABLES
+***********************************************************/
+// cores
+$corDefault: rgba(250,166,26,1);
+@mixin backgroundOpacityCor($value) {
+	background-color: rgba(250,166,26,$value);
+}
+$corBorder: rgba(230,230,230,1);
+$text-legend-movie: rgb(150,150,150);
+
+/********************************************************** 
+	RESET
+***********************************************************/
+// clearfix
+%clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// wrapper
+.wrapper { max-width: 960px; }
+
+/********************************************************** 
+	PATTENERS
+***********************************************************/
+// paragraph's page
+.nameEvent {
+	p {
+		line-height: 1.35em;
+    	margin: 1em 0;
+	}
+}
+// images content
+.nameEvent {
+	img {
+	    border: 2px solid $corDefault;
+    	margin: 1em auto;
+	}
+}
+
+
+/********************************************************** 
+	LAYOUT
+***********************************************************/
+// header
+header {
+	margin-bottom: 2m;
+	img { max-width: 100% }
+}
+
+// title
+.title-page {
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 1.225em;
+    margin: .5em 0 0 0;
+}
+// description title
+.container-description-title-page {
+    margin: 1em 0;
+    .description-title-page {
+	    margin: 0;
+	    color: $text-legend-movie;
+	    font-size: .875em;
+	}
+}
+
+// depositions
+.member-cite-blockquote {
+	@include backgroundOpacityCor(.1);
+	border-left: 10px solid $corDefault;
+	margin: 1.5em 10px;
+	padding: 1em;
+}
+.member-cite-blockquote:before {
+	font-family: georgia, serif;
+	color: $corDefault;
+	content: "\201C";
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+.member-cite-description {
+	display: inline;
+}
+.member-cite-autor {
+	font-size: .875em;
+	color: $corDefault;
+	display: block;
+}
+
+// subTitle
+.nameEvent {
+	.subTitle-page {
+		font-weight: 400;
+		margin-top: 4em;
+		padding: 0;
+	    color: rgb(90,90,90);
+	}
+}
+// subTitle - 2
+.subTitle-2-page { margin-top: 2em; }
+
+// table
+.datagrid {
+    background: #fff;
+    overflow-x: auto;
+}
+.datagrid {
+	table {
+	    border-collapse: collapse;
+	    text-align: left;
+	    width: 100%;
+	    td {
+			padding: .5em;
+		    border: 1px solid $corBorder;
+		    color: $text-legend-movie;
+		    font-size: .875em;
+		    line-height: 1.25em;
+		}
+	}
+	tfoot {
+		td {
+			font-style: italic;
+		}
+	}
+	.datagrid-emptycell {
+		background-color: $corDefault;
+		color: #ffffff;
+	}
+
+	.striped-table {
+		tr:nth-child(odd) {
+			@include backgroundOpacityCor(.1);	
+		}
+	}
+}
+
+// links of 'midiateca'
+.nameEvent
+.container-midiateca {
+	padding: 0;
+}
+.item-midiateca {
+	list-style: none;
+	margin-bottom: .5em;
+	&:before {
+		width: 24px;
+	    height: 24px;
+	    display: inline-block;
+	    content: "";
+	    background: url("../../assets/_workshop-design-thinking/icos/1.png") center center no-repeat;
+	    margin-right: .5em;
+	}
+}
+.midia {
+	&:before { background: url("../../assets/_workshop-design-thinking/icos/2.png") center center no-repeat;}
+}
+.template {
+	&:before { background: url("../../assets/_workshop-design-thinking/icos/3.png") center center no-repeat;}
+}
+///////////////////////////////////////////////////////////
+// foto e video do evento
+
+// container
+.parent-container {
+	margin: 4em 0;
+	text-align: center;
+	img { margin: 0 }
+	a { display: inline-block; }
+}
+
+// videos
+.container-videos { text-align: center; }
+.container-videos .legend-movie {
+	color: $text-legend-movie;
+	font-size: smaller;
+	line-height: 1.25em;
+	margin-bottom: 3em;
+}
+
+// button foward
+.btn-back {
+	margin: 2em 0;
+	text-align: center;
+	.link-btn-back {
+		background-color: $corDefault;
+	    padding: .5em 1em;
+	    display: inline-block;
+	    border-radius: 4px;
+	    color: #fff;
+	    border: 1px solid darken($corDefault, 5);
+	    &:hover {
+	    	text-decoration: none;
+	    	background-color: darken($corDefault, 5);
+	    	border: 1px solid darken($corDefault, 10);
+	    }
+	}
+}
+
+
+
+/********************************************************** 
+	MEDIA QUERIES
+***********************************************************/
+// Tablet
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+	// wrapper
+	.wrapper { 
+		border: none;
+		margin-top: 0;
+	}
+	// footer
+	footer[role="contentinfo"] { padding-top: 1em; }
+}
+
+// mobile phone
+@media only screen and (max-width:480px) {
+	// title-page
+	.title-page {font-size: 2em; }
+}
