@@ -4,6 +4,11 @@
 /********************************************************** 
 	RESET
 ***********************************************************/
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both; }
+
 .wrapper {
   max-width: 960px; }
 
@@ -69,14 +74,41 @@ header {
   color: #faa61a;
   display: block; }
 
+.theme-event {
+  text-align: center;
+  font-size: 1.5em;
+  width: 90%;
+  margin: 1.5em auto !important; }
+
 .nameEvent .subTitle-page {
-  font-weight: 400;
   margin-top: 4em;
-  padding: 0;
-  color: #5a5a5a; }
+  padding: 0; }
 
 .subTitle-2-page {
-  margin-top: 2em; }
+  margin-top: 2em;
+  font-weight: 400; }
+
+.nameEvent .staff {
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+  padding: .5em 0; }
+  .nameEvent .staff .list-staff {
+    margin-bottom: 0; }
+  .nameEvent .staff .title-column-staff {
+    margin: 0; }
+.nameEvent .legend-column-staff {
+  font-size: small;
+  color: #969696;
+  margin-top: .5em; }
+
+.container-videos {
+  text-align: center; }
+
+.container-videos .legend-movie {
+  color: #969696;
+  font-size: smaller;
+  line-height: 1.25em;
+  margin-bottom: 3em; }
 
 .datagrid {
   background: #fff;
@@ -129,15 +161,6 @@ header {
   .parent-container a {
     display: inline-block; }
 
-.container-videos {
-  text-align: center; }
-
-.container-videos .legend-movie {
-  color: #969696;
-  font-size: smaller;
-  line-height: 1.25em;
-  margin-bottom: 3em; }
-
 .btn-back {
   margin: 2em 0;
   text-align: center; }
@@ -156,6 +179,9 @@ header {
 /********************************************************** 
 	MEDIA QUERIES
 ***********************************************************/
+@media only screen and (max-width: 960px) {
+  .nameEvent .staff .column2 {
+    margin-top: 1em; } }
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation: portrait) {
   .wrapper {
     border: none;
@@ -165,4 +191,20 @@ header {
     padding-top: 1em; } }
 @media only screen and (max-width: 480px) {
   .title-page {
-    font-size: 2em; } }
+    font-size: 2em; }
+
+  .nameEvent .staff .column2 {
+    margin-top: 0; }
+
+  .container-videos {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0; }
+    .container-videos iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; } }

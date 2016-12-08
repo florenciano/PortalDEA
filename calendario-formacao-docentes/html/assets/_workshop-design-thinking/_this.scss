@@ -13,12 +13,10 @@ $text-legend-movie: rgb(150,150,150);
 	RESET
 ***********************************************************/
 // clearfix
-%clearfix {
-  &:after {
-    content: "";
-    display: table;
+.clearfix:after {
+    content: '';
+    display: block;
     clear: both;
-  }
 }
 
 // wrapper
@@ -102,17 +100,54 @@ header {
 	display: block;
 }
 
-// subTitle
+// text-theme
+.theme-event {
+    text-align: center;
+    font-size: 1.5em;
+    width: 90%;
+    margin: 1.5em auto !important;
+}
+
+// subTitle h2
 .nameEvent {
 	.subTitle-page {
-		font-weight: 400;
 		margin-top: 4em;
 		padding: 0;
-	    color: rgb(90,90,90);
 	}
 }
-// subTitle - 2
-.subTitle-2-page { margin-top: 2em; }
+// subTitle-2 h3
+.subTitle-2-page { 
+	margin-top: 2em;
+	font-weight: 400;
+}
+
+// list of members
+.nameEvent {
+	.staff {
+		border-bottom: 1px solid $corBorder;
+		border-top: 1px solid $corBorder;
+		padding: .5em 0;
+		.list-staff { margin-bottom: 0; }
+		.title-column-staff { margin: 0; }
+	}
+	.legend-column-staff {
+		font-size: small;
+		color: $text-legend-movie;
+		margin-top: .5em;
+	}
+}
+
+// movie
+// videos
+.container-videos { 
+	text-align: center;
+}
+.container-videos .legend-movie {
+	color: $text-legend-movie;
+	font-size: smaller;
+	line-height: 1.25em;
+	margin-bottom: 3em;
+}
 
 // table
 .datagrid {
@@ -183,15 +218,6 @@ header {
 	a { display: inline-block; }
 }
 
-// videos
-.container-videos { text-align: center; }
-.container-videos .legend-movie {
-	color: $text-legend-movie;
-	font-size: smaller;
-	line-height: 1.25em;
-	margin-bottom: 3em;
-}
-
 // button foward
 .btn-back {
 	margin: 2em 0;
@@ -216,6 +242,15 @@ header {
 /********************************************************** 
 	MEDIA QUERIES
 ***********************************************************/
+// small desktop
+@media only screen and (max-width: 960px) {
+	// list of members
+	.nameEvent {
+		.staff {
+			.column2 { margin-top: 1em; }
+		}
+	}	
+}
 // Tablet
 @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
 	// wrapper
@@ -231,4 +266,27 @@ header {
 @media only screen and (max-width:480px) {
 	// title-page
 	.title-page {font-size: 2em; }
+
+	// list of members
+	.nameEvent {
+		.staff {
+			.column2 { margin-top: 0; }
+		}
+	}
+
+	// responsive movie
+	.container-videos {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
 }
