@@ -176,6 +176,15 @@ header {
       background-color: #f59b05;
       border: 1px solid #dc8b05; }
 
+.btn-proximos-passos {
+  text-align: left; }
+
+:target {
+  background-color: rgba(250, 166, 26, 0.1); }
+
+#proximos-passos {
+  padding: 10px 0; }
+
 /********************************************************** 
 	MEDIA QUERIES
 ***********************************************************/

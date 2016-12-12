@@ -236,7 +236,10 @@ header {
 	    }
 	}
 }
-
+.btn-proximos-passos { text-align: left; }
+// realce target title 'Próximos Passos'
+:target { @include backgroundOpacityCor(.1); }
+#proximos-passos { padding: 10px 0;}
 
 
 /********************************************************** 
