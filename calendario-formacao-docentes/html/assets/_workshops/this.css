@@ -1,0 +1,250 @@
+@charset "UTF-8";
+/********************************************************** 
+	VARIABLES
+***********************************************************/
+/********************************************************** 
+	RESET
+***********************************************************/
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both; }
+
+.wrapper {
+  max-width: 960px; }
+
+/********************************************************** 
+	PATTENERS
+***********************************************************/
+.nameEvent p {
+  line-height: 1.35em;
+  margin: 1em 0; }
+.nameEvent img {
+  border: 2px solid #ee2a5d;
+  margin: 1em auto; }
+.nameEvent a[target="_blank"]:after {
+  content: "";
+  width: .825em;
+  height: .825em;
+  background: url("design-thinking/icos/blank.png") center center no-repeat;
+  background-size: 100%;
+  display: inline-block;
+  margin-left: .25em; }
+
+/********************************************************** 
+	LAYOUT
+***********************************************************/
+header {
+  margin-bottom: 2m; }
+  header img {
+    max-width: 100%; }
+
+.title-page {
+  font-size: 3em;
+  font-weight: 400;
+  line-height: 1.225em;
+  margin: .5em 0 0 0; }
+
+.container-description-title-page {
+  margin: 1em 0; }
+  .container-description-title-page .description-title-page {
+    margin: 0;
+    color: #969696;
+    font-size: .875em; }
+
+.member-cite-blockquote {
+  background-color: rgba(135, 135, 135, 0.1);
+  border-left: 10px solid #ee2a5d;
+  margin: 1.5em 10px;
+  padding: 1em; }
+
+.member-cite-blockquote:before {
+  font-family: georgia, serif;
+  color: #ee2a5d;
+  content: "\201C";
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em; }
+
+.member-cite-description {
+  display: inline; }
+
+.member-cite-autor {
+  font-size: .875em;
+  color: #ee2a5d;
+  display: block; }
+
+.theme-event {
+  text-align: center;
+  font-size: 1.5em;
+  width: 90%;
+  margin: 1.5em auto !important; }
+
+.nameEvent .subTitle-page {
+  margin-top: 4em;
+  padding: 0; }
+
+.subTitle-2-page {
+  margin-top: 2em;
+  font-weight: 400; }
+
+.nameEvent .staff {
+  border-bottom: 1px solid #e6e6e6;
+  border-top: 1px solid #e6e6e6;
+  padding: .5em 0; }
+  .nameEvent .staff .list-staff {
+    margin-bottom: 0; }
+  .nameEvent .staff .title-column-staff {
+    margin: 0; }
+.nameEvent .legend-column-staff {
+  font-size: small;
+  color: #969696;
+  margin-top: .5em; }
+
+.container-videos {
+  text-align: center; }
+
+.container-videos .legend-movie {
+  color: #969696;
+  font-size: smaller;
+  line-height: 1.25em;
+  margin-bottom: 3em; }
+
+.datagrid {
+  background: #fff;
+  overflow-x: auto; }
+
+.datagrid table {
+  border-collapse: collapse;
+  text-align: left;
+  width: 100%; }
+  .datagrid table td {
+    padding: .5em;
+    border: 1px solid #e6e6e6;
+    color: #969696;
+    font-size: .875em;
+    line-height: 1.25em; }
+.datagrid tfoot td {
+  font-style: italic; }
+.datagrid .datagrid-emptycell {
+  background-color: #ee2a5d;
+  color: #ffffff; }
+.datagrid .striped-table tr:nth-child(odd) {
+  background-color: rgba(135, 135, 135, 0.1); }
+
+.nameEvent
+.container-midiateca {
+  padding: 0; }
+
+.item-midiateca {
+  list-style: none;
+  margin-bottom: .5em; }
+  .item-midiateca:before {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    content: "";
+    background: url("../../assets/_workshops/design-thinking/icos/1.png") center center no-repeat;
+    margin-right: .5em; }
+
+.midia:before {
+  background: url("../../assets/_workshops/design-thinking/icos/2.png") center center no-repeat; }
+
+.template:before {
+  background: url("../../assets/_workshops/design-thinking/icos/3.png") center center no-repeat; }
+
+.parent-container {
+  margin: 4em 0;
+  text-align: center; }
+  .parent-container img {
+    margin: 0; }
+  .parent-container a {
+    display: inline-block; }
+
+.btn-back {
+  margin: 2em 0;
+  text-align: center; }
+  .btn-back .link-btn-back {
+    background-color: #ee2a5d;
+    padding: .5em 1em;
+    display: inline-block;
+    border-radius: 4px;
+    color: #fff;
+    border: 1px solid #ec134b; }
+    .btn-back .link-btn-back:hover {
+      text-decoration: none;
+      background-color: #ec134b;
+      border: 1px solid #d41144; }
+
+.btn-proximos-passos {
+  text-align: left; }
+
+:target {
+  background-color: rgba(135, 135, 135, 0.1); }
+
+#proximos-passos {
+  padding: 10px 0; }
+
+/********************************************************** 
+	Workshop: Princípios Integradores da Graduação
+***********************************************************/
+.txt-enfase-principios-integradores {
+  color: #27a5a2; }
+
+.btn-column-center {
+  text-align: center; }
+
+.container-conjunto {
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  padding: .5em; }
+
+.title-conjunto {
+  margin: 0 0 .5em;
+  text-transform: uppercase;
+  font-weight: 400; }
+
+.topic-conjunto {
+  margin: .25em 0;
+  border: 1px solid #27a5a2;
+  border-radius: 4px;
+  padding: .25em;
+  color: #27a5a2;
+  font-weight: 400; }
+
+/********************************************************** 
+	MEDIA QUERIES
+***********************************************************/
+@media only screen and (max-width: 960px) {
+  .nameEvent .staff .column2 {
+    margin-top: 1em; } }
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation: portrait) {
+  .wrapper {
+    border: none;
+    margin-top: 0; }
+
+  .container-conjunto {
+    margin-bottom: 1em; }
+
+  footer[role="contentinfo"] {
+    padding-top: 1em; } }
+@media only screen and (max-width: 480px) {
+  .title-page {
+    font-size: 2em; }
+
+  .nameEvent .staff .column2 {
+    margin-top: 0; }
+
+  .container-videos {
+    position: relative;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    padding-top: 25px;
+    height: 0; }
+    .container-videos iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%; } }

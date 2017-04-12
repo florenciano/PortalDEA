@@ -1,0 +1,330 @@
+/********************************************************** 
+	VARIABLES
+***********************************************************/
+// cores
+$corDefault: rgba(188,188,188,1); //CINZA Médio
+$workshop-design-thinking: rgba(238,42,93,1); // amarelo claro
+$workshop-principios-integradores: rgba(39,165,162,1); // verde médio
+
+@mixin backgroundOpacityCor($value) {
+	background-color: rgba(135,135,135,$value);
+}
+$corBorder: rgba(230,230,230,1);
+$text-legend-movie: rgb(150,150,150); 
+
+/********************************************************** 
+	RESET
+***********************************************************/
+// clearfix
+.clearfix:after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+.wrapper { max-width: 960px; }
+
+/********************************************************** 
+	PATTENERS
+***********************************************************/
+// images content
+.nameEvent {
+	// paragraph's page
+	p {
+		line-height: 1.35em;
+    	margin: 1em 0;
+	}
+	// border image
+	img {
+	    border: 2px solid $workshop-design-thinking;
+    	margin: 1em auto;
+	}
+	// icos for link '_blank' (other tabs)
+	a[target="_blank"]:after {
+		content: "";
+	    width: .825em;
+	    height: .825em;
+	    background: url("design-thinking/icos/blank.png") center center no-repeat;
+	    background-size: 100%;
+	    display: inline-block;
+	    margin-left: .25em;
+	}
+}
+
+/********************************************************** 
+	LAYOUT
+***********************************************************/
+// header
+header {
+	margin-bottom: 2m;
+	img { max-width: 100% }
+}
+
+// title
+.title-page {
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 1.225em;
+    margin: .5em 0 0 0;
+}
+// description title
+.container-description-title-page {
+    margin: 1em 0;
+    .description-title-page {
+	    margin: 0;
+	    color: $text-legend-movie;
+	    font-size: .875em;
+	}
+}
+
+// depositions
+.member-cite-blockquote {
+	@include backgroundOpacityCor(.1);
+	border-left: 10px solid $workshop-design-thinking;
+	margin: 1.5em 10px;
+	padding: 1em;
+}
+.member-cite-blockquote:before {
+	font-family: georgia, serif;
+	color: $workshop-design-thinking;
+	content: "\201C";
+	font-size: 4em;
+	line-height: 0.1em;
+	margin-right: 0.25em;
+	vertical-align: -0.4em;
+}
+.member-cite-description {
+	display: inline;
+}
+.member-cite-autor {
+	font-size: .875em;
+	color: $workshop-design-thinking;
+	display: block;
+}
+
+// text-theme
+.theme-event {
+    text-align: center;
+    font-size: 1.5em;
+    width: 90%;
+    margin: 1.5em auto !important;
+}
+
+// subTitle h2
+.nameEvent {
+	.subTitle-page {
+		margin-top: 4em;
+		padding: 0;
+	}
+}
+// subTitle-2 h3
+.subTitle-2-page { 
+	margin-top: 2em;
+	font-weight: 400;
+}
+
+// list of members
+.nameEvent {
+	.staff {
+		border-bottom: 1px solid $corBorder;
+		border-top: 1px solid $corBorder;
+		padding: .5em 0;
+		.list-staff { margin-bottom: 0; }
+		.title-column-staff { margin: 0; }
+	}
+	.legend-column-staff {
+		font-size: small;
+		color: $text-legend-movie;
+		margin-top: .5em;
+	}
+}
+
+// movie
+// videos
+.container-videos { 
+	text-align: center;
+}
+.container-videos .legend-movie {
+	color: $text-legend-movie;
+	font-size: smaller;
+	line-height: 1.25em;
+	margin-bottom: 3em;
+}
+
+// table
+.datagrid {
+    background: #fff;
+    overflow-x: auto;
+}
+.datagrid {
+	table {
+	    border-collapse: collapse;
+	    text-align: left;
+	    width: 100%;
+	    td {
+			padding: .5em;
+		    border: 1px solid $corBorder;
+		    color: $text-legend-movie;
+		    font-size: .875em;
+		    line-height: 1.25em;
+		}
+	}
+	tfoot {
+		td {
+			font-style: italic;
+		}
+	}
+	.datagrid-emptycell {
+		background-color: $workshop-design-thinking;
+		color: #ffffff;
+	}
+
+	.striped-table {
+		tr:nth-child(odd) {
+			@include backgroundOpacityCor(.1);	
+		}
+	}
+}
+
+// links of 'midiateca'
+.nameEvent
+.container-midiateca {
+	padding: 0;
+}
+.item-midiateca {
+	list-style: none;
+	margin-bottom: .5em;
+	&:before {
+		width: 24px;
+	    height: 24px;
+	    display: inline-block;
+	    content: "";
+	    background: url("../../assets/_workshops/design-thinking/icos/1.png") center center no-repeat;
+	    margin-right: .5em;
+	}
+}
+.midia {
+	&:before { background: url("../../assets/_workshops/design-thinking/icos/2.png") center center no-repeat;}
+}
+.template {
+	&:before { background: url("../../assets/_workshops/design-thinking/icos/3.png") center center no-repeat;}
+}
+///////////////////////////////////////////////////////////
+// foto e video do evento
+
+// container
+.parent-container {
+	margin: 4em 0;
+	text-align: center;
+	img { margin: 0 }
+	a { display: inline-block; }
+}
+
+// button foward
+.btn-back {
+	margin: 2em 0;
+	text-align: center;
+	.link-btn-back {
+		background-color: $workshop-design-thinking;
+	    padding: .5em 1em;
+	    display: inline-block;
+	    border-radius: 4px;
+	    color: #fff;
+	    border: 1px solid darken($workshop-design-thinking, 5);
+	    &:hover {
+	    	text-decoration: none;
+	    	background-color: darken($workshop-design-thinking, 5);
+	    	border: 1px solid darken($workshop-design-thinking, 10);
+	    }
+	}
+}
+.btn-proximos-passos { text-align: left; }
+// realce target title 'Próximos Passos'
+:target { @include backgroundOpacityCor(.1); }
+#proximos-passos { padding: 10px 0;}
+
+
+/********************************************************** 
+	Workshop: Princípios Integradores da Graduação
+***********************************************************/
+.txt-enfase-principios-integradores {
+	color: $workshop-principios-integradores;
+}
+.btn-column-center {
+	text-align: center;
+}
+// colunas dos conjuntos
+.container-conjunto {
+	border: 1px solid $corBorder;
+    border-radius: 4px;
+    padding: .5em;
+}
+.title-conjunto {
+    margin: 0 0 .5em;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+.topic-conjunto {
+    margin: .25em 0;
+    border: 1px solid $workshop-principios-integradores;
+    border-radius: 4px;
+    padding: .25em;
+    color: $workshop-principios-integradores;
+    font-weight: 400;
+}
+
+/********************************************************** 
+	MEDIA QUERIES
+***********************************************************/
+// small desktop
+@media only screen and (max-width: 960px) {
+	// list of members
+	.nameEvent {
+		.staff {
+			.column2 { margin-top: 1em; }
+		}
+	}	
+}
+// Tablet
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+	// wrapper
+	.wrapper { 
+		border: none;
+		margin-top: 0;
+	}
+	// colunas dos conjuntos
+	.container-conjunto {
+		margin-bottom: 1em;
+	}
+	// footer
+	footer[role="contentinfo"] { padding-top: 1em; }
+}
+
+// mobile phone
+@media only screen and (max-width:480px) {
+	// title-page
+	.title-page {font-size: 2em; }
+
+	// list of members
+	.nameEvent {
+		.staff {
+			.column2 { margin-top: 0; }
+		}
+	}
+
+	// responsive movie
+	.container-videos {
+		position: relative;
+		padding-bottom: 56.25%; /* 16:9 */
+		padding-top: 25px;
+		height: 0;
+		iframe {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+}
